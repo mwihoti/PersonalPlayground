@@ -42,6 +42,9 @@ const Modal = ({data, content, setSelectedContent, setShowModal}) => {
         })}
         </div>
         </div>
+        </div>
 
     )
     }
+
+    export default Modal
