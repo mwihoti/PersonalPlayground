@@ -33,6 +33,11 @@ const Modal = ({data, content, setSelectedContent, setShowModal}) => {
         {data.map((image_data, index) => {
             return (
                 <div className="flex flex-col justify-center items-center cursor-pointer"
+                onClick={() => {
+                    setSelectedContent(image_data);
+                }}>
+                <img className="w-200px h-200px object-cover" src={ImageData.url} alt={`Image ${index}`} />
+                </div>
             )
         })}
         </div>
