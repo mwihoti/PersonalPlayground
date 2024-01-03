@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const mongoose = require("mongoose");
 const TaskModel = require('./models/TaskModel');
+const FormModel = require('./models/FormModel')
 const morgan = require('morgan');
 
 // Create the Express app
@@ -23,6 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   TaskModel.find({}).then((tasks) => {
     res.render('index.ejs', { todos: tasks });
+  })
+  FormModel.find({}).then((tasks) => {
+    res.render('form.ejs', )
   })
 });
 

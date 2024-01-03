@@ -12,6 +12,17 @@
         <input type="text" name="task" id="task" placeholder="Add a new task">
         <button type="submit">Add Task</button>
     </form>
+
+    <h2>Add Message</h2>
+
+    <form action="/forms/" method="post">
+        <div>
+            <label >Message</label>
+            <textarea type="text" rows="4" name="message"
+                 />
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
     <ul>
         <% todos.forEach(function(todo) { %>
             <li>
@@ -30,6 +41,8 @@
             </li>
             <% }); %>
     </ul>
+   
+   
 </body>
 
 </html>
