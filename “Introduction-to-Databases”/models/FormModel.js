@@ -12,5 +12,5 @@ const formSchema = new mongoose.Schema({
 
     }
 })
-const formModel = mongoose.model('forms', formSchema);
-module.exports = formModel;
+const FormModel = mongoose.model('messages', formSchema);
+module.exports = FormModel;

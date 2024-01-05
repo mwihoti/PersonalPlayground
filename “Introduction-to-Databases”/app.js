@@ -21,20 +21,24 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  TaskModel.find({}).then((tasks) => {
-    res.render('index.ejs', { todos: tasks });
-  })
-  FormModel.find({}).then((tasks) => {
-    res.render('form.ejs', )
-  })
+app.get('/', async (req, res) => {
+  try {
+    const tasks = await TaskModel.find({});
+    const forms = await FormModel.find({});
+    res.render('index.ejs', { todos: tasks, forms: forms });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.post('/tasks/', (req, res) => {
   const newTodo = new TaskModel({
     task: req.body.task
   });
-
+  const newMes = new FormModel({
+    form: req.body.task
+  })
   newTodo.save();
   res.redirect('/');
 });
@@ -45,6 +49,11 @@ app.post('/tasks/:id/complete', (req, res) => {
     todo.save();
     res.redirect('/');
   });
+  FormModel.findById(req.params.id).then((message) => {
+    message.is_sent = !message.is_unsent;
+    message.save();
+    res.redirect('/');
+  })
 });
 
 app.post('/tasks/:id/update', (req, res) => {
