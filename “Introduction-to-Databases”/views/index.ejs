@@ -13,12 +13,12 @@
         <button type="submit">Add Task</button>
     </form>
 
-    <h2>Add Message</h2>
+    <h2  className="mx-auto w-1/2">Add Message</h2>
 
-    <form action="/messages/" method="post">
+    <form action="/mes/" method="post" className="mx-auto w-1/2">
         <div>
             <label >Message</label>
-            <textarea type="text" rows="4" name="message"></textarea>
+            <textarea type="text" rows="4" name="mess_t" id="mess_t"></textarea>
         </div>
         <button type="submit">Send Message</button>
     </form>
@@ -39,6 +39,18 @@
                 </form>
             </li>
             <% }); %>
+    </ul>
+    <ul>
+        <% mess.forEach(function(mes){ %>
+            <li>
+                <form action="/tasks/<%= mes._id %>/update" method="post" style=="display: inline">
+                <input type="text" name="mess_t" id="mess_t" value="<%- mes.mess_t %> " />
+                <button type="submit">Send</button>
+                </form>
+                <form action="/tasks/<%= mes._id %>/Sent "
+            </li>
+        
+        <% }); %>
     </ul>
    
    

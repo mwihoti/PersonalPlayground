@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const formSchema = new mongoose.Schema({
-    form: {
+    mess_t: {
         type: String,
         required: true
     },
@@ -12,5 +12,5 @@ const formSchema = new mongoose.Schema({
 
     }
 })
-const FormModel = mongoose.model('messages', formSchema);
+const FormModel = mongoose.model('mes', formSchema);
 module.exports = FormModel;

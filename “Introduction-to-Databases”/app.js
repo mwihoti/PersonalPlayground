@@ -24,50 +24,80 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', async (req, res) => {
   try {
     const tasks = await TaskModel.find({});
-    const forms = await FormModel.find({});
-    res.render('index.ejs', { todos: tasks, forms: forms });
+    const mes = await FormModel.find({});
+    res.render('index.ejs', { todos: tasks, mess: mes });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
 });
 
+
 app.post('/tasks/', (req, res) => {
   const newTodo = new TaskModel({
     task: req.body.task
   });
-  const newMes = new FormModel({
-    form: req.body.task
-  })
+ 
   newTodo.save();
   res.redirect('/');
 });
-
+app.post('/mes/', (req, res) => {
+  const newMes = new FormModel({
+    mess_t: req.body.mess_t
+  });
+  newMes.save();
+  res.redirect('/');
+  
+})
 app.post('/tasks/:id/complete', (req, res) => {
   TaskModel.findById(req.params.id).then((todo) => {
     todo.is_completed = !todo.is_completed;
     todo.save();
     res.redirect('/');
   });
-  FormModel.findById(req.params.id).then((message) => {
-    message.is_sent = !message.is_unsent;
-    message.save();
+  FormModel.findById(req.params.id).then((mes) => {
+    mes.is_sent = !mes.is_unsent;
+    mes.save();
     res.redirect('/');
   })
 });
 
-app.post('/tasks/:id/update', (req, res) => {
-  TaskModel.findById(req.params.id).then((todo) => {
+app.post('/tasks/:id/update', async (req, res) => {
+  try {
+    const taskId = req.params.id;
+    const todo = await TaskModel.findById(taskId);
+
+    if (!todo) {
+      // Task with the given ID was not found
+      return res.status(404).send('Task not found');
+    }
+
+    // Update the task
     todo.task = req.body.task;
-    todo.save();
+    await todo.save();
+
+    // Redirect to the home page
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+
+  FormModel.findById(req.params.id).then((mes) => {
+    mes.form = req.body.mess_t;
+    mes.save();
     res.redirect('/');
   });
-});
+})
 
 app.post('/tasks/:id/delete', (req, res) => {
   TaskModel.findByIdAndDelete(req.params.id).then(() => {
     res.redirect('/');
+
   });
+  FormModel.findByIdAndDelete(req.params.id).then(() => {
+    res.redirect('/');
+  })
 });
 
 module.exports = {
