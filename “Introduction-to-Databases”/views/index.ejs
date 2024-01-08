@@ -8,17 +8,17 @@
 
 <body>
     <h1>To-Do App</h1>
-    <form action="/tasks/" method="post">
+    <form action="/tasks/" method="post" style="display: flex; align-items: center; margin-bottom: 20px;">
         <input type="text" name="task" id="task" placeholder="Add a new task">
         <button type="submit">Add Task</button>
     </form>
 
     <h2  className="mx-auto w-1/2">Add Message</h2>
 
-    <form action="/mes/" method="post" className="mx-auto w-1/2">
-        <div>
-            <label >Message</label>
-            <textarea type="text" rows="4" name="mess_t" id="mess_t"></textarea>
+    <form action="/mes/" method="post" style=" text-align: center; display: flex; flex-direction: column; justify-items: center; justify-content: center;" >
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <label style= "font-weight: bold; text-transform: uppercase; text-underline-position: under; font-size: 30px;" >Message</label>
+            <textarea type="text" rows="4" name="mess_t" id="mess_t" style=" padding: 20px 80px; margin: 10px;" ></textarea>
         </div>
         <button type="submit">Send Message</button>
     </form>
