@@ -5,12 +5,13 @@ const formSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    sent: {
+    is_sent: {
         type: Boolean,
         required: false,
         default: false,
 
-    }
+    }},{  
+        timestamps: true,
 })
 const FormModel = mongoose.model('mes', formSchema);
 module.exports = FormModel;

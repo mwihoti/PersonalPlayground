@@ -22,15 +22,18 @@ app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', async (req, res) => {
-  try {
-    const tasks = await TaskModel.find({});
-    const mes = await FormModel.find({});
-    res.render('index.ejs', { todos: tasks, mesg: mes });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Internal Server Error');
-  }
-});
+  const tasks = await TaskModel.find({});
+  const mes = await FormModel.find({});
+
+   res.render('index.ejs', { todos: tasks, mesg: mes });
+  })
+app.get('/form', async (req, res) => {
+
+ const tasks = await TaskModel.find({});
+  const mes = await FormModel.find({});
+
+   res.render('form.ejs', { todos: tasks, mesg: mes });
+} );
 
 
 app.post('/tasks/', (req, res) => {
@@ -58,7 +61,7 @@ app.post('/tasks/:id/complete', (req, res) => {
  });
  app.post('/mes/:id/sent', (req, res) => {
   FormModel.findById(req.params.id).then((mess) => {
-    mess.is_sent = !mess.is_unsent;
+    mess.is_sent = !mess.is_sent;
     mess.save();
     res.redirect('/');
   })

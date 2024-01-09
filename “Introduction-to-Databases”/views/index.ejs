@@ -15,53 +15,23 @@
 
     <h2  className="mx-auto w-1/2">Add Message</h2>
 
-    <form action="/mes/" method="post" style=" text-align: center; display: flex; flex-direction: column; justify-items: center; justify-content: center;" >
+    <form action="/mes/" method="post" style=" text-align: center; display: flex; flex-direction: column; justify-items: center; justify-content: center; margin-bottom: 20px;" >
         <div style="display: flex; flex-direction: column; align-items: center;">
             <label style= "font-weight: bold; text-transform: uppercase; text-underline-position: under; font-size: 30px;" >Message</label>
             <textarea type="text" rows="4" name="mess_t" id="mess_t" style=" padding: 20px; width: 50%; margin: 10px;" ></textarea>
         </div>
         <button type="submit" style="margin: auto;">Send Message</button>
     </form>
-    <ul>
-        <% todos.forEach(function(todo) { %>
-            <li>
-                <form action="/tasks/<%= todo._id %>/update" method="post" style="display: inline;">
-                    <input type="text" name="task" id="task" value="<%- todo.task %>" />
-                    <button type="submit">Update</button>
-                </form>
-                <form action="/tasks/<%= todo._id %>/complete" method="post" style="display: inline;">
-                    <button type="submit">
-                        <%= todo.is_completed ? 'Uncomplete' : 'Complete' %>
-                    </button>
-                </form>
-                <form action="/tasks/<%= todo._id %>/delete" method="post" style="display: inline;">
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-            <% }); %>
-    </ul>
-    <ul >
-        
-        <% mesg.forEach(function(mess){ %>
-            <li>
-                <form action="/mes/<%= mess._id %>/update" method="post" style=="display: inline;">
-                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> " />
-                <button type="submit">Update</button>
-                </form>
-                <form action="/mes/<%= mess._id %>/sent" method="post" style="display: inline;">
-                <button type="submit">
-                    <%= mess.is_sent ? 'Unsend' : 'Send' %>
-                </button>
-                </form>
-                <form action="/mes/<%= mess._id %>/delete" method="post" style="display: inline;">
-                <button type="submit">Delete</button>
-                </form>
-            </li>
-        
-        <% }); %>
-    </ul>
    
-   
+   <button id="viewButton"  style="margin-left: 800px;">View</button>
+   <script>
+    const viewButton = document.getElementById('viewButton');
+
+    viewButton.addEventListener('click', ()=> {
+        window.location.href = '/form'
+    })
+
+    </script>
 </body>
 
 </html>

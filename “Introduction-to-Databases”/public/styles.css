@@ -66,11 +66,10 @@ button[type="submit"] {
     
 }
 
-form.inline {
-    display: inline;
-    margin-left: 10px;
-}
+
 
 form[action="/tasks/"] {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }

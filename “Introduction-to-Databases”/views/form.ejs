@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Tasks & Messages</title>
+</head>
+<body>
+    <ul>
+        <% todos.forEach(function(todo) { %>
+            <li>
+                <form action="/tasks/<%= todo._id %>/update" method="post" style="">
+                    <input type="text" name="task" id="task" value="<%- todo.task %>" />
+                    <button type="submit">Update</button>
+                </form>
+                <form action="/tasks/<%= todo._id %>/complete" method="post" style="display: inline;">
+                    <button type="submit">
+                        <%= todo.is_completed ? 'Uncomplete' : 'Complete' %>
+                    </button>
+                </form>
+                <form action="/tasks/<%= todo._id %>/delete" method="post" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+            <% }); %>
+    </ul>
+    <ul >
+        
+        <% mesg.forEach(function(mess){ %>
+            <li>
+                <form action="/mes/<%= mess._id %>/update" method="post" style=="display: inline;">
+                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> " />
+                <button type="submit">Update</button>
+                </form>
+                <form action="/mes/<%= mess._id %>/sent" method="post" style="display: inline;">
+                <button type="submit">
+                    <%= mess.is_sent ? 'Unsend' : 'Send' %>
+                </button>
+                </form>
+                <form action="/mes/<%= mess._id %>/delete" method="post" style="display: inline;">
+                <button type="submit">Delete</button>
+                </form>
+            </li>
+        
+        <% }); %>
+    </ul>
+</body>
+
+</html>
