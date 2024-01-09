@@ -25,7 +25,7 @@ app.get('/', async (req, res) => {
   try {
     const tasks = await TaskModel.find({});
     const mes = await FormModel.find({});
-    res.render('index.ejs', { todos: tasks, mess: mes });
+    res.render('index.ejs', { todos: tasks, mesg: mes });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
@@ -55,12 +55,14 @@ app.post('/tasks/:id/complete', (req, res) => {
     todo.save();
     res.redirect('/');
   });
-  FormModel.findById(req.params.id).then((mes) => {
-    mes.is_sent = !mes.is_unsent;
-    mes.save();
+ });
+ app.post('/mes/:id/sent', (req, res) => {
+  FormModel.findById(req.params.id).then((mess) => {
+    mess.is_sent = !mess.is_unsent;
+    mess.save();
     res.redirect('/');
   })
-});
+ })
 
 app.post('/tasks/:id/update', async (req, res) => {
   try {
@@ -82,7 +84,8 @@ app.post('/tasks/:id/update', async (req, res) => {
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
-
+})
+app.post('/mes/:id/update', async (req, res) => {
   FormModel.findById(req.params.id).then((mes) => {
     mes.form = req.body.mess_t;
     mes.save();
@@ -95,10 +98,13 @@ app.post('/tasks/:id/delete', (req, res) => {
     res.redirect('/');
 
   });
+  
+});
+app.post('/mes/:id/delete', (req, res) => {
   FormModel.findByIdAndDelete(req.params.id).then(() => {
     res.redirect('/');
   })
-});
+})
 
 module.exports = {
   mongoose,

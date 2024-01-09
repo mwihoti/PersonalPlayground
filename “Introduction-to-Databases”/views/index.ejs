@@ -8,8 +8,8 @@
 
 <body>
     <h1>To-Do App</h1>
-    <form action="/tasks/" method="post" style="display: flex; align-items: center; margin-bottom: 20px;">
-        <input type="text" name="task" id="task" placeholder="Add a new task">
+    <form action="/tasks/" method="post" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
+        <input type="text" name="task" id="task" placeholder="Add a new task" style=" padding: 20px; width: 50%; margin: 10px; margin-bottom: 10px;"/>
         <button type="submit">Add Task</button>
     </form>
 
@@ -18,9 +18,9 @@
     <form action="/mes/" method="post" style=" text-align: center; display: flex; flex-direction: column; justify-items: center; justify-content: center;" >
         <div style="display: flex; flex-direction: column; align-items: center;">
             <label style= "font-weight: bold; text-transform: uppercase; text-underline-position: under; font-size: 30px;" >Message</label>
-            <textarea type="text" rows="4" name="mess_t" id="mess_t" style=" padding: 20px 80px; margin: 10px;" ></textarea>
+            <textarea type="text" rows="4" name="mess_t" id="mess_t" style=" padding: 20px; width: 50%; margin: 10px;" ></textarea>
         </div>
-        <button type="submit">Send Message</button>
+        <button type="submit" style="margin: auto;">Send Message</button>
     </form>
     <ul>
         <% todos.forEach(function(todo) { %>
@@ -40,14 +40,22 @@
             </li>
             <% }); %>
     </ul>
-    <ul>
-        <% mess.forEach(function(mes){ %>
+    <ul >
+        
+        <% mesg.forEach(function(mess){ %>
             <li>
-                <form action="/tasks/<%= mes._id %>/update" method="post" style=="display: inline">
-                <input type="text" name="mess_t" id="mess_t" value="<%- mes.mess_t %> " />
-                <button type="submit">Send</button>
+                <form action="/mes/<%= mess._id %>/update" method="post" style=="display: inline;">
+                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> " />
+                <button type="submit">Update</button>
                 </form>
-                <form action="/tasks/<%= mes._id %>/Sent "
+                <form action="/mes/<%= mess._id %>/sent" method="post" style="display: inline;">
+                <button type="submit">
+                    <%= mess.is_sent ? 'Unsend' : 'Send' %>
+                </button>
+                </form>
+                <form action="/mes/<%= mess._id %>/delete" method="post" style="display: inline;">
+                <button type="submit">Delete</button>
+                </form>
             </li>
         
         <% }); %>

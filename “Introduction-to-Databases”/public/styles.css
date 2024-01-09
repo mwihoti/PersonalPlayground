@@ -31,12 +31,6 @@ h2 {
 
 
 
-input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 
 button {
     padding: 10px 20px;
@@ -69,6 +63,7 @@ s {
 
 button[type="submit"] {
     margin-left: 10px;
+    
 }
 
 form.inline {
