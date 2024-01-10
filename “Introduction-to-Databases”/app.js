@@ -42,28 +42,28 @@ app.post('/tasks/', (req, res) => {
   });
  
   newTodo.save();
-  res.redirect('/');
+  res.redirect('/form');
 });
 app.post('/mes/', (req, res) => {
   const newMes = new FormModel({
     mess_t: req.body.mess_t
   });
   newMes.save();
-  res.redirect('/');
+  res.redirect('/form');
   
 })
 app.post('/tasks/:id/complete', (req, res) => {
   TaskModel.findById(req.params.id).then((todo) => {
     todo.is_completed = !todo.is_completed;
     todo.save();
-    res.redirect('/');
+    res.redirect('/form');
   });
  });
  app.post('/mes/:id/sent', (req, res) => {
   FormModel.findById(req.params.id).then((mess) => {
     mess.is_sent = !mess.is_sent;
     mess.save();
-    res.redirect('/');
+    res.redirect('/form');
   })
  })
 
@@ -82,7 +82,7 @@ app.post('/tasks/:id/update', async (req, res) => {
     await todo.save();
 
     // Redirect to the home page
-    res.redirect('/');
+    res.redirect('/form');
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
@@ -92,20 +92,20 @@ app.post('/mes/:id/update', async (req, res) => {
   FormModel.findById(req.params.id).then((mes) => {
     mes.form = req.body.mess_t;
     mes.save();
-    res.redirect('/');
+    res.redirect('/form');
   });
 })
 
 app.post('/tasks/:id/delete', (req, res) => {
   TaskModel.findByIdAndDelete(req.params.id).then(() => {
-    res.redirect('/');
+    res.redirect('/form');
 
   });
   
 });
 app.post('/mes/:id/delete', (req, res) => {
   FormModel.findByIdAndDelete(req.params.id).then(() => {
-    res.redirect('/');
+    res.redirect('/form');
   })
 })
 

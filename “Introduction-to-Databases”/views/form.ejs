@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <head>
     <title>Tasks & Messages</title>
+    <link rel="stylesheet" href="/styles.css"
 </head>
 <body>
-    <ul>
+    <ul style="">
+        <h1>Tasks</h1>
         <% todos.forEach(function(todo) { %>
             <li>
-                <form action="/tasks/<%= todo._id %>/update" method="post" style="">
-                    <input type="text" name="task" id="task" value="<%- todo.task %>" />
+                <form action="/tasks/<%= todo._id %>/update" method="post" style=" margin: 10px;">
+                    <input type="text" name="task" id="task" value="<%- todo.task %>" style="font-size:15px; height: 40px;  padding: 10px; margin: 10px;"/>
                     <button type="submit">Update</button>
                 </form>
                 <form action="/tasks/<%= todo._id %>/complete" method="post" style="display: inline;">
@@ -22,6 +24,7 @@
             <% }); %>
     </ul>
     <ul >
+        <h1>Messages</h1>
         
         <% mesg.forEach(function(mess){ %>
             <li>
