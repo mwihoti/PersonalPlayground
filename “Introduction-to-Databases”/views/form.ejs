@@ -8,8 +8,9 @@
         <h1>Tasks</h1>
         <% todos.forEach(function(todo) { %>
             <li>
-                <form action="/tasks/<%= todo._id %>/update" method="post" style=" margin: 10px;">
-                    <input type="text" name="task" id="task" value="<%- todo.task %>" style="font-size:15px; height: 40px;  padding: 10px; margin: 10px;"/>
+                <form action="/tasks/<%= todo._id %>/update" method="post" style="display: inline;">
+                    <input type="text" name="task" id="task" value="<%- todo.task %>" size="50" style="height:70px; font-weight: 300px; font-size: 1.5rem;" />
+                    
                     <button type="submit">Update</button>
                 </form>
                 <form action="/tasks/<%= todo._id %>/complete" method="post" style="display: inline;">
@@ -28,8 +29,8 @@
         
         <% mesg.forEach(function(mess){ %>
             <li>
-                <form action="/mes/<%= mess._id %>/update" method="post" style=="display: inline;">
-                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> " />
+                <form action="/mes/<%= mess._id %>/update" method="post" style=="display: flex; flex-direction: column">
+                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> "  style="font-size:15px; padding: 20px; width: 100%; margin: 10px;"/ />
                 <button type="submit">Update</button>
                 </form>
                 <form action="/mes/<%= mess._id %>/sent" method="post" style="display: inline;">

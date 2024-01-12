@@ -70,8 +70,8 @@ button[type="submit"] {
 
 
 
-form[action="/tasks/"] {
+/*{form[action="/tasks/"] {
     padding: 10px;
     display: flex;
     flex-direction: column;
-}
+}}*/
