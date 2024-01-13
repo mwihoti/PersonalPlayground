@@ -18,12 +18,24 @@
     <form action="/mes/" method="post" style=" text-align: center; display: flex; flex-direction: column; justify-items: center; justify-content: center; margin-bottom: 20px;" >
         <div style="display: flex; flex-direction: column; align-items: center;">
             <label style= "font-weight: bold; text-transform: uppercase; text-underline-position: under; font-size: 30px;" >Message</label>
-            <textarea type="text" rows="4" name="mess_t" id="mess_t" style=" padding: 20px; width: 50%; margin: 10px;" ></textarea>
+            <textarea type="text" rows="4" name="mess_t" placeholder="Insert your message" id="mess_t" style=" padding: 20px; width: 50%; margin: 10px;" ></textarea>
         </div>
         <button type="submit" style="margin: auto;">Send Message</button>
     </form>
    
-   <button id="viewButton"  style="margin-left: 800px;">View</button>
+
+
+   <h2  className="mx-auto w-1/2">Text Message</h2>
+   <form style="text-align: center;" >
+    <div >
+        <textarea type="text" rows="4" name="txt" placeholder="Add your Text message" id="txt_m" style="padding: 20px; width: 50%;"></textarea>
+    </div>
+
+    
+   </form>
+   <div style="text-align: center; margin-top: 10px;">
+    <button id="viewButton"  style=" width: 70px; font-size: 20px;">View</button>
+   </div>
    <script>
     const viewButton = document.getElementById('viewButton');
 
