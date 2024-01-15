@@ -30,7 +30,7 @@
         <% mesg.forEach(function(mess){ %>
             <li>
                 <form action="/mes/<%= mess._id %>/update" method="post" style=="margin: 0;">
-                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> "  style="height: 70px; font-size: 1.5rem; " size="50"/ />
+                <input type="text" name="mess_t" id="mess_t" value="<%- mess.mess_t %> "  style="height: 70px; font-size: 1.5rem; border-radius: 10px; " size="50"  />
                 <button type="submit">Update</button>
                 </form>
                 <form action="/mes/<%= mess._id %>/sent" method="post" style="display: inline;">
@@ -39,6 +39,28 @@
                 </button>
                 </form>
                 <form action="/mes/<%= mess._id %>/delete" method="post" style="display: inline;">
+                <button type="submit">Delete</button>
+                </form>
+            </li>
+        
+        <% }); %>
+    </ul>
+    <ul >
+        <h1>Text Messages</h1>
+        
+        <% texts.forEach(function(txt_t){ %>
+            <li>
+                <form action="/txt_t/<%= txts._id %>/update" method="post" style=="margin: 0;">
+                    <input type="text" name="txt" id="txt" value="<%- txt_t.txt %> "  style="height: 70px; font-size: 1.5rem; border-radius: 20px;" />
+               
+                <button type="submit">Update</button>
+                </form>
+                <form action="/txt_t/<%= txts._id %>/sent" method="post" style="display: inline;">
+                <button type="submit">
+                    <%= txts.is_text ? 'Unsend' : 'Send' %>
+                </button>
+                </form>
+                <form action="/txt_t/<%= txts._id %>/delete" method="post" style="display: inline;">
                 <button type="submit">Delete</button>
                 </form>
             </li>

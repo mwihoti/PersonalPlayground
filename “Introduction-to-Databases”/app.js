@@ -2,7 +2,8 @@ const express = require('express');
 require('dotenv').config();
 const mongoose = require("mongoose");
 const TaskModel = require('./models/TaskModel');
-const FormModel = require('./models/FormModel')
+const FormModel = require('./models/FormModel');
+const TextModel = require('./models/TextModel');
 const morgan = require('morgan');
 
 // Create the Express app
@@ -24,15 +25,17 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', async (req, res) => {
   const tasks = await TaskModel.find({});
   const mes = await FormModel.find({});
+  const txt_t = await TextModel.find({});
 
-   res.render('index.ejs', { todos: tasks, mesg: mes });
+   res.render('index.ejs', { todos: tasks, mesg: mes, texts: txt_t });
   })
 app.get('/form', async (req, res) => {
 
  const tasks = await TaskModel.find({});
   const mes = await FormModel.find({});
+  const txt_t = await TextModel.find({});
 
-   res.render('form.ejs', { todos: tasks, mesg: mes });
+   res.render('form.ejs', { todos: tasks, mesg: mes, texts: txt_t });
 } );
 
 
@@ -50,8 +53,14 @@ app.post('/mes/', (req, res) => {
     mess_t: req.body.mess_t
   });
   newMes.save();
-  res.redirect('/form');
-  
+  res.redirect('/form');  
+})
+app.post('/txt_t/', (req, res) => {
+  const newTxt = new TextModel({
+    txt: req.body.txt
+  });
+  newTxt.save();
+  res.redirect('/form')
 })
 app.post('/tasks/:id/complete', (req, res) => {
   TaskModel.findById(req.params.id).then((todo) => {
@@ -64,6 +73,13 @@ app.post('/tasks/:id/complete', (req, res) => {
   FormModel.findById(req.params.id).then((mess) => {
     mess.is_sent = !mess.is_sent;
     mess.save();
+    res.redirect('/form');
+  })
+ })
+ app.post('/txt_t/:id/sent', (req, res) => {
+  TextModel.findById(req.params.id).then((txts) => {
+    txts.is_sent = !txts.is_sent;
+    txts.save();
     res.redirect('/form');
   })
  })
@@ -95,6 +111,13 @@ app.post('/mes/:id/update', async (req, res) => {
     mes.save();
     res.redirect('/form');
   });
+})
+app.post('/txt_t/:id/update', async (req, res) => {
+  TextModel.findById(req.params.id).then((txt_t) => {
+    txt_t.form = req.body.txt;
+    txt_t.save();
+    res.redirect('/form')
+  })
 })
 
 app.post('/tasks/:id/delete', (req, res) => {
