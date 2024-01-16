@@ -5,4 +5,3 @@ In this repository you will find my various projects :
     sui ,
     Express js,
 
-This is one fun thing I like to do
