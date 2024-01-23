@@ -15,7 +15,7 @@ export default function Home() {
       </div>
       <div className='mt-50 m-20 '>
 
-      {!book && (  <button className='p-4 bg-white  rounded  uppercase' onClick={toBook}>BOOK NOW</button>)}
+      {!book && (  <button className='p-4 bg-blue-800 font-bold rounded uppercase' onClick={toBook}>BOOK NOW</button>)}
       {book && <Contact />}
       </div>
 
