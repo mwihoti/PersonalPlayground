@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import Contact from './Contact'
+import React, { useState } from 'react';
+import Contact from './Contact';
+import carousel from './carousel';
 
 
 export default function Home() {
@@ -18,8 +19,9 @@ export default function Home() {
       {!book && (  <button className='p-4 bg-blue-800 font-bold rounded uppercase' onClick={toBook}>BOOK NOW</button>)}
       {book && <Contact />}
       </div>
-
-
+      <div>
+        <carousel />
+        </div>
     
     </div>
   )
