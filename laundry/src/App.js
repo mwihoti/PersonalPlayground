@@ -3,6 +3,7 @@ import Header from './components/header'
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
+import Carousel from './components/carousel';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -25,8 +26,12 @@ function App() {
        </Routes>
        
     </div>
+   <div>
+    <Home />
+   </div>
 
     </Router>
+    
 
     
   );

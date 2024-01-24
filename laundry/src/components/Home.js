@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Contact from './Contact';
-import carousel from './carousel';
+import Carousel from './carousel';
+import { Button } from '@material-tailwind/react';
 
 
 export default function Home() {
@@ -12,15 +13,15 @@ export default function Home() {
   return (
     <div className=''>
       <div className='mt-2 text-3xl w-30 text-center p-5 '>
-        <p className='uppercase font-bold underline '>Laundry and cleaning services</p>
+        <p className='uppercase font-bold underline text-5xl text-red-600 '>Laundry and cleaning services</p>
       </div>
       <div className='mt-50 m-20 '>
 
-      {!book && (  <button className='p-4 bg-blue-800 font-bold rounded uppercase' onClick={toBook}>BOOK NOW</button>)}
+      {!book && (  <Button className='p-4 bg-blue-800 font-bold rounded uppercase' onClick={toBook}>BOOK NOW</Button>)}
       {book && <Contact />}
       </div>
       <div>
-        <carousel />
+        <Carousel />
         </div>
     
     </div>

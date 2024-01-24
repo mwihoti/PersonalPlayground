@@ -1,2 +1,4 @@
-name = input("Enter your name: ")
-print(name)
+def my_func(c=89):
+    print("Counter: {}".format(c))
+    
+my_func(12)

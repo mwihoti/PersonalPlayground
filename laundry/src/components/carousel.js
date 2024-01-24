@@ -1,8 +1,10 @@
 import React from "react";
 
 
-export default function carousel() {
+export default function Carousel() {
   return (
-    <div>carousel</div>
+    <div>
+        <h1>This is carousel section</h1>
+    </div>
   )
 }
