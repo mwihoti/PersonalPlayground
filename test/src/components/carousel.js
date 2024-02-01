@@ -1,12 +1,12 @@
 import React from 'react'
-import laundry1 from '../img/laundry1.png'
-import laundry2 from '../img/laundry2.png'
-import laundry3 from '../img/laundry3.png'
+import laundry1 from '../assets/laundry1.png'
+import laundry2 from '../assets/laundry2.png'
+import laundry3 from '../assets/laundry3.png'
 import {Carousel, Typography, Button } from '@material-tailwind/react'
 
 export default function MyCarousel() {
   return (
-   <div className='h-svh'>
+   <section className='h-svh'>
         <Carousel className="h-[80%]  rounded-xl  mb-0 overflow-hidden">
             
             <div className='relative h-full w-full '>
@@ -85,7 +85,7 @@ export default function MyCarousel() {
             </div>
             
         </Carousel>
-     </div>
+     </section>
    
     
   )

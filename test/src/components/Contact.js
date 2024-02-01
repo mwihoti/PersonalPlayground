@@ -1,27 +1,28 @@
 import React from 'react'
-import { Card, CardHeader, Typography } from '@material-tailwind/react'
+import { Button, Card, Typography } from '@material-tailwind/react'
 import {UserCircleIcon} from "@heroicons/react/24/solid";
 import StaticDateTimePickerLandscape from './dateTime'
+
 
 function Contact() {
   return (
     <div className='text-center '>
         <h1>Contact us</h1>
-        <Card>
-            <CardHeader>
-                <div>
-                    <UserCircleIcon className='w-50 h-20 justify-center' />
+        <Card className='items-center'>
+           
+                <div className=' items-center'>
+                    <UserCircleIcon className='w-50 h-20' />
                 </div>
-            </CardHeader>
-             <Typography>
+            
+             <Typography className='text-3xl font-bold'>
                     Neno laundry.<br/>
                     <p>
-                Add your details to book your laundry day with us.
+                Add your details to book laundry with us.
 
                     </p>                    
               </Typography>  
                <form>
-               <h1 className='italic text-xs'>Fill in </h1>
+               <h1 className='italic text-xs p-2'>Fill in </h1>
                 <div className='flex justify-center'>
                
                 <div className='gap-4'>
@@ -34,6 +35,10 @@ function Contact() {
                 </div>
 
                 </div> 
+                <div className='ml-0' >
+                  <label>Email </label>
+                  <input type='text' className='border m-3' placeholder='@gmail.com'/>
+                </div>
                 <div className=''> 
                 <div >
                   <label>Phone </label>
@@ -45,7 +50,13 @@ function Contact() {
                 </div>
                 </div>
 
-        </form>        
+        </form>
+
+        <div>
+          <Button className='mt-3 mb-2'>
+            Book Now
+          </Button>
+          </div>        
 
         </Card>
        

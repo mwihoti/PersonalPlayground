@@ -1,0 +1,16 @@
+{
+    "name": "laravel/back",
+    "description": "laravel beginner",
+    "autoload": {
+        "psr-4": {
+            "Laravel\\Back\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mwihoti",
+            "email": "danielmwihoti@gmail.com"
+        }
+    ],
+    "require": {}
+}

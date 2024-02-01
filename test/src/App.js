@@ -4,6 +4,8 @@ import { Button } from "@material-tailwind/react";
 import { TabLaundry } from "./components/Header";
 import Contact from "./components/Contact";
 import Card from "./components/Card";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -12,12 +14,11 @@ function App() {
       <TabLaundry />
     <MyCarousel />
       <Card className=" mt-0"/>
-      <Contact />
-    
-
       <div>
-        <Button>Dante</Button>
+      <Contact />
       </div>
+      <About />
+      <Footer />
      
     </div>
   );
