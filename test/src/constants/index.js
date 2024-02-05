@@ -1,4 +1,3 @@
-import { instagram, whatsapp, twitter} from '../assets';
 export const footerLinks = [
     {
         title: "More about Neno Laundry",
@@ -24,16 +23,3 @@ export const footerLinks = [
         ]
     }
 ];
-
-export const socialMedia = [
-    {
-        id: "socialMedia1",
-        icon: whatsapp,
-        link: "http://www.whatsapp/"
-    },
-    {
-        id: "socialMedia2",
-        icon: instagram,
-        link: "http://www.instagram/"
-    }
-]
