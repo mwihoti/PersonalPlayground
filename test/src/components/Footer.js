@@ -17,13 +17,13 @@ export function laundryFooter() {
   
   const currentYear = new Date().getFullYear();
   return (
-    <footer className='relative w-full'>
-      <div className='mx-auto w-full '>
+    <footer className=''>
+      <div className=' '>
         <div >
           <Typography>
             Laundry Footer
           </Typography>
-          <div className=''>
+          <div className='grid grid-cols-3 justify-between gap-4' >
             {LINKS.map(({title, items})=> (
               <ul key={title}>
                 <Typography variant="small"
