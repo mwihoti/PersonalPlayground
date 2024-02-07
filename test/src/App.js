@@ -7,20 +7,25 @@ import Card from "./components/Card";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import BtCar from "./components/bootstrapcar";
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from "./components/Home";
 
 
 function App() {
   return (
     <div className="text-center">
+      
+      <BrowserRouter>
       <TabLaundry />
-    <MyCarousel />
-      <Card className=" mt-0"/>
-      <div>
-      <Contact />
-      </div>
-      <About />
-      <Footer />
-     
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
+         
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+
     </div>
   );
 }

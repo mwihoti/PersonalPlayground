@@ -21,14 +21,16 @@ export function TabLaundry (){
             label: "About",
             Value: "about",
             icon: UserCircleIcon,
-            desc: "About"
+            desc: "",
+            to: "about"
 
         },
         {
             label: "Contact",
             Value: "contact",
             icon: Cog6ToothIcon,
-            desc: ""
+            desc: "",
+            to: "contact"
 
         }
     ]
