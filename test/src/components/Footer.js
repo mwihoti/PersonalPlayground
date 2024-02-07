@@ -1,33 +1,40 @@
 import { Typography } from '@material-tailwind/react';
 import React from 'react';
+import logo from '../assets/logo.png'
 const LINKS = [
-  {title: "product",
-    items: ["Overview", "Features", "Solutions", "Tutorials"],
-},
+ 
 {
   title: "Company",
-  items: ["About us", "Careers", "Press", "News"],
+  items: ["About us",  "Home"],
 },
 {
   title: "Resources",
-  items: ["Blog", "NewsLetter", "Events", "Help center"]
+  items: ["Blog",  "Contact us"]
 }
 ];
 export function laundryFooter() {
   
   const currentYear = new Date().getFullYear();
   return (
-    <footer className=''>
-      <div className=' '>
-        <div >
-          <Typography>
-            Laundry Footer
+    <footer className='relative w-full'>
+      <div className='mx-auto w-full max-w-7xl px-8 '>
+        <div className='grid grid-cols-1 justify-between gap-2 md:grid-cols-2' >
+        
+          <Typography variant='h5' className='mb-6 font-bold'>
+             Laundry Footer
+             <div className='flex justify-center items-center mt-2'>
+          <img  src={logo} alt="Laundry logo" className='w-40 h-20 items-center '/>
+          </div>
+  
           </Typography>
-          <div className='grid grid-cols-3 justify-between gap-4' >
+          
+            
+            
+          <div className='grid grid-cols-2 justify-between gap-2' >
             {LINKS.map(({title, items})=> (
               <ul key={title}>
                 <Typography variant="small"
-                color="blue-gray"
+                color="red"
                 className='mb-3 font-medium opacity-60 '
                 >
                   {title}
@@ -48,7 +55,7 @@ export function laundryFooter() {
           </div>
 
         </div>
-        <div className='mt-7 flex w-full flex-col items-center justify-center border-t border-blue-gray-200 py-4 md:flex-row md:justify-between'>
+        <div className='mt-7 flex w-full flex-col items-center justify-center border-t border-amber-200 p-6 py-4 md:flex-row md:justify-between'>
           <Typography 
           varaint="small"
           className='mb-4 text-center font-normal text-blue-gray-900 md:mb-0'
