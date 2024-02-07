@@ -7,7 +7,7 @@ import StaticDateTimePickerLandscape from './dateTime'
 function Contact() {
   return (
     <div className='text-center '>
-        <h1>Contact us</h1>
+        
         <Card className='items-center'>
            
                 <div className=' items-center'>
@@ -15,7 +15,7 @@ function Contact() {
                 </div>
             
              <Typography className='text-3xl font-bold'>
-                    Neno laundry.<br/>
+                    Neno laundry.
                     <p>
                 Add your details to book laundry with us.
 

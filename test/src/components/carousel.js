@@ -6,12 +6,12 @@ import {Carousel, Typography, Button } from '@material-tailwind/react'
 
 export default function MyCarousel() {
   return (
-   <section className='h-svh'>
-        <Carousel className="h-[80%]  rounded-xl  mb-0 overflow-hidden">
+   <section className=''>
+        <Carousel className="rounded-xl  mb-0 overflow-hidden">
             
-            <div className='relative h-full w-full '>
+            <div className='relative h-1/2 w-full '>
                 <img src={laundry1} alt="image1" 
-                className='w-full object-cover '
+                className='w-full min-h-80 object-cover '
                 />
                 <div className='absolute inset-0 grid  w-full place-items-center bg-black/75'>
                 <div className='w-3/4 text-center md:w-2/4'>

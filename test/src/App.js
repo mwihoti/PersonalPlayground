@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Card from "./components/Card";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import BtCar from "./components/bootstrapcar";
 
 
 function App() {

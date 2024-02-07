@@ -22,8 +22,8 @@ export default function Card() {
                     <ul className="flex flex-col gap-4">
                         <li className="flex items-center gap-4">
                             <span className="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                                fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3 h-3">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                             </svg>
                             </span>
                             <p className=" block font-sans text-base font-normal leading-relaxed text-inherit">5 team members</p>
@@ -31,8 +31,8 @@ export default function Card() {
                         <li className=" flex items-center gap-4">
                             <span className="p-1 border rounded-full border-white/20 bg-white/20">
                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                                    fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3 h-3">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                                 </svg>
                             </span>
                             <p className="block font-sans text-base font-normal leading-relaxed text-inherit">
@@ -41,8 +41,8 @@ export default function Card() {
                         </li>
                         <li className=" flex gap-4 items-center">
                             <span className="p-1 border rounded-full bg-white/20 border-white/20 "><svg xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                                fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3 h-3">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                             </svg></span>
                             <p className=""> 40+ built-ins</p>
                         </li>
@@ -70,8 +70,8 @@ export default function Card() {
                 <ul className="flex flex-col gap-4">
                     <li className="flex items-center gap-4">
                         <span className="p-1 border rounded-full border-white/20 bg-white/20"><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                            fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3 h-3">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                         </svg>
                         </span>
                         <p className=" block font-sans text-base font-normal leading-relaxed text-inherit">5 team members</p>
@@ -79,8 +79,8 @@ export default function Card() {
                     <li className=" flex items-center gap-4">
                         <span className="p-1 border rounded-full border-white/20 bg-white/20">
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                                fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3 h-3">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                             </svg>
                         </span>
                         <p className="block font-sans text-base font-normal leading-relaxed text-inherit">
@@ -89,8 +89,8 @@ export default function Card() {
                     </li>
                     <li className=" flex gap-4 items-center">
                         <span className="p-1 border rounded-full bg-white/20 border-white/20 "><svg xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+                            fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3 h-3">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                         </svg></span>
                         <p className=""> 40+ built-ins</p>
                     </li>
