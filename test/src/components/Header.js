@@ -18,7 +18,7 @@ export function TabLaundry (){
 
         },
         {
-            label: "About",
+            label: "About Us",
             Value: "about",
             icon: UserCircleIcon,
             desc: "",
@@ -26,7 +26,7 @@ export function TabLaundry (){
 
         },
         {
-            label: "Contact",
+            label: "Contact Us",
             Value: "contact",
             icon: Cog6ToothIcon,
             desc: "",

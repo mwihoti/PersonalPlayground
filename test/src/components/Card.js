@@ -74,7 +74,10 @@ export default function Card() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
                         </svg>
                         </span>
-                        <p className=" block font-sans text-base font-normal leading-relaxed text-inherit">5 team members</p>
+                        <div className="flex gap-10">
+                        <p className=" block font-sans text-base font-normal leading-relaxed text-inherit">Duvet</p>
+                        <h1><span>500</span></h1>
+                        </div>
                     </li>
                     <li className=" flex items-center gap-4">
                         <span className="p-1 border rounded-full border-white/20 bg-white/20">
