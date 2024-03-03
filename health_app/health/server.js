@@ -22,3 +22,10 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
+
+
+const app = express();
+app.use(...);
+
+const db = require("./src/models");
+db.sequelize.sync();
