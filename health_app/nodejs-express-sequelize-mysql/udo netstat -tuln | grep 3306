@@ -1,0 +1,14 @@
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; disabled; vendor preset: enabled)
+     Active: activating (start) since Mon 2024-03-04 11:02:31 EAT; 3s ago
+    Process: 187222 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+   Main PID: 187230 (mysqld)
+     Status: "Server startup in progress"
+      Error: 98 (Address already in use)
+      Tasks: 30 (limit: 9114)
+     Memory: 361.9M
+        CPU: 1.097s
+     CGroup: /system.slice/mysql.service
+             └─187230 /usr/sbin/mysqld
+
+Mar 04 11:02:31 mrdan-HP-EliteBook-8440p-VD485AV systemd[1]: Starting MySQL Community Server...
