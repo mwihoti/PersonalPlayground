@@ -57,7 +57,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Tutorial.findbyPk(id)
+    Tutorial.findByPk(id)
     .then(data => {
         if (data) {
             res.send(data);
@@ -139,10 +139,26 @@ exports.deleteAll = (req, res) => {
     .then(nums => {
         res.send({ message: `${nums} Tutorials were deleted successfully!`})
     })
+    .catch(err => {
+        res.status(500).send({
+            message:
+            err.message || "Some error occurred while removing all tutorials."
+        })
+    })
   
 };
 
 // Find all published Tutorials
 exports.findAllPublished = (req, res) => {
+    Tutorial.findAll({where: { published: true }})
+    .then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message:
+            err.message || "Some error occurred while retrieving"
+        })
+    })
   
 };
