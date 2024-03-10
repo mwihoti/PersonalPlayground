@@ -30,7 +30,7 @@ export function TabLaundry (){
             Value: "about",
             icon: UserCircleIcon,
             desc: "",
-            to: "about1"
+            to: "about"
 
         },
         {
