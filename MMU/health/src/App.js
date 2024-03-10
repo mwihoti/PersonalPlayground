@@ -1,5 +1,5 @@
 import React from "react";
-import MyCarousel from './components/carousel'
+
 import { Button } from "@material-tailwind/react";
 import { TabLaundry } from "./components/Header";
 import Contact from "./components/Contact";
@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from "./components/Home";
 import User from "./components/User";
 import Book from "./components/Book";
-import AboutPage from "./components/About1"
+
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="user" element={<User />} />
           <Route path="book" element={<Book />} />
-          <Route path="about1" element={<AboutPage />} />
+       
          
         </Routes>
         <Footer />

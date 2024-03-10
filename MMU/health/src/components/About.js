@@ -8,6 +8,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import logo from '../assets/doctor1Image.jpeg'
+import Hospitals from './Hospitals'
 
 
 export default function About() {
@@ -33,6 +34,8 @@ export default function About() {
             </p>
           </div>
         </div>
+        <h1>We are patnereed with</h1>
+        <Hospitals/>
       </div>
     </div>
     </div>

@@ -1,8 +1,8 @@
 import React from 'react'
-import MyCarousel from './carousel';
+
 import Card from './Card';
 import HomeDetails from './HomeDetails';
-import  NewCarousel from './carousel1';
+
 import HCarousel from './HosCarousel'
 function Home() {
   return (
