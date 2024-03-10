@@ -7,7 +7,7 @@ function HomeDetails() {
     <div className="flex justify-center items-center">
       <Card className="w-80">
         <CardHeader color="lightBlue">
-          <h2 className="text-lg font-semibold text-white">Our Health App</h2>
+          <h2 className="text-lg font-semibold ">More</h2>
         </CardHeader>
         <CardBody>
           <p className="text-base text-gray-700">
@@ -32,7 +32,7 @@ function HomeDetails() {
 
       <Card className="w-80 ml-4">
         <CardHeader color="lightBlue">
-          <h2 className="text-lg font-semibold text-white">Our Services</h2>
+          <h2 className="text-lg font-semibold ">Our Services</h2>
         </CardHeader>
         <CardBody>
           <ul className="list-disc list-inside text-gray-700">

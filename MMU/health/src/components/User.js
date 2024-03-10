@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import SignIn from './sign/signIn'
 
 function User() {
   return (
-    <div>User</div>
+    <div>
+
+        <SignIn />
+    </div>
   )
 }
 
