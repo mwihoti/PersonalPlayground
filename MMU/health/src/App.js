@@ -11,6 +11,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from "./components/Home";
 import User from "./components/User";
 import Book from "./components/Book";
+import SignIn from "./components/sign/signIn";
+import Login from "./components/sign/login";
+import HealthBot from './components/HealthBot'
 
 
 function App() {
@@ -25,6 +28,11 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="user" element={<User />} />
           <Route path="book" element={<Book />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signin" element={<SignIn />} />
+          <Route path="bot" element={<HealthBot />} />
+
+
        
          
         </Routes>

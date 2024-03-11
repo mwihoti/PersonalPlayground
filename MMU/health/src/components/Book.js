@@ -3,6 +3,7 @@ import { Button, Card, Typography } from '@material-tailwind/react'
 import {UserCircleIcon} from "@heroicons/react/24/solid";
 import StaticDateTimePickerLandscape from './dateTime'
 import logo  from '../assets/hospital.png'
+import { NavLink } from 'react-router-dom';
 
 function Book() {
   return (
@@ -21,33 +22,49 @@ function Book() {
 
                     </p>                    
               </Typography>  
-               <form>
+               <form className='p-2'>
                <h1 className='italic text-xs p-2'>Fill in </h1>
-                <div className='flex justify-center'>
+                
                
                 <div className='gap-4'>
-                  <label>First-Name</label>
-                  <input type='text' className='border m-3' placeholder='first-name'/>
+                  <label>
+                    Patient Name
+                  </label><br/>
+                  <input type='text' className='border m-3 rounded' placeholder='Your Names'/>
                 </div>
                 <div className='gap-4'>
-                  <label>Last-Name</label>
-                  <input type='text' className='border m-3' placeholder='last-name'/>
+                  <label>Age</label><br/>
+                  <input type='text' className='border m-3 w-40 rounded' placeholder='Your Age'/>
                 </div>
 
-                </div> 
+                
                 <div className='ml-0' >
                   <label>Email </label>
-                  <input type='text' className='border m-3' placeholder='@gmail.com'/>
+                  <br/>
+                  <input type='text' className='border m-3 rounded' placeholder='Email Address'/>
                 </div>
                 <div className=''> 
                 <div >
                   <label>Phone </label>
-                  <input type='text' className='border m-3' placeholder='+254'/>
+                  <br/>
+                  <input type='text' className='border m-3 rounded' placeholder='+254'/>
                 </div>
                 <h1 className='font-bold uppercase text-2xl'>Time & date</h1>
                 <div>
                   <StaticDateTimePickerLandscape />
                 </div>
+                </div>
+                <div>
+                  <label>Select Doctor</label><br/>
+                 <select> 
+                  <option>Doctor 1</option>
+
+                  </select>
+                </div>
+                <div className='p-2'>
+                  <label>Describe Your symptoms</label>
+                  <br/>
+                  <textarea className='rounded'></textarea>
                 </div>
 
         </form>
@@ -58,8 +75,16 @@ function Book() {
           </Button>
           </div>        
 
-        </Card>
+          <div>
+          <NavLink to='/bot'>
+          <h1 className='text-blue'>Checkout our quick doctor</h1>
+          </NavLink>
+        </div>
        
+
+        </Card>
+
+        
     </div>
   )
 }
