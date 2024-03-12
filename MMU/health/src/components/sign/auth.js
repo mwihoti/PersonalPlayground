@@ -2,10 +2,12 @@ import React from 'react'
 import Login from './login'
 import SignIn from './signIn'
 import { NavLink } from 'react-router-dom';
+import { TabLaundry } from '../Header';
 
 function SignPage() {
   return (
     <div>
+   
         <h1 className='text-3xl'>Hospitali Mkononi</h1>
 
 

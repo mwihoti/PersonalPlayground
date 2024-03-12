@@ -1,5 +1,5 @@
 import React from "react";
-import {Tabs, TabsHeader, TabsBody, Tab, TabPanel} from "@material-tailwind/react";
+import {Tabs, TabsHeader, Tab} from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import {
     Square3Stack3DIcon,
@@ -53,6 +53,7 @@ export function TabLaundry (){
     return (
         <Tabs value= "dashboard">
             <TabsHeader>
+               
                 {data.map(({label, value, icon, to})=>(
                     <Tab key={value} value={value}>
                         <Link to={to} value={value}>

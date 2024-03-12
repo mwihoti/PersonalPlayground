@@ -4,10 +4,13 @@ import {UserCircleIcon} from "@heroicons/react/24/solid";
 import StaticDateTimePickerLandscape from './dateTime'
 import logo  from '../assets/hospital.png'
 import { NavLink } from 'react-router-dom';
+import { TabLaundry } from './Header';
+
 
 function Book() {
   return (
     <div className='text-center '>
+      <TabLaundry />
         
         <Card className='items-center'>
            

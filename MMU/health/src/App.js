@@ -14,6 +14,7 @@ import Book from "./components/Book";
 import SignIn from "./components/sign/signIn";
 import Login from "./components/sign/login";
 import HealthBot from './components/HealthBot'
+import Protected from './components/Protected'
 
 
 function App() {
@@ -21,13 +22,15 @@ function App() {
     <div className="text-center">
       
       <BrowserRouter>
-      <TabLaundry />
+     
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} />
+
+          <Route path="contact" element={<Protected Cmp={Contact} />} />
+
+          <Route path="about" element={<Protected Cmp={About }/>} />
           <Route path="user" element={<User />} />
-          <Route path="book" element={<Book />} />
+          <Route path="book" element={<Protected Cmp={Book}/>} />
           <Route path="login" element={<Login />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="bot" element={<HealthBot />} />
