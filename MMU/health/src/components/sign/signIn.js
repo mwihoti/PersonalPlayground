@@ -32,7 +32,7 @@ function SignIn() {
             }
         }) 
         result =await result.json()
-        localStorage.setItem("usr-info", JSON.stringify(result))
+        localStorage.setItem("user-info", JSON.stringify(result))
         navigate('/')
         console.warn("results", result)
     }

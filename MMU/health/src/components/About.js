@@ -8,12 +8,14 @@ import {
   Button,
 } from "@material-tailwind/react";
 import logo from '../assets/doctor1Image.jpeg'
-import Hospitals from './Hospitals'
+import Hospitals from './Hospitals';
+import { TabLaundry } from './Header';
 
 
 export default function About() {
   return (
     <div className="text-center">
+      <TabLaundry  />
     <div className="card my-5  ">
       <div className="justify-content-center align-items-center">
         <div className=" flex justify-center items-center m-2">

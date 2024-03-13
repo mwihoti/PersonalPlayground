@@ -36,7 +36,7 @@ function HomeDetails() {
         </CardHeader>
         <CardBody>
           <ul className="list-disc list-inside text-gray-700">
-            <li>Online Consultations with Qualified Doctors</li>
+            <li>Online Consultations </li>
             <li>Appointment Booking for In-person Visits</li>
             <li>Prescription Management</li>
             <li>Health Tracking and Monitoring</li>

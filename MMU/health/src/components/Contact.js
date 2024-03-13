@@ -3,11 +3,13 @@ import { Button, Card, Typography } from '@material-tailwind/react'
 import {UserCircleIcon} from "@heroicons/react/24/solid";
 import StaticDateTimePickerLandscape from './dateTime'
 import logo  from '../assets/med.png'
+import { TabLaundry } from "./Header";
 
 
 function Contact() {
   return (
     <div className='text-center '>
+      <TabLaundry />
         
         <h1 className='text-3xl underline font-bold uppercase mb-2'>Hospitali Mkononi</h1>
 
@@ -37,7 +39,7 @@ function Contact() {
             </div>
             
           </form>
-          <button className='border p-3 rounded text-black bg-blue-700'>Submit</button>
+          <button className='border p-3 rounded text-black bg-blue-700' type='submit'>Submit</button>
         </div>
        
     </div>

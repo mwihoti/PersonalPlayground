@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button } from "@material-tailwind/react";
-import { TabLaundry } from "./components/Header";
+
 import Contact from "./components/Contact";
 import Card from "./components/Card";
 import About from "./components/About";
@@ -15,6 +15,7 @@ import SignIn from "./components/sign/signIn";
 import Login from "./components/sign/login";
 import HealthBot from './components/HealthBot'
 import Protected from './components/Protected'
+import MyBook from "./components/MyBook";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
 
-          <Route path="contact" element={<Protected Cmp={Contact} />} />
+          <Route path="contact" element={<Contact/>} />
 
           <Route path="about" element={<Protected Cmp={About }/>} />
           <Route path="user" element={<User />} />
@@ -34,6 +35,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signin" element={<SignIn />} />
           <Route path="bot" element={<HealthBot />} />
+          <Route path="myBook" element={<MyBook />} />
 
 
        
