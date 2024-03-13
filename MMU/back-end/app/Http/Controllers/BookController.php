@@ -28,4 +28,18 @@ class BookController extends Controller
 
         return $book;
     }
+
+    function bookList ()
+    {
+        return Book::all();
+    }
+
+    function delete($id)
+    {
+        $del = Book::where('id', $id) -> delete();
+        if($del)
+        {
+            return ["Book" =>"Book has been revoked"];
+        }
+    }
 }
