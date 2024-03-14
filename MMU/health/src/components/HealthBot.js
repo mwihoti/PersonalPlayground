@@ -30,6 +30,12 @@ function HealthBot() {
         case 'stomach':
           suggestedDiseases.push('food poisoning');
           break;
+          case 'headache':
+            suggestedDiseases.push('Lack of rest'); 
+            break;
+            case 'fever':
+              suggestedDiseases.push('flu');
+              break;
         // Add more cases as needed
         default:
           break;
@@ -74,7 +80,7 @@ function HealthBot() {
       <div>
         <textarea
           placeholder='You might be suffering from...'
-          className='rounded'
+          className='rounded h-40'
           value={result}
           readOnly
         />

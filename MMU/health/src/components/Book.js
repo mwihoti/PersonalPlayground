@@ -91,7 +91,7 @@ function Book() {
                   </select>
                 </div>
                 <div className='p-2'>
-                  <label>descriptionribe Your symptoms</label>
+                  <label>describe Your symptoms</label>
                   <br/>
                   <textarea className='rounded' value={description} onChange={(e)=> setDescription(e.target.value)}></textarea>
                 </div>

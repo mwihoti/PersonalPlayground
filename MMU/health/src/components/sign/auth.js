@@ -12,7 +12,7 @@ function SignPage() {
 
 
   <div className='p-2 underline'>
-    <NavLink to={Login}>
+    <NavLink to='/login'>
       Login
     </NavLink>{" "}
     or {" "}

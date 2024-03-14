@@ -34,7 +34,7 @@ function App() {
           <Route path="book" element={<Protected Cmp={Book}/>} />
           <Route path="login" element={<Login />} />
           <Route path="signin" element={<SignIn />} />
-          <Route path="bot" element={<HealthBot />} />
+          <Route path="bot" element={<Protected Cmp={HealthBot}/>} />
           <Route path="myBook" element={<MyBook />} />
 
 
