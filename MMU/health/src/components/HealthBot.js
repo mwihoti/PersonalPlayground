@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TabLaundry } from './Header';
 
 function HealthBot() {
   const [symptoms, setSymptoms] = useState('');
@@ -46,15 +47,19 @@ function HealthBot() {
     return resultMessage;
   };
   return (
-    <div className='p-20'>
-      <h1>Type your Symptoms and know what you are suffering from</h1>
+    <div className=''>
+        <TabLaundry  />
+        <div className='border border-black p-2 bg-black text-white'>
+            <h1>Doctor Bot</h1>
+        </div>
+      <h1 className='p-2'>Talk to Dr Bot. Type your Symptoms and know what you are suffering from</h1>
       <form className='m-4 border' onSubmit={handleSubmit}>
         <div className='m-2'>
           <label>Patient Symptoms</label><br />
           <input
             type='text'
             placeholder='Your symptoms'
-            className='h-20'
+            className='h-20 '
             value={symptoms}
             onChange={handleInputChange}
           />

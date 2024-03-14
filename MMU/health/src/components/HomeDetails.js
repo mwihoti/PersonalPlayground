@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Button } from "@material-tailwind/react";
+import { NavLink } from 'react-router-dom';
 
 
 function HomeDetails() {
@@ -44,6 +45,7 @@ function HomeDetails() {
           </ul>
         </CardBody>
         <CardFooter>
+          <NavLink to='/bot'> 
           <Button
             color="lightBlue"
             buttonType="filled"
@@ -53,8 +55,9 @@ function HomeDetails() {
             iconOnly={false}
             ripple="light"
           >
-            Explore Services
+            Checkout our Doctor
           </Button>
+          </NavLink>
         </CardFooter>
       </Card>
     </div>

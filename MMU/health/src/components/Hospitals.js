@@ -1,8 +1,14 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Button } from "@material-tailwind/react";
+import { Card, CardHeader, CardBody, CardFooter, Button, Modal } from "@material-tailwind/react";
 import hospitals from '../assets/hospitalData';
+import { useState } from 'react';
+
 
 const Hospitals = () => {
+  const [showModal, setShowModal] = useState(false);
+ 
+
+  
    
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8" >
@@ -14,6 +20,7 @@ const Hospitals = () => {
           <CardBody>
             <p className="text-base text-gray-700">{hospital.description}</p>
             <p className="text-sm text-gray-500 mt-2">Location: {hospital.location}</p>
+            <p className='text-sm text-gray-500'>Emergency Number: {hospital.emergencyNo}</p>
           </CardBody>
           <CardFooter>
             <Button
@@ -24,12 +31,14 @@ const Hospitals = () => {
               block={false}
               iconOnly={false}
               ripple="light"
+              onClick={() => setShowModal(true)}
             >
-              Book Appointment
+             
             </Button>
           </CardFooter>
         </Card>
       ))}
+       
     </div>
   );
 };

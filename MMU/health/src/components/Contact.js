@@ -4,9 +4,23 @@ import {UserCircleIcon} from "@heroicons/react/24/solid";
 import StaticDateTimePickerLandscape from './dateTime'
 import logo  from '../assets/med.png'
 import { TabLaundry } from "./Header";
+import { useState } from 'react';
 
 
 function Contact() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+  }
   return (
     <div className='text-center '>
       <TabLaundry />
@@ -22,24 +36,24 @@ function Contact() {
             <div className=' mb-4'>
             <div >
               <label> Your Name</label> <br />
-              <input type='text' placeholder=' Name' className='rounded' required/>
+              <input value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder=' Name' className='rounded' required />
             </div>
             <div>
             <label> Your Email</label> <br />
-              <input type='text' placeholder=' Email' className='rounded' required/>
+              <input value={email} type='text' onChange={(e)=> setEmail(e.target.value)} placeholder=' Email' className='rounded' required />
               </div>
               <div className=''>
               <label>Subject</label> <br/>
-              <input type='text' placeholder='subject' className='rounded'  required/>
+              <input value={subject} onChange={(e) => setSubject(e.target.value)} type='text' placeholder='subject' className='rounded'  required />
             </div>
             <div>
               <label>Message</label> <br/>
-              <textarea type="text" required/>
+              <textarea value={message} onChange={(e) => setMessage(e.target.value)} type="text" required />
             </div>
             </div>
             
           </form>
-          <button className='border p-3 rounded text-black bg-blue-700' type='submit'>Submit</button>
+          <button className='border p-3 rounded text-black bg-blue-700' type='submit' onClick={handleSubmit}>Submit</button>
         </div>
        
     </div>

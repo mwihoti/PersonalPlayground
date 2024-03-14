@@ -36,7 +36,7 @@ export default function About() {
             </p>
           </div>
         </div>
-        <h1>We are patnereed with</h1>
+        <h1 className='p-2 underline'>We are patnered with</h1>
         <Hospitals/>
       </div>
     </div>
