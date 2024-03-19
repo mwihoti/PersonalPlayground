@@ -1,6 +1,7 @@
 import { Typography } from '@material-tailwind/react';
 import React from 'react';
 import logo from '../assets/logo.png'
+import { NavLink, Link  } from 'react-router-dom';
 const LINKS = [
  
 {
@@ -12,6 +13,30 @@ const LINKS = [
   items: ["Blog",  "Contact us"]
 }
 ];
+
+const data = [
+  {
+    label: "About Us",
+    Value: "about",
+    desc: "",
+    to: "about"
+
+  },
+  {
+    label: "Contact Us",
+    Value: "contact",
+    desc: "",
+    to: "contact"
+
+  },
+  {
+    label: "Home",
+    Value: "home",
+    desc: "",
+    to: "/"
+
+}
+]
 export function laundryFooter() {
   
   const currentYear = new Date().getFullYear();
@@ -31,26 +56,13 @@ export function laundryFooter() {
             
             
           <div className='grid grid-cols-2 justify-between gap-2' >
-            {LINKS.map(({title, items})=> (
-              <ul key={title}>
-                <Typography variant="small"
-                color="red"
-                className='mb-3 font-medium opacity-60 '
-                >
-                  {title}
-                </Typography>
-                {items.map((link)=>(
-                  <li key={link}>
-                    <Typography as ="a"
-                      href="#"
-                      color="gray"
-                      className='py-1.5 font-normal transition-colors hover:text-blue-grat-900'
-                    >
-                      {link}
-                      </Typography>
-                  </li>
-                ))}
-              </ul>
+            {data.map(({label, value, to})=> (
+              <tab key={value} value={value}>
+                <Link to={to} value={value}></Link>
+                <div className='flex items-center gap-2'>{label}</div>
+
+              </tab>
+           
             ))}
           </div>
 
