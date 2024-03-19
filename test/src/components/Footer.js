@@ -41,13 +41,13 @@ export function laundryFooter() {
   
   const currentYear = new Date().getFullYear();
   return (
-    <footer className='relative w-full'>
+    <footer className='relative w-full pt-5 border  border-t-5 border-blue-400'>
       <div className='mx-auto w-full max-w-7xl px-8 '>
-        <div className='grid grid-cols-1 justify-between gap-2 md:grid-cols-2' >
+        <div className='grid  justify-between gap-2 md:grid-cols-2' >
         
-          <Typography variant='h5' className='mb-6 font-bold'>
+          <Typography variant='h5' className=' font-bold  flex'>
              Laundry Footer
-             <div className='flex justify-center items-center mt-2'>
+             <div className='flex justify-center '>
           <img  src={logo} alt="Laundry logo" className='w-40 h-20 items-center '/>
           </div>
   
@@ -55,19 +55,22 @@ export function laundryFooter() {
           
             
             
-          <div className='grid grid-cols-2 justify-between gap-2' >
+          <div className='grid grid-cols-3 justify-between gap-2' >
             {data.map(({label, value, to})=> (
               <tab key={value} value={value}>
-                <Link to={to} value={value}></Link>
-                <div className='flex items-center gap-2'>{label}</div>
+                <Link to={to} value={value}>
+                <button className='flex items-center gap-2'>{label}
+                </button>
+                </Link>
 
               </tab>
+              
            
             ))}
           </div>
 
         </div>
-        <div className='mt-7 flex w-full flex-col items-center justify-center border-t border-amber-200 p-6 py-4 md:flex-row md:justify-between'>
+        <div className='mt-3 flex w-full flex-col items-center justify-center border-t border-amber-200 p-6 py-4 md:flex-row md:justify-between'>
           <Typography 
           varaint="small"
           className='mb-4 text-center font-normal text-blue-gray-900 md:mb-0'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import laundry1 from '../assets/laundry1.png'
+import laundry1 from '../assets/laundry1.png';
+import { Link } from 'react-router-dom';
 import {Carousel, Typography, Button } from '@material-tailwind/react'
 
 const imageData = [
@@ -36,8 +37,8 @@ function NewCarousel() {
                     we offer a seamless laundry experience tailored to your needs. 
                     </Typography>
                     <div className='flex gap-2 justify-center'>
-                       <Button size='lg' color="grey">Explore</Button>
-                       <Button size='lg' color="grey">Contact us</Button>
+                       <Button size='lg' color="grey"><Link to={"/about"}>Explore</Link></Button>
+                       <Button size='lg' color="grey"><Link to={"/contact"}>Contact us</Link></Button>
                     </div>
                 </div>
 
