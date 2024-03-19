@@ -1,70 +1,153 @@
-
 <!DOCTYPE html>
-<html>
-    <head>
-<link rel="stylesheet" href="assets/stylesheets/main.css">
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AirBnB clone</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/4-common.css">
+    <link rel="stylesheet" href="styles/3-header.css">
+    <link rel="stylesheet" href="styles/3-footer.css">
+    <link rel="stylesheet" href="styles/6-filters.css">
+    <link rel="stylesheet" href="styles/8-places.css">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous">
+    <link rel="icon" href="images/icon.png">
+  </head>
 
-    <body>
+  <body>
+    <header></header>
 
-          <div class="group">
-          <section>
-            <ol start="30" reversed>
-              <li>Head north on N Halsted St</li>
-              <li>Turn right on W Diversey Pkwy</li>
-              <li>Turn left on N Orchard St</li>
-            </ol>
-          </section>
-          
-           <section>
-            <ul >
-              <li>Head north on N Halsted St</li>
-              <li>Turn right on W Diversey Pkwy</li>
-              <li>Turn left on N Orchard St</li>
-            </ul>>
-          </section>
+    <div class="container">
+      <section class="filters">
+        <div class="locations">
+          <h3>States</h3>
+          <h4>ie. New York/Virgina...</h4>
+          <div class="popover">
+            <h2>New York:</h2>
+            <ul>
+              <li>Buffalo</li>
+              <li>New York City</li>
+            </ul>
+            <h2>Virginia:</h2>
+            <ul>
+              <li>Charlottesville</li>
+              <li>Richmond</li>
+            </ul>
+          </div>
 
-          <section>
-         <dl style="padding: 44px;">
-          <dt>study</dt>
-          <dd style="margin-left: 40px;">The devotion of time and attention to acquiring knowledge on an academic subject, especially by means of books</dd>
-          <dt>design</dt>
-          <dd style="margin-left: 40px;">A plan or drawing produced to show the look and function or workings of a building, garment, or other object before it is built or made</dd>
-          <dd style="margin-left: 40px;"> Purpose, planning, or intention that exists or is thought to exist behind an action, fact, or material object</dd>
-          <dt>business</dt>
-          <dt>work</dt>
-          <dd style="margin-left: 40px;">A person's regular occupation, profession, or trade</dd>
-         </dl>
-          </section>
-
-          <section>
-            <ol>
-              <li>Walk the dog</li>
-              <li>Fold laundry</li>
-              <li> Go to grocery and buy:
-                <ul>
-                  <li>Milk</li>
-                  <li>Bread</li>
-                  <li>Cheese</li>
-                </ul>
-              </li>
-              <li>Mow the lawn</li>
-              <li>Make dinner</li>
-            </ol>
-          </section>
-          <section>
-            <nav class="navigation">
-              <ul>
-                <li><a href="#">Profile</a></li><!--
-                --><li><a href="#">Settings</a></li><!--
-                --><li><a href="#">Notifications</a></li><!--
-                --><li><a href="#">Logout</a></li>
-              </ul>
-            </nav>
-          </section>
+        </div><div class="amenities">
+          <h3>Amenities</h3>
+          <h4>ie. Laundry/Internet...</h4>
+          <ul class="popover">
+            <li>Internet</li>
+            <li>TV</li>
+            <li>Kitchen</li>
+            <li>Iron</li>
+          </ul>
         </div>
-          <footer>
-            <code>&#60;footer&#62;</code>
-          </footer>
-    </body>
-    </html>
+        <button>Search</button>
+      </section>
+
+      <section class="places">
+        <h1>Places</h1>
+        <article>
+          <div class="name_and_price">
+            <h2>My home</h2>
+            <div class="price_by_night">&#36;80</div>
+          </div>
+          <div class="information">
+            <div class="max_guest">
+              <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              <br>2 Guests
+            </div>
+            <div class="number_rooms">
+              <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              <br>1 Room
+            </div>
+            <div class="number_bathrooms">
+              <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              <br>0 Bathrooms
+            </div>
+          </div>
+          <div class="user">
+		  <strong>Owner:</strong> Mark John
+          </div>
+          <div class="description">
+            Our place is a private, affordable stand-alone guest house centrally located just minutes to French Quarters, downtown, The Fair Groundz(Jazz Fest) and City Park. The guest house is a quaint, 400 square ft. with a full bath, mini kitchen, & living room. The extra high cellings make the home feel more spacious. The sofa converts to a bed also.
+          </div>
+        </article>
+
+        <article>
+          <div class="name_and_price">
+            <h2>Tiny house</h2>
+            <div class="price_by_night">&#36;65</div>
+          </div>
+          <div class="information">
+            <div class="max_guest">
+              <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              <br>1 Guest
+            </div>
+            <div class="number_rooms">
+              <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              <br>1 Room
+            </div>
+            <div class="number_bathrooms">
+              <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              <br>2 Bathrooms
+            </div>
+          </div>
+          <div class="user"><strong>Owner:</strong> Alx Room</div>
+          <div class="description">
+            So, we've got this old couch that's currently going unused in our
+            frat house (Theta Beta Bois boiiiii!) We know trying to find school
+            housing sucks, right? So, like, we thought, you know what would be
+            a good idea? We should offer our couch for a student in need! Join
+            us bro, we're the chillest bros around, and you know we throw the
+            littest Friday night bangers!
+          </div>
+        </article>
+
+        <article>
+          <div class="name_and_price">
+            <h2>A Suite</h2>
+            <div class="price_by_night">&#36;190</div>
+          </div>
+          <div class="information">
+            <div class="max_guest">
+              <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+              <br>1 Guest
+            </div>
+            <div class="number_rooms">
+              <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+              <br>4 Rooms
+            </div>
+            <div class="number_bathrooms">
+              <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+              <br>1 Bathrooms
+            </div>
+          </div>
+          <div class="user">
+            <strong>Owner:</strong> Suite &#38; Lovers
+          </div>
+          <div class="description">
+            Hi there. You're reading this right now, yes? I can sense it. Now,
+            are you my soul mate? If so, I await you. Yes, you, you fellow
+            spiritualist. You, who dedicates each morning carefully tending your
+            backyard grove of avocado trees. You, who cannot spend one day away
+            from the presence of your family of 17 alpacas. You know who you
+            are. Unite with me. Unite with my spirit. I have two boiled eggs
+            waiting for you.
+          </div>
+        </article>
+
+
+      </section>
+    </div>
+
+    <footer>
+      Best School
+    </footer>
+  </body>
+</html>
