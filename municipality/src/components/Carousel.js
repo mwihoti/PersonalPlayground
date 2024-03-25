@@ -3,14 +3,14 @@ import mun from '../assets/d1.jpg'
 
 function Carousel() {
     return (
-        <div className='w-full relative'>
+        <div className='w-full relative '>
             <section className='w-full'>
                 <div className='flex justify-center p-2  '>
-                    <img src={mun} alt="Carousel Image" className='w-full h-96 object-cover' />
+                    <img src={mun} alt="Carousel Image" className='w-full h-96 object-cover sm:w-auto md:w-full' />
                     
                     
                       <div className='inset-0 absolute place-items-center grid text-white' >
-                        <p className='text-4xl uppercase bold'>Municipality Primary school</p>
+                        <p className='text-4xl  md:text-xl  uppercase bold'>Municipality Primary school</p>
                         <br/>
                         <div className='border border-black p-4 rounded bg-green-900'>
                         <p className='text-white  '>
@@ -20,10 +20,12 @@ function Carousel() {
                         </p>
                         
                         </div>
+
                         <button className='border p-3 rounded bg-black hover:bg-blue-700'>Contact us</button>
 
 
                       </div>
+                    
                     </div>
 
 
