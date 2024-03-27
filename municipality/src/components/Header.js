@@ -3,17 +3,19 @@ import logo from '../assets/logo.png'
 
 function Header() {
   return (
-    <div className='bg-black/5  '>
+    <div className='bg-black/5 '>
         
         <nav className=' md:w-full '>
          
        
 
-        <ul className='flex    place-content-between md:gap-5'>
-        <img src={logo} alt="School logo" className='w-20  '/> 
-            <li className='border  p-3 rounded'><a href='#'>Home</a></li>
-            <li className='border p-3 rounded'><a>About</a></li>
-            <li className='border p-3 rounded'><a>Contact</a></li>
+        <ul className='flex  p-2  ' >
+        <img src={logo} alt="School logo" className='w-20 ml-5 '/> 
+            <li className=' mx-auto p-3 sm:p-1 rounded hover:text-xl'><a href='/'>Home</a></li>
+            <li className=' mx-auto p-3 sm:p-1 rounded hover:text-xl'><a href='/about'>About</a></li>
+            <li className=' p-3 sm:p-1 mx-auto rounded hover:text-xl'><a href="/admin">Admission Query</a></li>
+            <li className=' p-3 sm:p-1  mr-20 rounded hover:text-xl'><a href='/staff'>Staffs</a></li>
+         
            
         </ul>
         

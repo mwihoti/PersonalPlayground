@@ -1,5 +1,6 @@
 import React from 'react';
-import mun from '../assets/d1.jpg'
+import mun from '../assets/d1.jpg';
+import motto from '../assets/d4.jpeg';
 
 function Carousel() {
     return (
@@ -10,10 +11,11 @@ function Carousel() {
                     
                     
                       <div className='inset-0 absolute place-items-center grid text-white' >
-                        <p className='text-4xl  md:text-xl  uppercase bold'>Municipality Primary school</p>
-                        <br/>
-                        <div className='border border-black p-4 rounded bg-green-900'>
+                        <p className='text-xl lg:text-5xl  uppercase bold text-cyan-500 hover:text-black/75 '>Municipality Primary school</p>
+                        
+                        <div className='border border-black p-4 rounded bg-green-900 '>
                         <p className='text-white  '>
+                            <img  src={motto} alt='school motto'  className='mx-auto w-24 p-2 rounded'/>
                             <h1><em>School Motto:</em></h1>
                             <h3>A Great Place To Learn.</h3>
 
