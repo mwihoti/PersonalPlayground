@@ -2,52 +2,56 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import next from '../assets/next.png';
+import back from '../assets/back.png';
 
 
 function Students() {
-    var settings = {
-        dots: true,
+    const settings = {
+        dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
-      };
+        nextArrow: <img src={next} alt="next"/>,
+        prevArrow: <img src={back} alt='back'/>
+    };
     return (
-        <Slider {...settings}>
-        <div className='w-3/4 mx-auto'>
-          
-                <div className='mt-20'>
+
+
+        <div className='w-3/4 mx-auto bg-white p-5'>
+
+            <div className='mt-20'>
+                <Slider {...settings}>
                     {data.map((d) => (
-                        <div className='h-[450px bg-white'>
-                            <div className='rounded-t-xl bg-indigo-500 flex justify-center items-center'>
-                                <img src={d.img} alt="Student"/>
+                        <div className='h-[450px] '>
+                            <div className='rounded-t-xl h-56 bg-indigo-500 flex justify-center items-center'>
+                                <img src={d.img} alt="Student" className='h-44 w-44' />
 
                             </div>
-                            <div className='flex flex-col items-center justify-center p-4 gap-4'> 
+                            <div className=' bg-white md:flex md:flex-col items-center justify-center p-4 gap-4'>
 
-                            <h1 className='text-2xl'>{d.name}</h1>
-                            <h3>{d.response}</h3>
+                                <h1 className='md:text-xl font-semibold'>{d.name}</h1>
+                                <h3>{d.response}</h3>
                             </div>
-                            
+
                         </div>
 
                     ))}
+                </Slider>
+            </div>
 
-                </div>
-                <div className=''>
 
-                </div>
-         
 
 
         </div>
-        </Slider>
-    )
+    )       
+     
 }
 const data = [
     {
         name: "Makena",
-        img:  require('../assets/students/makena.png'),
+        img: require('../assets/students/makena.png'),
         response: "I love been here at municpality primary school."
     },
     {
