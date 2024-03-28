@@ -1,6 +1,7 @@
 import React from 'react';
 import mun from '../assets/d1.jpg';
 import motto from '../assets/d4.jpeg';
+import { Link } from 'react-router-dom';
 
 function Carousel() {
     return (
@@ -22,8 +23,11 @@ function Carousel() {
                         </p>
                         
                         </div>
+                        <Link to='/contact' >
+                        <button className='border p-3 rounded bg-black hover:bg-blue-700 '>Contact us</button>
+                        </Link>
 
-                        <button className='border p-3 rounded bg-black hover:bg-blue-700'>Contact us</button>
+                        
 
 
                       </div>
