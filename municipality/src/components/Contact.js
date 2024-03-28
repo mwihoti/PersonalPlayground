@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState }  from 'react'
 
 function Contact() {
   return (
@@ -6,7 +6,7 @@ function Contact() {
       <div className='bg-amber-900 p-20 text-5xl font-bold uppercase text-center'>Contact us</div>
       <div className='md:flex gap-10'>
         <div className='p-7'> 
-          <h3>CONTACT US</h3>
+          <h3 className='font-bold text-2xl'>CONTACT US</h3>
           <h4 className='border-b pb-5'>For more information contact using one of the highlighted models below</h4>
           <div className='md:flex gap-10 p-10 border-b'>
           <article>
@@ -18,7 +18,7 @@ function Contact() {
             <h4>+254747559342</h4>
           </article>
           </div>
-          <article className='border-b pb-3'>
+          <article className='border-b pb-3 mt-5'>
             <h3>Address</h3>
             <h4>
               Municipality primary school, Mutithi, Mwea
@@ -29,7 +29,7 @@ function Contact() {
           </article>
         </div>
         <div className='p-7 w-3/6 text-center'>
-          <h3>SEND A MESSAGE</h3>
+          <h3 className='font-bold text-2xl'>SEND A MESSAGE</h3>
           <h4 className='pb-4'>
           You have a comment, suggestion,a question or a complaint? Fill the form below and we will get back to you as soon as we can.we are here to serve you for better.
           </h4>
@@ -48,12 +48,12 @@ function Contact() {
          
         </div>
       </div>
-      <div>
-        <h4>Address</h4>
-        <iframe>
-        https://www.google.com/maps/place/Mwea+Municipality+Primary+School,+B6,+Wamumu/@-0.7333314,37.3225421,17z/data=!4m15!1m8!3m7!1s0x18261f942ff92a23:0xd5b4861a01974df3!2sMwea+Municipality+Primary+School,+B6,+Wamumu!3b1!8m2!3d-0.7334015!4d37.3224365!16s%2Fg%2F11b8tf8nfn!3m5!1s0x18261f942ff92a23:0xd5b4861a01974df3!8m2!3d-0.7334015!4d37.3224365!16s%2Fg%2F11b8tf8nfn?entry=ttu
-
-        </iframe>
+      <div className=''>
+        <h4 className='underline pb-2'>Address:</h4>
+        <h5>Municipality Primary School</h5>
+        <div className='flex justify-center'>
+        <iframe width="50%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=B6,%20Wamumu+(Mwea%20Municipality%20Primary%20School,%20B6,%20Wamumu,%20Kenya)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe>
+        </div>
       </div>
     </div>
   )
