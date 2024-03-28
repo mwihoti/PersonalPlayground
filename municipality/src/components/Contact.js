@@ -8,11 +8,7 @@ function Contact() {
   const [message, setMessage] = useState('');
   function handleSubmit (e) {
     e.preventDefault();
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Phone:", phone);
-    console.log("Subject:", subject);
-    console.log("Message:", message);
+ 
 
     setName('');
     setEmail('');
