@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import pupils from '../assets/d7.jpeg';
+import Students from './Students';
 
 
 function About() {
@@ -32,8 +33,8 @@ function About() {
         </div>
       </div>
 
-      <div>
-        <h2>What students says abiut us</h2>
+      <div className=''>
+        <Students/>
       </div>
 
     </div>
