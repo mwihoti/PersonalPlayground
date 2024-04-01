@@ -6,8 +6,8 @@ import x from '../assets/x.png';
 
 function Footer() {
   return (
-    <footer className='bg-cyan-800 text-white p-5 mt-5 flex items-center justify-center ' >
-    <div className='flex  gap-10'>
+    <footer className='bg-cyan-800 text-white p-5 mt-5flex items-center justify-center ' >
+    <div className=' md:flex  gap-10'>
        <div className='p-4' >
        <img src={logo} className="w-12  mx-auto rounded-xl  " alt='logo'/>
         <h2 className='p-3 text-center'>Municipality primary School</h2>
@@ -19,18 +19,18 @@ function Footer() {
           <h3 className='underline'>
             More
           </h3>
-          <ul className='p-5 flex gap-5'>
+          <ul className='p-5 flex gap-5 '>
             <li><a href='/about' className=''>About</a></li>
             <li><a href='/' className=''>Home</a></li>
             <li><a href='/contact'>Contact</a></li>
           </ul>
         </div>
-        <div className='text-center underline'>
+        <div className='text-center underline md:ml-28'>
           <h4>Socials</h4>
-          <ul className='flex justify-center items-center'>
-            <li> <img src={x} className="h-20 " alt="x icon" /></li>
-            <li> <img src={ig} className="h-20 " alt="ig icon" /></li>
-            <li> <img src={fb} className='h-20' alt="fb icon" />
+          <ul className='flex justify-center items-center '>
+            <li> <img src={x} className="h-10 " alt="x icon" /></li>
+            <li> <img src={ig} className="h-10 " alt="ig icon" /></li>
+            <li> <img src={fb} className='h-10' alt="fb icon" />
 </li>
           </ul>
          

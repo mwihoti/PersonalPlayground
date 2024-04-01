@@ -44,11 +44,13 @@ function Contact() {
             <h4>Mwea, Kenya</h4>
           </article>
         </div>
-        <div className='p-7 w-3/6 text-center'>
+        <div className='p-7 w-3/6 text-center mx-auto'>
+          <div>
           <h3 className='font-bold text-2xl'>SEND A MESSAGE</h3>
           <h4 className='pb-4'>
           You have a comment, suggestion,a question or a complaint? Fill the form below and we will get back to you as soon as we can.we are here to serve you for better.
           </h4>
+          </div>
           <div className='gap-16 md:flex'>
             <input type='text' value={name} onChange={(e)=> setName(e.target.value)} placeholder='Name*' className='border border-black p-2 m-5' />
             <input type='text' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email*' className='border border-black p-2 m-5' />
@@ -57,14 +59,15 @@ function Contact() {
           <input type='text' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Mobile Number*' className='border border-black p-2 m-5' />
           <input type='text' value={subject} onChange={(e) => setSubject(e.target.value)} placeholder='Subject' className='border border-black p-2 m-5' />
           <textarea className='border m-5 border-black h-28' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message'></textarea>
-          <button className='bg-yellow-950 w-20 p-3 text-white' onClick={handleSubmit}>
+          <br/><button className='bg-yellow-950 w-20 p-3 text-white mx-auto' onClick={handleSubmit}>
             Submit
           </button>
           </div>
+          </div>
          
-        </div>
+        
       </div>
-      <div className=''>
+      <div className='p-8'>
         <h4 className='underline pb-2'>Address:</h4>
         <h5>Municipality Primary School</h5>
         <div className='flex justify-center'>
