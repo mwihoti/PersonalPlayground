@@ -6,7 +6,7 @@ import x from '../assets/x.png';
 
 function Footer() {
   return (
-    <footer className='bg-cyan-800 text-white p-5 mt-5flex items-center justify-center ' >
+    <footer className='bg-cyan-800 text-white p-5 mt-5 flex items-center justify-center ' >
     <div className=' md:flex  gap-10'>
        <div className='p-4' >
        <img src={logo} className="w-12  mx-auto rounded-xl  " alt='logo'/>
@@ -25,7 +25,7 @@ function Footer() {
             <li><a href='/contact'>Contact</a></li>
           </ul>
         </div>
-        <div className='text-center underline md:ml-28'>
+        <div className='text-center underline '>
           <h4>Socials</h4>
           <ul className='flex justify-center items-center '>
             <li> <img src={x} className="h-10 " alt="x icon" /></li>

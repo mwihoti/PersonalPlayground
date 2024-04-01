@@ -51,11 +51,12 @@ function Contact() {
           You have a comment, suggestion,a question or a complaint? Fill the form below and we will get back to you as soon as we can.we are here to serve you for better.
           </h4>
           </div>
-          <div className='gap-16 md:flex'>
-            <input type='text' value={name} onChange={(e)=> setName(e.target.value)} placeholder='Name*' className='border border-black p-2 m-5' />
-            <input type='text' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email*' className='border border-black p-2 m-5' />
-          </div>
+        
+           
+          
           <div className='md:flex flex-col'>
+          <input type='text' value={name} onChange={(e)=> setName(e.target.value)} placeholder='Name*' className='border border-black p-2 m-5' />
+            <input type='text' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email*' className='border border-black p-2 m-5' />
           <input type='text' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Mobile Number*' className='border border-black p-2 m-5' />
           <input type='text' value={subject} onChange={(e) => setSubject(e.target.value)} placeholder='Subject' className='border border-black p-2 m-5' />
           <textarea className='border m-5 border-black h-28' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message'></textarea>

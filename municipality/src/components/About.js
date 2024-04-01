@@ -4,6 +4,7 @@ import pupils from '../assets/d7.jpeg';
 import Students from './Students';
 
 
+
 function About() {
   return (
     <div className='p-4'>
