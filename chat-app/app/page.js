@@ -1,11 +1,7 @@
-"use client"
-import Image from "next/image";
-import Main from "./components/Main";
-import Header from './components/Header'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Order from './components/Order';
-import Product from './components/Product';
+import Page from '../components/page';
+
 import Link from 'next/link'
+import Header from '@/components/Header';
 
 
 export default function Home() {
@@ -13,9 +9,9 @@ export default function Home() {
   
      
       <div>
-      <Header />
+      < comp/> 
+      <Page />
       
-     
 
       
       </div>
