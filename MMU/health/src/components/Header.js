@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs, TabsHeader, Tab } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import {
   Square3Stack3DIcon,
@@ -10,7 +10,16 @@ import {
 import { NavDropdown } from "react-bootstrap";
 
 export function TabLaundry() {
-  const loggedIn = localStorage.getItem('user-info');
+  const loggedIn = JSON.parse(localStorage.getItem('user-info'));
+  const navigate = useNavigate();
+
+  let user = localStorage.getItem("user-info")
+  function logOut()
+  {
+    localStorage.clear();
+    navigate("/signin")
+
+  }
 
   const loggedInTabs = [
     {
@@ -63,7 +72,7 @@ export function TabLaundry() {
 
   const tabsToShow = loggedIn ? loggedInTabs : loggedOutTabs;
 
-  return (
+  return (  
     <Tabs value="dashboard">
       <TabsHeader>
         {tabsToShow.map(({ label, value, icon, to }) => (
@@ -76,8 +85,18 @@ export function TabLaundry() {
             </Link>
             
           </Tab>
+         
           
         ))}
+         <Tab>
+          
+
+            <NavDropdown.Item onClick={logOut}>Logout</NavDropdown.Item> 
+
+            
+            
+             
+          </Tab>
       </TabsHeader>
       
       

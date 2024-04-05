@@ -41,5 +41,8 @@ class BookController extends Controller
         {
             return ["Book" =>"Book has been revoked"];
         }
+        else {
+            return ["Book" =>"No Book to Revoke"];
+        }
     }
 }
