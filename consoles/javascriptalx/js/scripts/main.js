@@ -9,8 +9,7 @@ myImage.onclick = () => {
     }
 }
 
-const myHeading = document.querySelector('h1');
-myHeading.textContent = "Hello world its dante";
+
 
 document.querySelector("#bt").addEventListener("click", function () {
     alert("Ouch! Stop poking me!")
@@ -18,3 +17,31 @@ document.querySelector("#bt").addEventListener("click", function () {
 
 document.querySelector('.btc').addEventListener('click', function ()
  {alert ("!Ouch, I am using  class instead of id") })
+
+
+ let myButton = document.querySelector("#my");
+ let myHeading = document.querySelector("h1");
+
+
+ function setUserName() {
+    const myName = prompt("Please enter your name. !");
+    if (!myName) {
+        alert("Enter name")
+        setUserName();
+    } else {
+        localStorage.setItem("name", myName);
+        myHeading.textContent = `Mozilla is cool, ${myName}`
+    }
+    
+ }
+
+ if (!localStorage.getItem("name")){
+    setUserName();
+ } else {
+    const storedName = localStorage.getItem("name");
+    myHeading.textContent = `Mozilla is cool, ${storedName}`;
+ }
+
+ myButton.onclick = () => {
+    setUserName();
+ }
