@@ -1,7 +1,9 @@
-In this repository you will find my various projects :
-    PY folder - contains python files, 
-    Gallery folder - food gallery project,
-    media folder - ,
-    sui ,
-    Express js,
-
+#funtime by mwihoti
+## This repository contains my  projects .
+```
+Languages used in this repository:
+* React, NextJs, Javascript
+* Python, Django
+* Laravel, php
+* Solidity
+```
