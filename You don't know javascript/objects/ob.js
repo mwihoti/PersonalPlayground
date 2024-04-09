@@ -13,4 +13,5 @@ const person = {
 }
 
 person.bio();
-person.introduceSelf()
+person.introduceSelf();
+person.age
