@@ -17,3 +17,12 @@ person["name"]["last"] = "Cratchit"
 person.age;
 person["name"]["last"];
 person.bio()
+
+person['eyes'] = 'Hazel';
+person.farewell = () => {
+    console.log("Bye everyOne");
+};
+
+person['eyes'];
+person.farewell();
+person
