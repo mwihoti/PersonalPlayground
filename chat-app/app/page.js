@@ -1,7 +1,7 @@
-import Page from '../components/page';
+
 
 import Link from 'next/link'
-import Header from '@/components/Header';
+import Header from '@/app/components/layout/Header';
 
 
 export default function Home() {
@@ -9,8 +9,7 @@ export default function Home() {
   
      
       <div>
-      < comp/> 
-      <Page />
+    <Header />
       
 
       

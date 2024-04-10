@@ -10,19 +10,19 @@ function Header() {
                 <ul className='flex gap-5 top-0'>
                     <li className='font-bold'>
 
-                        <Link href='/'>
+                        <Link href={'/'}>
                             Home
                         </Link>
                     </li>
                     <li className='font-bold'>
 
-                        <Link href='/product'>
+                        <Link href={'/product'}>
 
                             Products
                         </Link>
                     </li>
                     <li className='font-bold'>
-                        <Link href='/order'>
+                        <Link href={'/order'}>
                             Order
                         </Link>
 
