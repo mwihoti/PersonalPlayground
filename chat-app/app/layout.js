@@ -1,9 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Providers from "./provider";
 
-import { ThemeProvider } from "./theme-prodiver";
-import { ThemeSwitcher } from "./components";
-import { switchThemeDuration } from "./constants";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,12 +16,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-slate-50 dark:bg-[#0d1117] ${switchThemeDuration}`}
+        className={inter.className}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeSwitcher />
-          <main>{children}</main>
-        </ThemeProvider>
+        <Providers>
+        <main>{children}</main>
+        </Providers>
+      
+          
+          
+     
       </body>
     </html>
   );

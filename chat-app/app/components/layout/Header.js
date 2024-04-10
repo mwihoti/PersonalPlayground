@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import ThemeButton from './themeButton'
 
 
 function Header() {
@@ -29,7 +30,12 @@ function Header() {
                     </li>
 
 
+
                 </ul>
+                <div className=' ml-20'>
+                <ThemeButton />
+                </div>
+                
             </nav>
         </div>
     )
