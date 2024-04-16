@@ -1,0 +1,7 @@
+create a virtual environment - virtualenv .venv
+
+
+activate the virtual environment - . .venv/bin/activate
+
+Sharing your virtual environment -- pip freeze > requirements.txt
+
