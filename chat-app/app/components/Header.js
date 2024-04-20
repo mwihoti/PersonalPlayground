@@ -1,14 +1,20 @@
 
 import React from 'react'
 import Link from 'next/link'
-import ThemeButton from './themeButton'
+import ThemeButton from './layout/themeButton'
 
 
 function Header() {
     return (
         <div className=''>
-            <nav className='p-10 flex mx-auto'>
-                <ul className='flex gap-5 top-0'>
+            <nav className='p-10 flex  border '>
+                <div>
+                    <a href='/'>
+                        Chat-app
+
+                    </a>
+                </div>
+                <ul className='flex mx-auto gap-5 top-0 justify-between'>
                     <li className='font-bold'>
 
                         <Link href={'/'}>
@@ -27,15 +33,14 @@ function Header() {
                             Order
                         </Link>
 
-                    </li>
-
-
+                    </li>                
 
                 </ul>
-                <div className=' ml-20'>
+              
+                <div>
                 <ThemeButton />
+
                 </div>
-                
             </nav>
         </div>
     )
