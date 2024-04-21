@@ -1,0 +1,7 @@
+{
+  "databaseURL": "https://Daniel-Mwihoti-s-workspace-rv16qj.us-east-1.xata.sh/db/chat-app",
+  "codegen": {
+    "output": "src/xata.js",
+    "moduleType": "cjs"
+  }
+}

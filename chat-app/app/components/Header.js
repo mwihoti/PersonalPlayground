@@ -1,13 +1,15 @@
-
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import ThemeButton from './layout/themeButton'
+import { UserButton, useUser } from '@clerk/nextjs'
 
 
 function Header() {
+    const {isLoaded, user} = useUser();
     return (
         <div className=''>
-            <nav className='p-10 flex  border '>
+            <nav className='p-10 flex  border-b '>
                 <div>
                     <a href='/'>
                         Chat-app
@@ -37,9 +39,18 @@ function Header() {
 
                 </ul>
               
-                <div>
-                <ThemeButton />
+                <div className='flex gap-4'>
+                    {
+                        isLoaded && user && (
+                            
 
+                            <UserButton afterSignOutUrl='/' />
+
+                        )
+                        
+                    }
+               
+               <ThemeButton />
                 </div>
             </nav>
         </div>

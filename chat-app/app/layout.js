@@ -15,11 +15,12 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <ClerkProvider>
+   
     <html lang="en">
       <body
         className=''
       >
+         <ClerkProvider>
         <Providers>
           <Header />
           <div className="flex justify-center items-center p-24">
@@ -27,12 +28,13 @@ export default function RootLayout({
           </div>
        
         </Providers>
+        </ClerkProvider>
       
           
           
      
       </body>
     </html>
-    </ClerkProvider>
+  
   );
 }       
