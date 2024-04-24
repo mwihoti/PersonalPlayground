@@ -1,26 +1,21 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import { getXataClient } from '@/src/xata';
-import {z} from 'zod';
 
-const schema = z.object({
-    name: z.string().min(10)
-})
 
-function FolderForm() {
-    async function createFolder (formData) {
-        'use server';
 
-        const name = formData.get('name');
-        if(!name){
-            return;
-        }
 
-        console.log(formData.get("name"));
-    }
+export default function FolderForm({handleCreateFolder}) {
+   
+    const ref =  useRef(null);
   return (
     <form 
     className=' mb-4 w-full flex gap-x-2 items-center'
-    action={createFolder}
+    action={(formData)=>
+        {handleCreateFolder(formData);
+            ref.current?.reset();
+        }}
+    ref={ref}
     >
         <div className='grow'>
             <label
@@ -33,10 +28,8 @@ New name
             type='text'
             placeholder='myfolder'/>
         </div>
-        <button className='bg-gra-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-32'>Submit</button>
+        <button className='bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-32'>Submit</button>
 
     </form>
   )
 }
-
-export default FolderForm
