@@ -2,7 +2,8 @@
 import React from 'react';
 import Link from 'next/link'
 import Header from '@/app/components/Header';
-import { auth } from '@clerk/nextjs/dist/types/server';
+import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'react-router-dom';
 
 
 export default function Home() {

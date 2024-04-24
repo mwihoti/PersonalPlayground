@@ -5,7 +5,12 @@ exports.getXataClient = exports.XataClient = void 0;
 const client_1 = require("@xata.io/client");
 /** @typedef { import('./types').SchemaTables } SchemaTables */
 /** @type { SchemaTables } */
-const tables = [];
+const tables = [
+  {
+    name: "chat_table",
+    columns: [{ name: "name", type: "string", unique: true }],
+  },
+];
 /** @type { import('@xata.io/client').ClientConstructor<{}> } */
 const DatabaseClient = (0, client_1.buildClient)();
 const defaultOptions = {
