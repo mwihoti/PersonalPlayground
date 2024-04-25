@@ -9,6 +9,7 @@ import { redirect } from 'react-router-dom';
 export default function Home() {
 
   const {userId } = auth();
+  console.log(userId)
   if (userId) {
     redirect('/order')
   }

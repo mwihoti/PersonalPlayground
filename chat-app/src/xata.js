@@ -8,7 +8,10 @@ const client_1 = require("@xata.io/client");
 const tables = [
   {
     name: "chat_table",
-    columns: [{ name: "name", type: "string", unique: true }],
+    columns: [
+      { name: "name", type: "string", unique: true },
+      { name: "userId", type: "string", notNull: true, defaultValue: "null" },
+    ],
   },
 ];
 /** @type { import('@xata.io/client').ClientConstructor<{}> } */
