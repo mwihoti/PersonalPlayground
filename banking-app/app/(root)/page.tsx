@@ -23,7 +23,7 @@ const Home = () => {
         </header>
     </div>
 
-    Home
+   RECENT TRANSACTIONS 
     </section>
   )
 }
