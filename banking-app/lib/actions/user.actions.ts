@@ -6,3 +6,10 @@ export const signIn = async () => {
     } catch (error) {
         console.error('Error', error);   }
 }
+
+export const signup = async () => {
+    try {
+
+    } catch (error) {
+        console.error('Error', error);   }
+}
