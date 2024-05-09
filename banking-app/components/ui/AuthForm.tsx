@@ -18,7 +18,8 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 const formSchema = z.object({
-    email: z.string().email()
+    email: z.string().email(),
+    Password: z.string().min(4)
   })
 
 const AuthForm = ({type }: { type: string }) => {
@@ -86,7 +87,7 @@ const AuthForm = ({type }: { type: string }) => {
             </FormLabel>
             <div className='flex w-full flex-col'>
                 <FormControl>
-                    <input placeholder='Enter your email name' className='input-class' {...field}/>
+                    <input placeholder='Enter your email name' className='input-clas p-2' {...field} type="text" />
 
                 </FormControl>
                 <FormMessage className='form-message mt-2' />
@@ -106,7 +107,7 @@ const AuthForm = ({type }: { type: string }) => {
             </FormLabel>
             <div className='flex w-full flex-col'>
                 <FormControl>
-                    <input placeholder='Enter your email name' className='input-class' {...field}/>
+                    <input placeholder='Enter your email name' className='input-class p-2' {...field} type="password"/>
 
                 </FormControl>
                 <FormMessage className='form-message mt-2' />
@@ -116,7 +117,7 @@ const AuthForm = ({type }: { type: string }) => {
            </div>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button className='form-btn' type="submit">Submit</Button>
       </form>
     </Form>
                         </>
