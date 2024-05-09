@@ -17,6 +17,9 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import CustomInput from './CustomInput';
+import { authFormSchema } from '@/lib/utils';
+import { Loader2 } from 'lucide-react'
 const formSchema = z.object({
     email: z.string().email(),
     Password: z.string().min(4)
@@ -24,6 +27,7 @@ const formSchema = z.object({
 
 const AuthForm = ({type }: { type: string }) => {
     const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
      // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,7 +41,9 @@ const AuthForm = ({type }: { type: string }) => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
+    setIsLoading(true)
     console.log(values)
+    setIsLoading(false)
   }
 
   return (
@@ -82,12 +88,12 @@ const AuthForm = ({type }: { type: string }) => {
           name="email"
           render={({ field }) => (
            <div className='form-item'>
-            <FormLabel className='form-lable'>
+            <FormLabel className='form-label'>
             Email
             </FormLabel>
             <div className='flex w-full flex-col'>
                 <FormControl>
-                    <input placeholder='Enter your email name' className='input-clas p-2' {...field} type="text" />
+                    <input placeholder='Enter your email name' className='input-class p-2' {...field} type="text" />
 
                 </FormControl>
                 <FormMessage className='form-message mt-2' />
@@ -102,12 +108,12 @@ const AuthForm = ({type }: { type: string }) => {
           name="Password"
           render={({ field }) => (
            <div className='form-item'>
-            <FormLabel className='form-lable'>
+            <FormLabel className='form-label'>
             Password
             </FormLabel>
             <div className='flex w-full flex-col'>
                 <FormControl>
-                    <input placeholder='Enter your email name' className='input-class p-2' {...field} type="password"/>
+                    <input placeholder='Password' className='input-class p-2' {...field} type="password"/>
 
                 </FormControl>
                 <FormMessage className='form-message mt-2' />
@@ -117,9 +123,30 @@ const AuthForm = ({type }: { type: string }) => {
            </div>
           )}
         />
-        <Button className='form-btn' type="submit">Submit</Button>
+        <Button className='form-btn' type="submit" disabled={isLoading}>
+            {isLoading ? (
+                <>
+                <Loader2 size={20}
+                className="animate-spin" /> &nbsp; Loading...
+                </>
+            ): type === 'sign-in' ? 
+        "Sign In " : "Sign Up"}
+        </Button>
       </form>
     </Form>
+
+    <footer className="flex justify-center gap-1">
+
+        <p className='text-14 font-normal text-gray-600'>
+            {type === 'sign-in'
+            ? "Don't have an account ?"
+        : "Already have an account?"}
+        </p>
+        <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className='form-link'>
+            {type === 'sign-in ' ? 'sign up' : 'sign  in' }
+
+        </Link>
+    </footer>
                         </>
                     )}
 
