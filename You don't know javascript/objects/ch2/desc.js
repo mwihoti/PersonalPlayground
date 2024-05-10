@@ -1,3 +1,5 @@
+//Property descriptors
+
 myObj = {
     favoriteNumber: 42,
     isDeveloper: true,
