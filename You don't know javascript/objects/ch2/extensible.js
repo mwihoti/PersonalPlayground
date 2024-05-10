@@ -1,17 +1,23 @@
-myObj = {
-    favoriteNumber: 42
+
+
+let differentObj = {
+    // Properties and methods of differentObj
 };
 
-myObj.firstName = "Kyle";  
+let myObj = Object.create(differentObj); // myObj is now created with differentObj as its prototype
 
-myObj.nicknames = [ "getify", "ydkjs" ];  
-
-console.log(myObj)// works fine
-
-Object.preventExtensions(myObj);
-
-myObj.nicknames = [ "getify", "ydkjs" ];   // fails
-myObj.favoriteNumber = 123;                // works fine
+myObj.firstName = "Kyle";
 
 
-console.log(myObj)
+myObj.nicknames = ["getify", "ydkjs"];
+console.log(myObj);
+myObj = Object.create(differentObj); // myObj is now created with differentObj as its prototype
+
+console.log(myObj);
+
+Object.preventExtensions(myObj); // Prevents further extensions to myObj
+
+myObj.nicknames = ["getify", "ydkjs"];   // Attempting to add a new property, fails
+myObj.favoriteNumber = 123;             // Modifying an existing property, works fine
+
+console.log(myObj);
