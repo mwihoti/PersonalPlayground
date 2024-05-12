@@ -2,6 +2,8 @@
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { parseStringify } from "../utils";
+import { ID } from "node-appwrite";
 
 export const signIn = async () => {
     try {
@@ -11,7 +13,7 @@ export const signIn = async () => {
     }
 }
 
-export const signup = async (userData : SignUpParams) => {
+export const signUp = async (userData : SignUpParams) => {
     const { email, firstName, password, lastName } = userData;
     let newUserAccount;
 
@@ -36,6 +38,7 @@ export const signup = async (userData : SignUpParams) => {
             sameSite: "strict",
             secure: true,
         })
+        return parseStringify(newUserAccount)
         redirect('/account');
 
 
@@ -47,7 +50,9 @@ export const signup = async (userData : SignUpParams) => {
 export async function getLoggedInUser() {
     try {
         const { account } = await createSessionClient();
-        return await account.get();
+        const user =  await account.get();
+
+        return parseStringify(user)
 
     } catch (error) {
         return null;
