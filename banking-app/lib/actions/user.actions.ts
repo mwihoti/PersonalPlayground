@@ -13,3 +13,5 @@ export const signup = async () => {
     } catch (error) {
         console.error('Error', error);   }
 }
+
+export async function getLoggedI

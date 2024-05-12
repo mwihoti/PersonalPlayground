@@ -53,7 +53,7 @@ const AuthForm = ({ type }: { type: string }) => {
               email: data.email,
                 password: data.password,
             })
-           if (response).push('/')
+           if (response)router.push('/')
         }
             console.log(values)
             setIsLoading(false)
