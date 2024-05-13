@@ -7,6 +7,8 @@ import { ID } from "node-appwrite";
 
 export const signIn = async () => {
     try {
+        const { account} = await createAdminClient();
+        const response = await account.createEmailPasswordSession(email, password)
 
     } catch (error) {
         console.error('Error', error);
