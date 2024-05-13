@@ -5,10 +5,11 @@ import { redirect } from "next/navigation";
 import { parseStringify } from "../utils";
 import { ID } from "node-appwrite";
 
-export const signIn = async () => {
+export const signIn = async ({email, password}: signInProps) => {
     try {
         const { account} = await createAdminClient();
         const response = await account.createEmailPasswordSession(email, password)
+        return parseStringify(response)
 
     } catch (error) {
         console.error('Error', error);
