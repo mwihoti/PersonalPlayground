@@ -4,6 +4,8 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { parseStringify } from "../utils";
 import { ID } from "node-appwrite";
+import { CountryCode, Products } from "plaid";
+import { Languages } from "lucide-react";
 
 export const signIn = async ({email, password}: signInProps) => {
     try {
@@ -71,4 +73,20 @@ export const logoutAccount = async () => {
     } catch (error) {
         return null;
     }
+}
+export const createLinkToken = async (user: User) => {
+    try {
+        const tokenParams = {
+            user : {
+                client_user_id: user.$id
+            },
+            client_name: user.name,
+            products: ['auth'] as Products[],
+            language: 'en',
+            country_codes: ['KE'] as unknown as CountryCode[], 
+        }
+    } catch (error) {
+
+    }
+
 }
