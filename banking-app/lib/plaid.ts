@@ -10,4 +10,4 @@ const configuration = new Configuration({
     }
 }
 )
-export default plaidClient = new PlaidApi(configuration)
+export const plaidClient = new PlaidApi(configuration)
