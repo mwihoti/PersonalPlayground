@@ -8,6 +8,7 @@ import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestPr
 import { Languages } from "lucide-react";
 import { plaidClient } from "../plaid";
 import { revalidatePath } from "next/cache";
+import { addFundingSource } from "./dwolla.actions";
 
 export const signIn = async ({email, password}: signInProps) => {
     try {
@@ -96,6 +97,16 @@ export const createLinkToken = async (user: User) => {
 
 }
 
+export const createBankAccount = async ({userId, bankId,
+    accountId, accessToken, fundingSourceUrl, sharableId
+}: createBankAccountProps) => {
+    try {
+
+    } catch (error) {
+
+    }
+}
+
 export const exchangePublicToken = async ({
     publicToken,
     user,
@@ -137,7 +148,7 @@ export const exchangePublicToken = async ({
         await createBankAccount({
             userId: user.$id,
             bankId: itemId,
-            accoutnId: accountData.account_id,
+            accountId: accountData.account_id,
             accessToken,
             fundingSourceUrl,
             sharableId.encryptId(accountData.account_id)
