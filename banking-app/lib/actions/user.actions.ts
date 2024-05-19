@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { parseStringify } from "../utils";
 import { ID } from "node-appwrite";
-import { CountryCode, Products } from "plaid";
+import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestProcessorEnum, Products } from "plaid";
 import { Languages } from "lucide-react";
 import { plaidClient } from "../plaid";
 
@@ -110,9 +110,19 @@ export const exchangePublicToken = async ({
         //Get account information from plaid using access token
         const accountResponse = await plaidClient.accountsGet({
             access_token: accessToken,
-        })
+        });
+
+        const accountData = accountResponse.data.accounts[0];
+
+        //Create a processor token for Dwolla using access token and account Id
+        const request: ProcessorTokenCreateRequest = {
+            access_token: accessToken,
+            account_id: accountData.account_id,
+            processor: "dwolla" as ProcessorTokenCreateRequestProcessorEnum,
+        }; 
+        const processorTokenResponse = await plaidClient.processorTokenCreate(request);
+        const processorToken = processorTokenResponse.data.processor_token;
      } catch (error) {
     console.error("An error occcurred while creating exchange token", error)
  }
     } 
-}
