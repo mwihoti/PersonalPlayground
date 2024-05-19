@@ -7,6 +7,7 @@ import { ID } from "node-appwrite";
 import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestProcessorEnum, Products } from "plaid";
 import { Languages } from "lucide-react";
 import { plaidClient } from "../plaid";
+import { revalidatePath } from "next/cache";
 
 export const signIn = async ({email, password}: signInProps) => {
     try {
@@ -133,6 +134,21 @@ export const exchangePublicToken = async ({
         if (!fundingSourceUrl) throw Error;
         
         // create a bank account using user ID, item ID, account ID, access token funding source url and sharable id 
+        await createBankAccount({
+            userId: user.$id,
+            bankId: itemId,
+            accoutnId: accountData.account_id,
+            accessToken,
+            fundingSourceUrl,
+            sharableId.encryptId(accountData.account_id)
+        })
+        //Revalidate the path to reflect changes
+        revalidatePath("/");
+
+        // Return a success message
+        return parseStringify({
+            publicTokenExchange: "complete",
+        })
      } catch (error) {
     console.error("An error occcurred while creating exchange token", error)
  }
