@@ -6,6 +6,7 @@ import { parseStringify } from "../utils";
 import { ID } from "node-appwrite";
 import { CountryCode, Products } from "plaid";
 import { Languages } from "lucide-react";
+import { plaidClient } from "../plaid";
 
 export const signIn = async ({email, password}: signInProps) => {
     try {
@@ -85,8 +86,26 @@ export const createLinkToken = async (user: User) => {
             language: 'en',
             country_codes: ['KE'] as unknown as CountryCode[], 
         }
+        const response = await plaidClient.linkTokenCreate(tokenParams);
+
+        return parseStringify({linkToken: response.data.link_token})
     } catch (error) {
 
     }
 
+}
+
+export const exchangePublicToken = async ({
+    publicToken,
+    user,
+}: exchangePublicTokenProps) => {
+    try {
+        //Exchange public token for access token and item id
+        const response = await plaidClient.itemPublicTokenExchange({
+            public_token: publicToken,
+        })
+ catch (error) {
+    console.error("An error occcurred while creating exchange token", error)
+ }
+    } 
 }
