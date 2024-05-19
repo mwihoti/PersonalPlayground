@@ -104,7 +104,14 @@ export const exchangePublicToken = async ({
         const response = await plaidClient.itemPublicTokenExchange({
             public_token: publicToken,
         })
- catch (error) {
+        const accessToken = response.data.access_token;
+        const itemId = response.data.item_id;
+
+        //Get account information from plaid using access token
+        const accountResponse = await plaidClient.accountsGet({
+            access_token: accessToken,
+        })
+     } catch (error) {
     console.error("An error occcurred while creating exchange token", error)
  }
     } 
