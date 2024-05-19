@@ -2,13 +2,17 @@
 import { createAdminClient, createSessionClient } from "../appwrite";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { parseStringify } from "../utils";
+import { extractCustomerIdFromUrl, parseStringify } from "../utils";
 import { ID } from "node-appwrite";
 import { CountryCode, ProcessorTokenCreateRequest, ProcessorTokenCreateRequestProcessorEnum, Products } from "plaid";
 import { Languages } from "lucide-react";
 import { plaidClient } from "../plaid";
 import { revalidatePath } from "next/cache";
-import { addFundingSource } from "./dwolla.actions";
+import { addFundingSource, createDwollaCustomer } from "./dwolla.actions";
+const { APPWRITE_DATABASE_ID: DATABASE_ID,
+    APPWRITE_USER_COLLECTION_ID: USER_COLLECTION_ID,
+    APPWRITE_BANK_COLLECTION_ID: BANK_COLLECTION_ID,
+} = process.env;
 
 export const signIn = async ({email, password}: signInProps) => {
     try {
@@ -38,6 +42,15 @@ export const signUp = async (userData : SignUpParams) => {
           );
       
           if(!newUserAccount) throw new Error('Error creating user')
+        
+        const dwollaCustomerUrl = await createDwollaCustomer({
+            ...userData,
+            type: 'personal'
+        })
+
+        if (!dwollaCustomerUrl) throw new Error('Error creating Dwolla customer')
+        
+        const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl)
 
         const session = await account.createEmailPasswordSession(email, password);
         cookies().set("my-custom-session", session.secret, {
@@ -101,6 +114,19 @@ export const createBankAccount = async ({userId, bankId,
     accountId, accessToken, fundingSourceUrl, sharableId
 }: createBankAccountProps) => {
     try {
+        const { database } = await createAdminClient();
+
+        const bankAccount = await database.createDocument(
+            DATABASE_ID!,
+            BANK_COLLECTION_ID!,
+            ID.unique(),
+            {
+                userId, bankId,
+    accountId, accessToken, fundingSourceUrl, sharableId
+            }
+        )
+
+        return parseStringify(bankAccount)
 
     } catch (error) {
 
