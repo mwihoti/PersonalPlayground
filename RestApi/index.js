@@ -7,7 +7,9 @@ const
     app = express();
 
 app.get('/hello/:name?', (req, res) => 
-    res.json(
+    res
+    .append('Access-Control-Allow-Origin', '*')
+    .json(
         {message: `Hello ${req.params.name || 'World'}!`}
     )
 );
