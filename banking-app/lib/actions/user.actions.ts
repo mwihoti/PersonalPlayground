@@ -31,7 +31,7 @@ export const signUp = async (userData : SignUpParams) => {
 
     try {
 
-        const { account } = await createAdminClient();
+        const { account, database} = await createAdminClient();
     
 
         newUserAccount = await account.create(
@@ -50,8 +50,19 @@ export const signUp = async (userData : SignUpParams) => {
 
         if (!dwollaCustomerUrl) throw new Error('Error creating Dwolla customer')
         
-        const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl)
+        const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl);
 
+        const newUser = await database.createDocument(
+            DATABASE_ID!,
+            USER_COLLECTION_ID!,
+            ID.unique(),
+            {
+              ...userData,
+              userId: newUserAccount.$id,
+              dwollaCustomerUrl,
+              dwollaCustomerId,
+            }
+          );
         const session = await account.createEmailPasswordSession(email, password);
         cookies().set("my-custom-session", session.secret, {
             path: "/",
@@ -165,7 +176,7 @@ export const exchangePublicToken = async ({
         const fundingSourceUrl = await addFundingSource({
             dwollaCustomerId: user.dwollaCustomerId,
             processorToken,
-            bankName.accountData.name,
+            bankName: accountData.name,
         });
         // If the funding source url is not created throw Error
         if (!fundingSourceUrl) throw Error;
@@ -177,7 +188,7 @@ export const exchangePublicToken = async ({
             accountId: accountData.account_id,
             accessToken,
             fundingSourceUrl,
-            sharableId.encryptId(accountData.account_id)
+            sharableId: encryptId(accountData.account_id)
         })
         //Revalidate the path to reflect changes
         revalidatePath("/");
