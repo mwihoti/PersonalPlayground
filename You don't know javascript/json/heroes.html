@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+
+<head>
     <meta charset="utf-8">
 
     <title>Our superheroes</title>
 
     <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-  </head>
+</head>
 
-  <body>
+<body>
 
-      <header>
+    <header>
 
-      </header>
+    </header>
 
-      <section>
+    <section>
 
-      </section>
+    </section>
 
-      <script>
+    <script>
         async function populate() {
-            const requestUrl =     "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+            const requestUrl = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
 
             const request = new Request(requestUrl);
 
             const response = await fetch(request)
 
             const superHeroes = await response.json();
-            
+
             populateHeader(superHeroes);
             populateHeroes(superHeroes)
         }
+        async function jsonBin() {
+            const requestUrl = 'https://api.jsonbin.io/v3/b/664d922ae41b4d34e4f797b6'
+            const req =new XMLHttpRequest();
+            req.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            const bins = JSON.parse(this.responseText);
+            populateLikes(bins.likes);
+            }
+            };
+            req.open("GET", requestUrl, true);
+            req.setRequestHeader("X-Master-Key", "$2a$10$Tae8qANPPwI0IKW7ufWylO2xSuq61.Bo9w0xk9SryXDF03WnmvfdW");
+            req.send();
+           
 
-        function populateHeader(obj) {
+                }
+
+                function populateHeader(obj) {
             const header = document.querySelector('header');
             const myH1 = document.createElement('h1')
             myH1.textContent = obj.squadName;
@@ -42,6 +58,8 @@
             const myPara = document.createElement("p");
             myPara.textContent = `Hometown: ${obj.homeTown} // Formed: ${obj.formed}`;
             header.appendChild(myPara)
+
+
         }
 
         function populateHeroes(obj) {
@@ -81,8 +99,29 @@
             }
         }
 
-        populate()
+        function populateLikes(obj) {
+    const section = document.querySelector('section');
+    const myList = document.createElement('ul');
 
-      </script>
-  </body>
+    if (obj && obj.likes) {
+        const likes = obj.likes;
+        for (const like of likes) {
+            const listItem = document.createElement('li');
+            listItem.textContent = like;
+            myList.appendChild(listItem);
+        }
+    } else {
+        const listItem = document.createElement('li');
+        listItem.textContent = 'Likes data is not available.';
+        myList.appendChild(listItem);
+    }
+
+    section.appendChild(myList);
+}
+        populate();
+        jsonBin()
+
+    </script>
+</body>
+
 </html>
