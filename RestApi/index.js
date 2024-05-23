@@ -1,14 +1,13 @@
 // Simple Express.js RESTFUL Api
 'use strict';
 
-const 
-    port = 8888,
-    express = require('express'),
-    app = express();
+const port = 8888;
+const express = require('express');
+const app = express();
 
 app.get('/hello/:name?', (req, res) => 
-    res
-    .append('Access-Control-Allow-Origin', '*')
+    // Set CORS headers to allow all origins
+    res.append('Access-Control-Allow-Origin', '*')
     .json(
         {message: `Hello ${req.params.name || 'World'}!`}
     )
