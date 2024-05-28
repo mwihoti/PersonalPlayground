@@ -30,7 +30,7 @@ const AuthForm = ({ type }: { type: string }) => {
         resolver: zodResolver(formSchema),
         defaultValues: {
             email: "",
-            Password: "",
+            password: "",
         },
     })
 
