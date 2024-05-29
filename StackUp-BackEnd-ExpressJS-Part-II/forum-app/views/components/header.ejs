@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="row split align-center w-100">
+        <a href="/dashboard" style="color: white; font-size: 30px;">Forums</a>
+        <% if(username){ %>
+            <ul>
+                <li><a class="nav-link" href="/post">Post</a></li>
+            </ul>
+            <% } else { %>
+                <div class="row gap-10">
+                    <a class="nav-link" href="/auth/login">Login</a>
+                    <a class="nav-link" href="/auth/register">Register</a>
+                </div>
+                <% } %>
+    </div>
+</nav>
