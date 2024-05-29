@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const authController = require('../controllers/authController');
 
-//views
-router.get('/register', (req, res) => authController.registerView(req,res) );
+// Views
+router.get('/register', (req,res)=> authController.registerView(req,res));
 router.get('/login', (req,res)=> authController.loginView(req,res));
 
 router.post('/register', (req, res) => authController.register(req, res));
