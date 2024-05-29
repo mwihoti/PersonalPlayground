@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forum</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <%- include('components/header', {username: username ? username: ""}) %>
+        <div style="display: flex; align-items: columns; justify-content: center;">
+        <div style="padding: 10px; background-color: white; max-width: 1000px; width: 100%; margin-top: 10px;">
+            <!-- Form to post a new topic -->
+            <form action="/post/" method="post">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required><br>
+
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" style="width: 100%; min-height: 300px; padding: 10px 20px;" required></textarea>
+
+                <button type="submit" style="margin-top: 10px;">Post Topic</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

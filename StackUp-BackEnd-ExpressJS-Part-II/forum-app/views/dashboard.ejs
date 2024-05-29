@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <%- include('components/header',{username} ) %>
+        <div style="display: flex; align-items: columns; justify-content: center;">
+            <div style="padding: 10px; background-color: white; max-width: 1000px; width: 100%; margin-top: 10px;">
+                <% posts?.forEach(post=>{ %>
+
+                    <div class="post">
+                        <h4 class="post-h4">
+                            <%= post.title %>
+                        </h4>
+                        <p class="post-p">
+                            <%= post.content %>
+                        </p>
+                        <div style="display: flex; width: 100%; justify-content: right; align-items: flex-end;">
+                            <a href="/post/<%= post._id %>" class="btn">View</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+</body>
+
+</html>
