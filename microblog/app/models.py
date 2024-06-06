@@ -1,7 +1,7 @@
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from flaskapp import db
+from app import db
 
 class User(db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)

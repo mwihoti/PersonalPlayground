@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
     <head>
+   
+      
         {% if title %}
         <title>{{ title }} - Microblog</title>
         {% else %}
@@ -8,11 +10,11 @@
         {% endif %}
     </head>
     <body>
-        <h1>Hello, {{user.username}} !</h1>
-
-        {% for post in posts %}
-        <div> <p> {{post.author.username}}  says: </p> <b>{{post.body}} </b></div>
-        {% endfor %}
+        <div>Microblog: <a href="{{ url_for('index')}}">Home</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
 
     </body>
 </html>
