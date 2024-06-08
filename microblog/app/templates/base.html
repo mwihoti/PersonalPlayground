@@ -10,8 +10,13 @@
         {% endif %}
     </head>
     <body>
-        <div>Microblog: <a href="{{ url_for('index')}}">Home</a>
+        <div>Microblog:
+             <a href="{{ url_for('index')}}">Home</a>
+             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout')}}">Logout</a>
+            {% endif %}
         </div>
         <hr>
         {% block content %}{% endblock %}
