@@ -1,0 +1,1 @@
+A basic API that can create, read, update and delete operations for a single data structure.
