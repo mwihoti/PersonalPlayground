@@ -22,7 +22,7 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return items
 
 @app.get("/items/{item_id}", response_model=schemas.Item)
-def read_item(item_id:int, db: Session = Depends(get_db)):
+def read_item(item_id: int, db: Session = Depends(get_db)):
     db_item = controllers.get_item(db, item_id=item_id)
     if db_item is None:
         raise HTTPException(status_code=404, detail='Item not found ')
@@ -38,3 +38,11 @@ def update_item(item_id: int, item: schemas.ItemCreate, db: Session = Depends(ge
     if db_item is None:
         raise HTTPException(status_code=404, detail='Item not found')
     return db_item
+
+@app.delete('/items/{item_id}', response_model=schemas.Item)
+def delete_item(item_id: int, db: Session = Depends(get_db)):
+    db_item = controllers.delete_item(db, item_id=item_id)
+    if db_item is None:
+        raise HTTPException(status_code=404, detail="Item not found")
+    return db_item
+

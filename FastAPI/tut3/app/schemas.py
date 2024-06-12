@@ -8,6 +8,6 @@ class ItemBase(BaseModel):
 class ItemCreate(ItemBase):
     pass
 
-class item(ItemBase):
+class Item(ItemBase):
     id: int
 

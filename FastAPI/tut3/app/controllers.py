@@ -9,7 +9,7 @@ def get_items(db: Session, skip: int = 0, limit: int = 100):
 # Query a singular item by specifying the ID
 
 def get_item(db:Session, item_id: int):
-    return db.query(models.Item).filter(models.Item.id == item_id)
+    return db.query(models.Item).filter(models.Item.id == item_id).first()
 
 #create item
 def create_item(db: Session, item: schemas.ItemCreate):
