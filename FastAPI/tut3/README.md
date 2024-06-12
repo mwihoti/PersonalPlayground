@@ -1,1 +1,1 @@
-A fully functional API server intergrated with SQLAlchemy allowing users to intergrate with database.
+A fully functional API server intergrated with SQLAlchemy allowing users to interact with database.
