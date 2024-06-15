@@ -56,5 +56,34 @@ class UserModelCase(unittest.TestCase):
         self.assertFalse(u1.is_following(u2))
         self.assertEqual(u1.following_count(), 0)
         self.assertEqual(u2.followers_count(), 0)
+    
+    
+    def test_follow_posts(self):
+        # creating 4 users
+        
+        u1 = User(username="Daniel", email='daniel@gmail.com')
+        u2 = User(username='Mike', email='mike@gmail')
+        u3 = User(username='mary', email='mary@gmail.com')
+        u4 = User(username='david', email='david@gmail.com')
+        db.session.add_all([u1, u2, u3, u4])
+        
+        # creating 4 posts
+        
+        now = datetime.now(timezone.eat)
+        p1 = Post(body='Post from daniel', author=u1, timestamp=now + timedelta(seconds=1))
+        p2 = Post(body="Post from Mike", author=u2, timestamp=now + timedelta(seconds=4))
+        p3 = Post(body="post from mary", author=u3,
+                  timestamp=now + timedelta(seconds=3))
+        p4 = Post(body="post from david", author=u4,
+                  timestamp=now + timedelta(seconds=2))
+        
+        db.session.add_all([p1, p2, p3, p4])
+        db.session.commit()
+        
+        
+        
+        
+
+        
         
         
