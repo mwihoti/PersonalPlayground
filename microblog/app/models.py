@@ -5,7 +5,7 @@ from app import db, login
 from datetime import datetime, timezone
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from hashlib import md5
+import hashlib 
 
 followers = sa.Table(
     'followers',
@@ -49,7 +49,7 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)
     def avatar(self, size):
-        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        digest = hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
         return f'https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}'
     
     @login.user_loader
@@ -78,7 +78,7 @@ class User(UserMixin, db.Model):
             self.following.select().subquery())
         return db.session.scalar(query)
     
-    def following_post(self):
+    def following_posts(self):
         Author = so.aliased(User)
         Follower = so.aliased(User)
         return (
