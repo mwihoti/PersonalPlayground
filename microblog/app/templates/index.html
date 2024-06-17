@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
     <h1>Hi, {{ current_user.username }}!</h1>
+    {% if form %}
 
     <form action="" method="post">
         {{form.hidden_tag()}}
@@ -14,7 +16,12 @@
         </p>
         <p>{{form.submit()}}</p>
     </form>
+    {% endif %}
     {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+
+    {% include '_post.html' %}
+    <div style="display: flex;"><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+</div>
+   
     {% endfor %}
 {% endblock %}
