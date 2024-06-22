@@ -1,43 +1,28 @@
 {% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
 
 {% block content %}
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
     <h1>Hi, {{ current_user.username }}!</h1>
     {% if form %}
-
-    <form action="" method="post">
-        {{form.hidden_tag()}}
-        <p>
-            {{form.post.label}}<br>
-            {{form.post(cols=32, row=4)}}<br>
-            {% for error in form.post.errors %}
-            <span style="color: red;"> [{{error}}]</span>
-            {% endfor %}
-        </p>
-        <p>{{form.submit()}}</p>
-    </form>
+    {{ wtf.quick_form(form) }}
     {% endif %}
     {% for post in posts %}
-
-    {% include '_post.html' %}
-    <div style="display: flex;"><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-</div>
-   
+        {% include '_post.html' %}
+        <div style="display: flex;"><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
-
-    <nav aria-label="post navigation">
+    
+    <nav aria-label="Post navigation">
         <ul class="pagination">
             <li class="page-item{% if not prev_url %} disabled{% endif %}">
-                <a class="page-link" href="{{prev_url }}">Newer Posts</a>
+                <a class="page-link" href="{{ prev_url }}">
+                    <span aria-hidden="true">&larr;</span> Newer posts
+                </a>
             </li>
-
             <li class="page-item{% if not next_url %} disabled{% endif %}">
-                <a class="page-link" href="{{next_url}}">
+                <a class="page-link" href="{{ next_url }}">
                     Older posts <span aria-hidden="true">&rarr;</span>
                 </a>
             </li>
         </ul>
     </nav>
-
-
 {% endblock %}
