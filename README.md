@@ -1,9 +1,11 @@
 #funtime by mwihoti
-## This repository contains my  projects .
+## This repository contains my personal projects .
+
+
 ```
 Languages used in this repository:
 * React, NextJs, Javascript
-* Python, Django
+* Python, Django, flask
 * Laravel, php
-* Solidity
+* Solidity, Zetachain
 ```
