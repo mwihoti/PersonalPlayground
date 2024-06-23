@@ -13,7 +13,7 @@ from config import Config
 
 def get_locale():
     #return request.accept_languages.best_match(app.config['LANGUAGES'])
-    return 'es'
+    return 'sw'
 
 
 app = Flask(__name__)

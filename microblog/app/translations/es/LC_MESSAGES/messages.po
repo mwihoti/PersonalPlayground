@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-23 07:58+0300\n"
+"POT-Creation-Date: 2024-06-23 09:31+0300\n"
 "PO-Revision-Date: 2024-06-23 08:24+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -17,6 +17,129 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.15.0\n"
+
+#: app/__init__.py:25
+msgid "Please log in to access this page."
+msgstr ""
+
+#: app/email.py:18
+msgid "[Microblog ] Reset Your password"
+msgstr ""
+
+#: app/forms.py:13 app/forms.py:20 app/forms.py:55
+msgid "Username"
+msgstr ""
+
+#: app/forms.py:14 app/forms.py:22 app/forms.py:47
+msgid "Password"
+msgstr ""
+
+#: app/forms.py:15
+msgid "Remember Me"
+msgstr ""
+
+#: app/forms.py:16 app/routes.py:77 app/templates/login.html:5
+msgid "Sign In"
+msgstr ""
+
+#: app/forms.py:21 app/forms.py:42
+msgid "Email"
+msgstr ""
+
+#: app/forms.py:24 app/forms.py:49
+msgid "Repeat Password"
+msgstr ""
+
+#: app/forms.py:26 app/routes.py:98 app/templates/register.html:7
+msgid "Register"
+msgstr ""
+
+#: app/forms.py:32 app/forms.py:69
+msgid "Please use a different username."
+msgstr ""
+
+#: app/forms.py:38
+msgid "Please use a different email address."
+msgstr ""
+
+#: app/forms.py:43 app/forms.py:51
+msgid "Request Password Reset"
+msgstr ""
+
+#: app/forms.py:56
+msgid "About me"
+msgstr ""
+
+#: app/forms.py:58 app/forms.py:79
+msgid "Submit"
+msgstr ""
+
+#: app/forms.py:77
+msgid "Say something"
+msgstr ""
+
+#: app/routes.py:31
+msgid "Your post is now live!"
+msgstr ""
+
+#: app/routes.py:40 app/templates/base.html:31
+msgid "Home"
+msgstr ""
+
+#: app/routes.py:56 app/templates/base.html:34
+msgid "Explore"
+msgstr ""
+
+#: app/routes.py:70
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/routes.py:96
+msgid "Congratulations, you are now a registered user!"
+msgstr ""
+
+#: app/routes.py:112
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+
+#: app/routes.py:115
+msgid "Reset Password"
+msgstr ""
+
+#: app/routes.py:129
+msgid "Your password has been reset."
+msgstr ""
+
+#: app/routes.py:160
+msgid "Your changes have been saved."
+msgstr ""
+
+#: app/routes.py:165 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr ""
+
+#: app/routes.py:177 app/routes.py:198
+#, python-format
+msgid "User %(username)s not found."
+msgstr ""
+
+#: app/routes.py:180
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: app/routes.py:184
+#, python-format
+msgid "You are following %(username)s!"
+msgstr ""
+
+#: app/routes.py:201
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
+#: app/routes.py:205
+#, python-format
+msgid "You are not following %(username)s."
+msgstr ""
 
 #: app/templates/404.html:4
 msgid "File Not Found"
@@ -34,21 +157,13 @@ msgstr ""
 msgid "The administrator has been notified. Sorry for the inconvenience!"
 msgstr ""
 
-#: app/templates/_post.html:15
+#: app/templates/_post.html:16
 #, python-format
 msgid "%(username)s said %(when)s"
 msgstr ""
 
 #: app/templates/base.html:11
 msgid "Welcome to Microblog!"
-msgstr ""
-
-#: app/templates/base.html:31
-msgid "Home"
-msgstr ""
-
-#: app/templates/base.html:34
-msgid "Explore"
 msgstr ""
 
 #: app/templates/base.html:40
@@ -63,20 +178,12 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: app/templates/edit_profile.html:5
-msgid "Edit Profile"
-msgstr ""
-
 #: app/templates/index.html:18 app/templates/user.html:41
 msgid "Newer posts"
 msgstr ""
 
 #: app/templates/index.html:23 app/templates/user.html:46
 msgid "Older posts"
-msgstr ""
-
-#: app/templates/login.html:5
-msgid "Sign In"
 msgstr ""
 
 #: app/templates/login.html:7
@@ -89,10 +196,6 @@ msgstr ""
 
 #: app/templates/login.html:10
 msgid "Click to Reset It"
-msgstr ""
-
-#: app/templates/register.html:7
-msgid "Register"
 msgstr ""
 
 #: app/templates/reset_password.html:5
@@ -129,4 +232,7 @@ msgstr ""
 #: app/templates/user.html:27
 msgid "Unfollow"
 msgstr ""
+
+#~ msgid "%(username)s said %(when)s"
+#~ msgstr ""
 
