@@ -1,0 +1,132 @@
+# Swahili translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-06-23 07:58+0300\n"
+"PO-Revision-Date: 2024-06-23 08:24+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sw\n"
+"Language-Team: sw <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: app/templates/404.html:4
+msgid "File Not Found"
+msgstr ""
+
+#: app/templates/404.html:5 app/templates/500.html:6
+msgid "Back"
+msgstr ""
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occurred"
+msgstr ""
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr ""
+
+#: app/templates/_post.html:15
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: app/templates/base.html:11
+msgid "Welcome to Microblog!"
+msgstr ""
+
+#: app/templates/base.html:31
+msgid "Home"
+msgstr ""
+
+#: app/templates/base.html:34
+msgid "Explore"
+msgstr ""
+
+#: app/templates/base.html:40
+msgid "Login"
+msgstr ""
+
+#: app/templates/base.html:44
+msgid "Profile"
+msgstr ""
+
+#: app/templates/base.html:47
+msgid "Logout"
+msgstr ""
+
+#: app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr ""
+
+#: app/templates/index.html:18 app/templates/user.html:41
+msgid "Newer posts"
+msgstr ""
+
+#: app/templates/index.html:23 app/templates/user.html:46
+msgid "Older posts"
+msgstr ""
+
+#: app/templates/login.html:5
+msgid "Sign In"
+msgstr ""
+
+#: app/templates/login.html:7
+msgid "Click to Register! "
+msgstr ""
+
+#: app/templates/login.html:9
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: app/templates/login.html:10
+msgid "Click to Reset It"
+msgstr ""
+
+#: app/templates/register.html:7
+msgid "Register"
+msgstr ""
+
+#: app/templates/reset_password.html:5
+#: app/templates/reset_password_request.html:5
+msgid "Reset Your Password"
+msgstr ""
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:11
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:13
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:15
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:20
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:27
+msgid "Unfollow"
+msgstr ""
+
