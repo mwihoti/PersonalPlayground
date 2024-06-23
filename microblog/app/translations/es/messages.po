@@ -1,0 +1,249 @@
+# Spanish and Swahili translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# SECOND AUTHOR DANIELMWIHOTI@GMAIL.COM
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: DANIELMWIHOTI@GMAIL.COM\n"
+"POT-Creation-Date: 2017-10-03 15:49-0700\n"
+"PO-Revision-Date: 2017-09-29 23:25-0700\n"
+"Last-Translator: FULL NAME DANIELMWIHOTI@GMAIL.COM\n"
+"Language: es\sw"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: app/__init__.py:20
+msgid "Please log in to access this page."
+msgstr "Por favor ingrese para acceder a esta página."
+msgstr[sw] "Tafadhali ingia ili kufikia ukurasa huu."
+
+#: app/email.py:21
+msgid "[Microblog] Reset Your Password"
+msgstr "[Microblog] Nueva Contraseña"
+msgstr[sw] "[Microblog] Weka Upya Nenosiri Lako"
+
+#: app/forms.py:12 app/forms.py:19 app/forms.py:50
+msgid "Username"
+msgstr "Nombre de usuario"
+msgstr[sw] "Jina la mtumiaji"
+
+#: app/forms.py:13 app/forms.py:21 app/forms.py:43
+msgid "Password"
+msgstr "Contraseña"
+msgstr[sw] "Nenosiri"
+
+#: app/forms.py:14
+msgid "Remember Me"
+msgstr "Recordarme"
+msgstr[sw] "Nikumbuke"
+
+#: app/forms.py:15 app/templates/login.html:5
+msgid "Sign In"
+msgstr "Ingresar"
+msgstr[sw] "Ingia"
+
+#: app/forms.py:20 app/forms.py:38
+msgid "Email"
+msgstr "Email"
+msgstr[sw] "Barua pepe"
+
+#: app/forms.py:23 app/forms.py:45
+msgid "Repeat Password"
+msgstr "Repetir Contraseña"
+msgstr[sw] "Rudia Nenosiri"
+
+#: app/forms.py:24 app/templates/register.html:5
+msgid "Register"
+msgstr "Registrarse"
+msgstr[sw] "Jisajili"
+
+#: app/forms.py:29 app/forms.py:62
+msgid "Please use a different username."
+msgstr "Por favor use un nombre de usuario diferente."
+msgstr[sw] "Tafadhali tumia jina la mtumiaji tofauti."
+
+#: app/forms.py:34
+msgid "Please use a different email address."
+msgstr "Por favor use una dirección de email diferente."
+msgstr[sw] "Tafadhali tumia barua pepe tofauti."
+
+#: app/forms.py:39 app/forms.py:46
+msgid "Request Password Reset"
+msgstr "Pedir una nueva contraseña"
+msgstr[sw] "Omba Upya Nenosiri"
+
+#: app/forms.py:51
+msgid "About me"
+msgstr "Acerca de mí"
+msgstr[sw] "Kuhusu mimi"
+
+#: app/forms.py:52 app/forms.py:67
+msgid "Submit"
+msgstr "Enviar"
+msgstr[sw] "Tuma"
+
+#: app/forms.py:66
+msgid "Say something"
+msgstr "Dí algo"
+msgstr[sw] "Sema kitu"
+
+#: app/forms.py:71
+msgid "Search"
+msgstr "Buscar"
+msgstr[sw] "Tafuta"
+
+#: app/routes.py:30
+msgid "Your post is now live!"
+msgstr "¡Tu artículo ha sido publicado!"
+msgstr[sw] "Chapisho lako sasa limechapishwa!"
+
+#: app/routes.py:66
+msgid "Invalid username or password"
+msgstr "Nombre de usuario o contraseña inválidos"
+msgstr[sw] "Jina la mtumiaji au nenosiri batili"
+
+#: app/routes.py:92
+msgid "Congratulations, you are now a registered user!"
+msgstr "¡Felicitaciones, ya eres un usuario registrado!"
+msgstr[sw] "Hongera, sasa wewe ni mtumiaji aliyesajiliwa!"
+
+#: app/routes.py:107
+msgid "Check your email for the instructions to reset your password"
+msgstr "Busca en tu email las instrucciones para crear una nueva contraseña"
+msgstr[sw] "Angalia barua pepe yako kwa maelekezo ya kuweka upya nenosiri lako"
+
+#: app/routes.py:124
+msgid "Your password has been reset."
+msgstr "Tu contraseña ha sido cambiada."
+msgstr[sw] "Nenosiri lako limewekwa upya."
+
+#: app/routes.py:152
+msgid "Your changes have been saved."
+msgstr "Tus cambios han sido salvados."
+msgstr[sw] "Mabadiliko yako yamehifadhiwa."
+
+#: app/routes.py:157 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Editar Perfil"
+msgstr[sw] "Hariri Wasifu"
+
+#: app/routes.py:166 app/routes.py:182
+#, python-format
+msgid "User %(username)s not found."
+msgstr "El usuario %(username)s no ha sido encontrado."
+msgstr[sw] "Mtumiaji %(username)s hajapatikana."
+
+#: app/routes.py:169
+msgid "You cannot follow yourself!"
+msgstr "¡No te puedes seguir a tí mismo!"
+msgstr[sw] "Huwezi kujifuatilia mwenyewe!"
+
+#: app/routes.py:173
+#, python-format
+msgid "You are following %(username)s!"
+msgstr "¡Ahora estás siguiendo a %(username)s!"
+msgstr[sw] "Unamfuata %(username)s!"
+
+#: app/routes.py:185
+msgid "You cannot unfollow yourself!"
+msgstr "¡No te puedes dejar de seguir a tí mismo!"
+msgstr[sw] "Huwezi kujiondoa kufuatilia mwenyewe!"
+
+#: app/routes.py:189
+#, python-format
+msgid "You are not following %(username)s."
+msgstr "No estás siguiendo a %(username)s."
+msgstr[sw] "Humfuati %(username)s."
+
+#: app/templates/404.html:4
+msgid "Not Found"
+msgstr "Página No Encontrada"
+msgstr[sw] "Haijapatikana"
+
+#: app/templates/404.html:5 app/templates/500.html:6
+msgid "Back"
+msgstr "Atrás"
+msgstr[sw] "Rudi"
+
+#: app/templates/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Ha ocurrido un error inesperado"
+msgstr[sw] "Kosa lisilotarajiwa limetokea"
+
+#: app/templates/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
+msgstr[sw] "Msimamizi amepewa taarifa. Samahani kwa usumbufu!"
+
+#: app/templates/_post.html:9
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s dijo %(when)s"
+msgstr[sw] "%(username)s alisema %(when)s"
+
+#: app/templates/base.html:4
+msgid "Welcome to Microblog"
+msgstr "Bienvenido a Microblog"
+msgstr[sw] "Karibu kwenye Microblog"
+
+#: app/templates/base.html:21
+msgid "Home"
+msgstr "Inicio"
+msgstr[sw] "Nyumbani"
+
+#: app/templates/base.html:22
+msgid "Explore"
+msgstr "Explorar"
+msgstr[sw] "Gundua"
+
+#: app/templates/base.html:33
+msgid "Login"
+msgstr "Ingresar"
+msgstr[sw] "Ingia"
+
+#: app/templates/base.html:35
+msgid "Profile"
+msgstr "Perfil"
+msgstr[sw] "Wasifu"
+
+#: app/templates/base.html:36
+msgid "Logout"
+msgstr "Salir"
+msgstr[sw] "Toka"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "¡Hola, %(username)s!"
+msgstr[sw] "Habari, %(username)s!"
+
+#: app/templates/index.html:17 app/templates/user.html:31
+msgid "Newer posts"
+msgstr "Artículos siguientes"
+msgstr[sw] "Machapisho mapya"
+
+#: app/templates/index.html:22 app/templates/user.html:36
+msgid "Older posts"
+msgstr "Artículos previos"
+msgstr[sw] "Machapisho ya zamani"
+
+#: app/templates/login.html:12
+msgid "New User?"
+msgstr "¿Usuario Nuevo?"
+msgstr[sw] "Mtumiaji Mpya?"
+
+#: app/templates/login.html:12
+msgid "Click to Register!"
+msgstr "¡Haz click aquí para registrarte!"
+msgstr[sw] "Bonyeza kujisajili!"
+
+#: app/templates/login.html:14
+msgid "Forgot Your Password?"
+msgstr "¿Te olvidaste tu contraseña?"
+msgstr[sw] "Umesahau Nenosiri Lako
