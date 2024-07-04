@@ -12,8 +12,17 @@ app.get('/api/hello', async (req, res) => {
 
     const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-    const location = 'Kenya';
-    const temp = 12;
+    const locationResponse = await axios.get(`https://ipapi.co/${clientIp}/json/`);
+    const locationData = locationResponse.data;
+    const location = locationData.city || locationData.country_name || 'Unknown Location';
+
+    console.log(`Location Data: ${JSON.stringify(locationData)}`);
+    const weatherResponse = await fetch(`http://api.weatherapi.com/v1/current.json?key=ee8ad2cfff40408aaed130943240407&q=${location}`);
+    if (!weatherResponse.ok) {
+      throw new Error('Failed to fetch weather data');
+    }
+    const weatherData = await weatherResponse.json();
+    const temp = weatherData.current.temp_c;
 
     res.json({
         client_ip: clientIp,
