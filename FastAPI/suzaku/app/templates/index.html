@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{username}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="flex row jsplit">
+                <div class="logo">
+                    <a href="/">{{username}}</a>
+                </div>
+                <div class="flex row gap">
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1 class="purple">{{username}}</h1>
+            <p>{{description}}</p>
+
+            <div class="projects">
+                {% for project in projects %}
+    {% if project.category == "Web Development" %}
+        <div class="project">
+            <h2>{{project.title}}</h2>
+            <p>{{project.description}}</p>
+            <p class="light">{{project.author}}</p>
+        </div>
+    {% endif %}
+{% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

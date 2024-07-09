@@ -1,0 +1,69 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #121212;
+    padding: 0px;
+    margin: 0px;
+}
+
+.purple {
+    color: #4361ee;
+}
+
+.navbar {
+    background-color: #121212;
+    padding: 0px;
+    margin: 0px;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    padding: 0px 0px;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.jsplit {
+    justify-content: space-between;
+}
+
+.gap {
+    gap: 10px;
+}
+
+.container {
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 20px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.light {
+    opacity: 0.5;
+}
