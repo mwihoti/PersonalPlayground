@@ -10,7 +10,7 @@ projects = [
     {
         'id': 1,
         'title': 'E-commerce Website',
-        'description': 'A website where you can buy stuff',
+        'description': 'A website where you can connect with Mwihoti',
         'author': 'Mwihoti',
         'category': 'Web Development'
     },
@@ -37,15 +37,11 @@ def hello_world():
 
 @app.route('/about')
 def about():
-    return 'About me'
+    return render_template('about.html', username=username)
 
-@app.route('/contact', methods = ['POST', 'GET'])
+@app.route('/contact')
 def contact():
-    if request.method == 'POST':
-        return 'You are using POST'
-    elif request.method == 'GET':
-        return 'You are using GET'
-    
+   return render_template('contact.html', username=username)
 
 if __name__ == '__main__':
     app.run(debug=True)

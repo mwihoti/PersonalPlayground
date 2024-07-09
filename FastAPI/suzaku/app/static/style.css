@@ -67,3 +67,21 @@ body {
 .light {
     opacity: 0.5;
 }
+.ttext {
+    text-align: center;
+}
+.btn {
+    place-items: center;
+    justify-content: center;
+    background-color: rgb(115, 115, 110);
+    padding: 10px 15px;
+    
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn.a {
+    color: #121212;
+}
