@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {{shopname}}
+    </title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+        <div class="flex row jsplit">
+            <div class="logo">
+                <a href="/">{{shopname}}</a>
+            </div>
+            <div class="flex row gap align-center">
+                {% if not user.username %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+                {% else %}
+                <span class="light">Logged in as {{user.username}}</span>
+                <a href="/logout">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="content flex column gap-10">
+            <h1 class="purple">{{shopname}} Admin </h1>
+            <a href="/product/add" class="aButton">Add Ptoduct</a>
+            <div class="products">
+                {% for product in products %}
+                <div class="product">
+                    <h2>{{product.title}}</h2>
+                    <p>{{product.description}}</p>
+                    <p class="light">{{product.author}}</p>
+                    <div class="flex row justify-split align-center">
+                        <a href="/product/{{product.id}}" class="aButton">View</a>
+                        <a href="/product/delete/{{product.id}}" class="aButton warning">Delete</a>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
