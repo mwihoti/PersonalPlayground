@@ -1,0 +1,4 @@
+Flask
+Flask-SQLAlchemy
+sqlalchemy
+flask-login
