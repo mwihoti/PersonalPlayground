@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{shopname}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="flex row jsplit">
+                <div class="logo">
+                    <a href="/">{{shopname}}</a>
+                </div>
+                <div class="flex row gap align-center">
+                    {% if not user.username %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    {% else %}
+                        <span class="light">Logged in as {{user.username}}</span>
+                        <a href="/logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container center fill-height">
+        <div class="content">
+            <div class="box flex column">
+                <h1 class="purple">Register</h1>
+                <form action="/register" method="POST" class="flex column gap-10">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

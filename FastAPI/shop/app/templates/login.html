@@ -29,6 +29,25 @@
 
         </div>
     </div>
+    <div class="container fill-height">
+        <div class="content">
+            <div class="box flex column">
+                <h1 class="purple">Login</h1>
+                <form action="/login" method="POST" class="flex column gap-10">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                    <button type="submit">Login</button>
+                    {% if error %}
+                    <p class="error">{{error}}</p>
+                    {% endif %}
+                    {% if success %}
+                    <p class="success">{{success}}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
 </body>
 
 </html>

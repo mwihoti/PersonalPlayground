@@ -1,7 +1,7 @@
 from models import User, db
 from sqlalchemy import exc
 
-def get_user():
+def get_users():
     users = User.query.all()
     return users
 
