@@ -120,6 +120,7 @@ class Post(db.Model):
     user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey('user.id'),
                                                index=True
     )
+    language: so.Mapped[Optional[str]] = so.mapped_column(sa.String(5))
     author: so.Mapped[User] = so.relationship('User', back_populates='posts')
     
     def __repr__(self):
