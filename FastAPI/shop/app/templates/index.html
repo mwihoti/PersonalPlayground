@@ -9,6 +9,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        .product {
+            text-align: center;
+
+        }
+        .product img {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -39,8 +52,9 @@
                 <div class="product">
                     <h2>{{product.title}}</h2>
                     <p>{{product.description}}</p>
+                     <img src="{{ url_for('static', filename=product.image) }}" alt="{{product.title}}">
                     <p class="light">{{product.author}}</p>
-                    <div class="flex row justify-split align-center">
+                    <div class="flex row justify-split align-center fill-width">
                         <a href="/product/{{product.id}}" class="aButton">View</a>
                         <a href="/product/delete/{{product.id}}" class="aButton warning">Delete</a>
 

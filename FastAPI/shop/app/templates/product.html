@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{shopname}}</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="navbar">
-        <div class="container">
-            <div class="flex row jsplit">
-                <div class="logo">
-                    <a href="/">{{shopname}}</a>
-                </div>
-                <div class="flex row gap align-center">
-                    {% if not user.username %}
-                    <a href="/login">Login</a>
-                    <a href="/register">Register</a>
-                    {% else %}
-                        <span class="light">Logged in as {{user.username}}</span>
-                        <a href="/logout">Logout</a>
-                    {% endif %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{{shopname}}</title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+        <style>
+            .product {
+                text-align: center;
+
+            }
+            .product img {
+                display: block;
+                margin: 0 auto;
+                width: 300px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <div class="flex row jsplit">
+                    <div class="logo">
+                        <a href="/">{{shopname}}</a>
+                    </div>
+                    <div class="flex row gap align-center">
+                        {% if not user.username %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                        {% else %}
+                            <span class="light">Logged in as {{user.username}}</span>
+                            <a href="/logout">Logout</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container fill-height">
-        <div class="content">
-            <div class="box flex column">
-                <h1 class="purple">Product</h1>
-                <form action="/product/update/{{product.id}}" method="POST" class="flex column gap-10">
-                    <label for="title">Name</label>
-                    <input type="text" name="title" placeholder="Name" value="{{product.title}}">
-                    <label for="category">Category</label>
-                    <input type="text" name="category" placeholder="Category" value="{{product.category}}">
-                    <label for="description">Description</label>
-                    <textarea name="description" placeholder="Description">{{product.description}}</textarea>
-                    <label for="price">Price</label>
-                    <input type="number" name="price" placeholder="Price" value="{{product.price}}">
-                    <label for="image">Image</label>
-                    <input type="text" name="image" placeholder="Image" value="{{product.image}}">
-                    <button type="submit">Update</button>
-                </form>
+        <div class="container fill-height">
+            <div class="content">
+                <div class="box flex column">
+                    <h1 class="purple">Product</h1>
+                    <form action="/product/update/{{product.id}}" method="POST" class="flex column gap-10" enctype="multipart/form-data">
+                        <label for="title">Name</label>
+                        <input type="text" name="title" placeholder="Name" value="{{product.title}}">
+                        <label for="category">Category</label>
+                        <input type="text" name="category" placeholder="Category" value="{{product.category}}">
+                        <label for="description">Description</label>
+                        <textarea name="description" placeholder="Description">{{product.description}}</textarea>
+                        <label for="price">Price</label>
+                        <input type="number" name="price" placeholder="Price" value="{{product.price}}">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" placeholder="Image" value="{{product.image}}" accept="image/">
+                        <input type="hidden" name="current_image" value="{{product.image}}">
+
+                        <img src="{{ url_for('static', filename=product.image) }}" alt="{{product.title}}">
+                        <button type="submit">Update</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
