@@ -1,8 +1,11 @@
-from app import app
+from flask import Blueprint
 import os
 import click
 
-@app.cli.group()
+
+bp = Blueprint('clie', __name__, cli_group=None)
+
+@bp.cli.group()
 def translate():
     """Translation and localization commands."""
     pass
