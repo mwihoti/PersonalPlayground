@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
-from flask import Flask, request
+from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
@@ -14,7 +14,7 @@ from config import Config
 
 def get_locale():
     #return request.accept_languages.best_match(app.config['LANGUAGES'])
-    return 'en'
+    return request.accept_languages.best_match(current_app.config['LANGUAGES'])
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -35,13 +35,16 @@ def create_app(config_class=Config):
     login.init_app(app)
     mail.init_app(app)
     moment.init_app(app)
-    babel.init(app)
+    babel.init_app(app, locale_selector=get_locale)
 
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
 
-    from app.auth import bp as auth_bp
+    from app.auth import bp as auth_bp # type: ignore
     app.register_blueprint(auth_bp, url_prefix='/auth')
+    
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
     
     from app.cli import bp as cli_bp
     app.register_blueprint(cli_bp)
@@ -77,4 +80,4 @@ def create_app(config_class=Config):
     return app
 
 
-from app import routes, models
+from app import models

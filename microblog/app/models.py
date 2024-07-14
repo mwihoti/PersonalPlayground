@@ -8,7 +8,7 @@ from flask_login import UserMixin
 import hashlib
 from time import time
 import jwt
-from app import app
+from app import db, login
 
 followers = sa.Table(
     'followers',
