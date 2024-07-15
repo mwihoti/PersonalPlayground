@@ -6,9 +6,13 @@
     {% if form %}
     {{ wtf.quick_form(form) }}
     {% endif %}
+
     {% for post in posts %}
+    <div style="display: flex;"><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
         {% include '_post.html' %}
-        <div style="display: flex;"><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+       
+       
+
     {% endfor %}
     
     <nav aria-label="Post navigation">
