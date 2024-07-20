@@ -38,7 +38,9 @@
                     href="{{ url_for('main.messages') }}">
                 {{ _('Messages') }}
                 {% set unread_message_count = current_user.unread_message_count() %}
-                <span class="badge text-bg-danger">
+                <span id="message_count" class="badge text-bg-danger"
+                    style="visibility: {% if unread_message_count %}visible
+                                       {% else %}hidden{% endif %};">
                     {{ unread_message_count }}
                 </span>
             </a>
@@ -119,6 +121,12 @@
         }
       }
       document.addEventListener('DOMContentLoaded', initialize_popovers);
+
+      function set_message_count(n) {
+        const count = document.getElementById('message_count');
+        count.innerText= n;
+        count.style.visibility = n ? 'visible' : 'hidden';
+      }
   </script>
 
 
