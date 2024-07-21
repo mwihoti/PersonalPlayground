@@ -10,6 +10,7 @@ from time import time
 import jwt
 from app import db, login
 from flask import current_app
+import json
 from app.search import add_to_index, remove_from_index, query_index
 
 
@@ -91,8 +92,12 @@ class User(UserMixin, db.Model):
         back_populates='following'
     )
     messages_sent: so.WriteOnlyMapped['Message'] = so.relationship(
-        foreign_keys='Message.sender_id'
+        foreign_keys='Message.sender_id', back_populates='recipient'
     )
+    messages_received: so.WriteOnlyMapped['Message'] = so.relationship(
+        foreign_keys='Message.recipient_id', back_populates='recipient'
+    )
+    notifications: so.WriteOnlyMapped['Notification'] = so.relationship(back_populates='user')
     
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -147,6 +152,11 @@ class User(UserMixin, db.Model):
             .order_by(Post.timestamp.desc())
         )
     
+    def unread_message_count(self):
+        last_read_time = self.last_message_read_time or datetime(1900, 1, 1)
+        query = sa.select(Message).where(Message.recipient ==  self, Message.timestamp > last_read_time)
+        return db.session.scalar(sa.select(sa.func.count()).select_from(query.subquery()))
+    
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in},
@@ -186,3 +196,22 @@ class Message(db.model):
 
     body: so.Mapped[str] = so.mapped_column(sa.String(140))
     timestamp: so.Mapped[datetime] = so.mapped_column(index=True, default=lambda: datetime.now(timezone.utc))
+
+    author: so.Mapped[User] = so.relationship(
+        foreign_keys='Message.sender_id',
+        back_populates='message_sent')
+    
+    recipient: so.Mapped[User] = so.relationship(
+        foreign_keys='Message.recipient_id', back_populates='messages_received'
+    )
+
+
+class Notification(db.model):
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    name: so.Mapped[str] = so.mapped_column(sa.String(128), index=True)
+    user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id), index=True)
+    timestamp: so.Mapped[float] = so.mapped_column(index=True, default=time)
+    payload_json: so.Mapped[str] = so.relationship(back_populates='notifications')
+
+    def get_data(self):
+        return json.loads(str(self.payload_json))
