@@ -151,6 +151,14 @@ class User(UserMixin, db.Model):
             .group_by(Post)
             .order_by(Post.timestamp.desc())
         )
+
+    def add_notification(self, name, data):
+        db.session.execute(self.notifications.delete(). where(
+            Notification.name == name
+        ))
+        n = Notification(name=name, payload_json=json.dumps(data), user=self)
+        db.session.add(n)
+        return n
     
     def unread_message_count(self):
         last_read_time = self.last_message_read_time or datetime(1900, 1, 1)
