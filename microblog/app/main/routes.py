@@ -199,4 +199,15 @@ def send_message(recipient):
 
 
     
-
+@bp.route('/notifications')
+@login_required
+def notifications():
+    since = request.args.get('since', 0.0, type=flaot)
+    query = current_user.notifications.select().where(
+        Notification.timestamp > since).order_by(Notification.timestamp.asc())
+    notifications = db.session.scalars(query)
+    return [{
+        'name': n.name,
+        'data': n.get_data(),
+        'timestamp': n.timestamp
+    } for n in notifications]
