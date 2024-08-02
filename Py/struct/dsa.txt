@@ -1,0 +1,5 @@
+initialize node
+
+struct node *one = NULL
+struct node *two = NULL
+struct node *three = NULL
