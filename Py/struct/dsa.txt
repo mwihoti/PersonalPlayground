@@ -2,4 +2,21 @@ initialize node
 
 struct node *one = NULL
 struct node *two = NULL
-struct node *three = NULL
+struct node *three = NULL;
+
+// allocate memory
+one = malloc(sizof(struct node));
+two = malloc(sizeof(struct node));
+three = malloc(sizeof(struct node));
+
+/* Asign data values
+one->data = 1;
+two->data = 2;
+three->data = 3;
+
+/* Connect nodes */
+one->next = two;
+two->next = three;
+three->next = NULL;
+
+head =one
