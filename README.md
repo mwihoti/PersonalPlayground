@@ -18,6 +18,7 @@ Welcome to my repository of personal projects! This is where I experiment with d
 9. chat-app: A chat application with custom sign-in and sign-up features, integrating user IDs on the Xata database.
 10. py: A space where I practice and experiment with Python skills.
 11. You don't know javascript: Projects and exercises from the book You Don’t Know JS, focusing on deepening my JavaScript knowledge.
+12. FastAPI: Contains projects dealing with crud operation in python using FastApi, focusing on creating efficient API endpionts
 
 ---
 ## Technologies Used
@@ -28,7 +29,7 @@ React, Next.js, JavaScript, Python, Django, Flask, Laravel, PHP, Solidity
 ```
 Tools & Libraries: 
 ```
-Three.js, Appwrite, Plaid
+Three.js, Appwrite, Plaid, FastApI
 ```
 How to Explore
 Feel free to browse through the projects and directories. If you see something interesting, don’t hesitate to dive in, provide feedback, or contribute. Enjoy exploring my personal playground!
