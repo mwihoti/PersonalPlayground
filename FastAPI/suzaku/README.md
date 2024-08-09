@@ -40,5 +40,6 @@
     
 
 ## Deployed application
-    https://suzaku-5h6acnxxm-mwihotis-projects.vercel.app/
+
+   [SUZAKU] ( https://suzaku-5h6acnxxm-mwihotis-projects.vercel.app)
 
