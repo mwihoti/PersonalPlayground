@@ -18,7 +18,8 @@ Welcome to my repository of personal projects! This is where I experiment with d
 9. chat-app: A chat application with custom sign-in and sign-up features, integrating user IDs on the Xata database.
 10. py: A space where I practice and experiment with Python skills.
 11. You don't know javascript: Projects and exercises from the book You Don’t Know JS, focusing on deepening my JavaScript knowledge.
-12. FastAPI: Contains projects dealing with crud operation in python using FastApi, focusing on creating efficient API endpionts
+12. FastAPI: Contains projects dealing with crud operation in python using FastApi, focusing on creating efficient API endpionts.
+13. Neno-Laundry: Neno laundry store
 
 ---
 ## Technologies Used
