@@ -5,7 +5,8 @@
 Welcome to my repository of personal projects! This is where I experiment with different technologies, tools, and ideas during my free time. Below is a quick overview of the various projects.
 
 ## Projects
-===
+---
+
 1. mricroblog: A blog application showcasing basic blogging functionalities.
 2. StackUp-BackEnd-ExpressJS-Part-II: Contains a forum application and a login application, demonstrating backend development with ExpressJS.
 3. StackUp-ThreeJS: Projects involving Three.js to create a 3D cube and other visual experiments.
@@ -20,6 +21,7 @@ Welcome to my repository of personal projects! This is where I experiment with d
 
 ---
 ## Technologies Used
+
 Languages & Frameworks:
 ```
 React, Next.js, JavaScript, Python, Django, Flask, Laravel, PHP, Solidity
@@ -31,14 +33,4 @@ Three.js, Appwrite, Plaid
 How to Explore
 Feel free to browse through the projects and directories. If you see something interesting, don’t hesitate to dive in, provide feedback, or contribute. Enjoy exploring my personal playground!
 
-
-
-
-```
-Languages used in this repository:
-* React, NextJs, Javascript
-* Python, Django, flask
-* Laravel, php
-* Solidity, Zetachain
-```
 
