@@ -1,0 +1,2761 @@
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="157101835696-ooapojlodmuabs2do2vuhhnf90bccmoi.apps.googleusercontent.com">
+    <meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award">
+    <meta property="og:site_name" content="web.dev">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#3740ff"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/web/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//apis.google.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/images/touchicon-180.png"><link rel="canonical" href="https://web.dev/articles/promises"><link rel="search" type="application/opensearchdescription+xml"
+            title="web.dev" href="https://web.dev/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://web.dev/articles/promises" /><link rel="alternate" hreflang="x-default" href="https://web.dev/articles/promises" /><link rel="alternate" hreflang="ar"
+          href="https://web.dev/articles/promises?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://web.dev/articles/promises?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://web.dev/articles/promises?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://web.dev/articles/promises?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://web.dev/articles/promises?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://web.dev/articles/promises?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://web.dev/articles/promises?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://web.dev/articles/promises?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://web.dev/articles/promises?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://web.dev/articles/promises?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://web.dev/articles/promises?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://web.dev/articles/promises?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://web.dev/articles/promises?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://web.dev/articles/promises?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://web.dev/articles/promises?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://web.dev/articles/promises?hl=ru" /><link rel="alternate" hreflang="es"
+          href="https://web.dev/articles/promises?hl=es" /><link rel="alternate" hreflang="es-419"
+          href="https://web.dev/articles/promises?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://web.dev/articles/promises?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://web.dev/articles/promises?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://web.dev/articles/promises?hl=vi" /><link rel="alternate" hreflang="en-cn"
+          href="https://web.developers.google.cn/articles/promises" /><link rel="alternate" hreflang="x-default" href="https://web.developers.google.cn/articles/promises" /><link rel="alternate" hreflang="ar-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=ar" /><link rel="alternate" hreflang="bn-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=bn" /><link rel="alternate" hreflang="zh-Hans-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=zh-tw" /><link rel="alternate" hreflang="fa-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=fa" /><link rel="alternate" hreflang="fr-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=fr" /><link rel="alternate" hreflang="de-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=de" /><link rel="alternate" hreflang="he-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=he" /><link rel="alternate" hreflang="hi-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=hi" /><link rel="alternate" hreflang="id-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=id" /><link rel="alternate" hreflang="it-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=it" /><link rel="alternate" hreflang="ja-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=ja" /><link rel="alternate" hreflang="ko-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=ko" /><link rel="alternate" hreflang="pl-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=pl" /><link rel="alternate" hreflang="pt-BR-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=pt-br" /><link rel="alternate" hreflang="ru-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=ru" /><link rel="alternate" hreflang="es-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=es" /><link rel="alternate" hreflang="es-419-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=es-419" /><link rel="alternate" hreflang="th-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=th" /><link rel="alternate" hreflang="tr-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=tr" /><link rel="alternate" hreflang="vi-cn"
+          href="https://web.developers.google.cn/articles/promises?hl=vi" /><title>JavaScript Promises: an introduction &nbsp;|&nbsp; Articles &nbsp;|&nbsp; web.dev</title>
+
+<meta property="og:title" content="JavaScript Promises: an introduction &nbsp;|&nbsp; Articles &nbsp;|&nbsp; web.dev"><meta name="description" content="Promises simplify deferred and asynchronous computations. A promise represents an operation that hasn&amp;#39;t completed yet.">
+  <meta property="og:description" content="Promises simplify deferred and asynchronous computations. A promise represents an operation that hasn&amp;#39;t completed yet."><meta property="og:url" content="https://web.dev/articles/promises"><meta property="og:locale" content="en"><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "dateModified": "2013-12-16",
+    "headline": "JavaScript Promises: an introduction"
+  }
+</script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Articles",
+      "item": "https://web.dev/articles"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "JavaScript Promises: an introduction",
+      "item": "https://web.dev/articles/promises"
+    }]
+  }
+  </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+    
+      <link rel="stylesheet" href="/extras.css"></head>
+  <body class=""
+        template="page"
+        theme="web-theme"
+        type="article"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        display-toc
+        pending>
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+    <section class="devsite-wrapper">
+      
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+      <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner nocontent">
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="webDev" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/images/lockup.svg" class="devsite-site-logo" alt="web.dev">
+  </picture>
+  
+</a>
+
+
+
+  
+  
+  <span class="devsite-product-name">
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+  </span>
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+              
+              
+  <devsite-tabs class="upper-tabs">
+
+    <nav class="devsite-tabs-wrapper" aria-label="Upper tabs">
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/about"
+      track-metadata-eventdetail="https://web.dev/about"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - about"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: About"
+         
+           track-name="about"
+         
+       >
+    About
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/blog"
+      track-metadata-eventdetail="https://web.dev/blog"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - blog"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Blog"
+         
+           track-name="blog"
+         
+       >
+    Blog
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/articles"
+      track-metadata-eventdetail="https://web.dev/articles"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - articles"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Articles"
+         
+           track-name="articles"
+         
+       >
+    Articles
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/learn"
+      track-metadata-eventdetail="https://web.dev/learn"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - learn"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Learn"
+         
+           track-name="learn"
+         
+       >
+    Learn
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/explore"
+      track-metadata-eventdetail="https://web.dev/explore"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - explore"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Explore"
+         
+           track-name="explore"
+         
+       >
+    Explore
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/patterns"
+      track-metadata-eventdetail="https://web.dev/patterns"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - patterns"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Patterns"
+         
+           track-name="patterns"
+         
+       >
+    Patterns
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+        
+          <tab  >
+            
+    <a href="https://web.dev/case-studies"
+      track-metadata-eventdetail="https://web.dev/case-studies"
+    
+       class="devsite-tabs-content gc-analytics-event "
+       track-type="nav"
+       track-metadata-position="nav - case studies"
+       track-metadata-module="primary nav"
+       
+       
+         
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Tab: Case studies"
+         
+           track-name="case studies"
+         
+       >
+    Case studies
+  
+    </a>
+  
+  
+          </tab>
+        
+      
+    </nav>
+
+  </devsite-tabs>
+
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    
+    project-name="Articles"
+    tenant-name="web.dev"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://web.dev/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        
+          aria-current="true">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+        
+
+        
+          
+          
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+        </devsite-user>
+           
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="devsite-collapsible-section
+    
+      devsite-header-no-lower-tabs
+    ">
+    <div class="devsite-header-background">
+      
+        
+      
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+</devsite-header>
+      <devsite-book-nav scrollbars hidden>
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent"
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="webDev" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/images/lockup.svg" class="devsite-site-logo" alt="web.dev">
+  </picture>
+  
+</a>
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list"
+  >
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/about"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: About"
+      
+        track-name="about"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: About"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      About
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/blog"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Blog"
+      
+        track-name="blog"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Blog"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Blog
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/articles"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Articles"
+      
+        track-name="articles"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Articles"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Articles
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/learn"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Learn"
+      
+        track-name="learn"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Learn"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Learn
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/explore"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Explore"
+      
+        track-name="explore"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Explore"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Explore
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/patterns"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Patterns"
+      
+        track-name="patterns"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Patterns"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Patterns
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+  <a href="/case-studies"
+    
+       class="devsite-nav-title gc-analytics-event
+              
+              "
+    
+
+    
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Tab: Case studies"
+      
+        track-name="case studies"
+      
+    
+     data-category="Site-Wide Custom Events"
+     data-label="Responsive Tab: Case studies"
+     track-type="globalNav"
+     track-metadata-eventDetail="globalMenu"
+     track-metadata-position="nav">
+  
+    <span class="devsite-nav-text" tooltip >
+      Case studies
+   </span>
+    
+  
+  </a>
+  
+
+  
+              
+            </li>
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>
+      <section id="gc-wrapper">
+        <main role="main" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          
+          
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="2"
+                            scrollbars
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav">
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article">
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation">
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  
+    aria-label="Breadcrumb">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+  <a href="https://web.dev/"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="1"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="1"
+      
+        track-metadata-eventdetail=""
+      
+    >
+    
+        Home
+      
+  </a>
+  
+    
+  </li>
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+      
+      <div class="devsite-breadcrumb-guillemet material-icons" aria-hidden="true"></div>
+    
+    
+    
+      
+  <a href="https://web.dev/articles"
+      
+        class="devsite-breadcrumb-link gc-analytics-event"
+      
+        data-category="Site-Wide Custom Events"
+      
+        data-label="Breadcrumbs"
+      
+        data-value="2"
+      
+        track-type="globalNav"
+      
+        track-name="breadcrumb"
+      
+        track-metadata-position="2"
+      
+        track-metadata-eventdetail="Articles"
+      
+    >
+    
+        Articles
+      
+  </a>
+  
+    
+  </li>
+  
+</ul>
+    
+      
+    <devsite-thumb-rating position="header">
+    </devsite-thumb-rating>
+  
+    
+  </div>
+  
+      <h1 class="devsite-page-title" tabindex="-1">JavaScript Promises: an introduction</h1>
+  <devsite-feature-tooltip
+          ack-key="AckCollectionsBookmarkTooltipDismiss"
+          analytics-category="Site-Wide Custom Events"
+          analytics-action-show="Callout Profile displayed"
+          analytics-action-close="Callout Profile dismissed"
+          analytics-label="Create Collection Callout"
+          class="devsite-page-bookmark-tooltip nocontent"
+          dismiss-button="true"
+          id="devsite-collections-dropdown"
+
+          
+          dismiss-button-text="Dismiss"
+
+          
+          close-button-text="Got it">
+
+        
+        <devsite-bookmark></devsite-bookmark>
+
+        <span slot="popout-heading">
+          
+          Stay organized with collections
+        </span>
+        <span slot="popout-contents">
+          
+          Save and categorize content based on your preferences.
+        </span>
+      </devsite-feature-tooltip>
+  <div class="devsite-page-title-meta"><devsite-view-release-notes></devsite-view-release-notes></div>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="2"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  
+
+  
+
+
+
+
+
+
+<div class="devsite-article-body clearfix
+  ">
+
+  
+    
+
+
+
+
+<p>Promises simplify deferred and asynchronous computations. A promise represents an operation that hasn&#39;t completed yet.</p>
+
+<p>
+<div class="wd-authors" translate="no">
+  
+    
+    
+      <div class="wd-author">
+        
+          <img class="devsite-landing-row-item-icon" alt="Jake Archibald" 
+            src="https://web.dev/images/authors/jakearchibald.jpg" 
+            decoding="async" height="64" loading="lazy" width="64"> 
+        
+        <div>
+          <span> 
+            Jake Archibald
+          </span>
+          <div class="wd-author__links">
+            
+              <a href="https://twitter.com/jaffathecake" aria-label="Jake Archibald on X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 300 271">
+                  <title>X</title>
+                  <path fill="currentColor" d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"></path>
+                </svg></a>
+            
+            
+            
+            
+            
+            
+              <a href="https://jakearchibald.com/" aria-label="Jake Archibald's homepage">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 30 30">
+                  <title>Homepage</title>
+                  <circle cx="14.5" cy="14.5" r="13.5" stroke-width="2" stroke-miterlimit="10" fill="none" stroke="currentColor" />
+                  <ellipse cx="14.5" cy="14.5" rx="6.1" ry="13.5" stroke-width="2" stroke-miterlimit="10" fill="none" stroke="currentColor" />
+                  <path d="M1.6 9.6h25.8M1.6 19.4h25.8" stroke-width="2" stroke-miterlimit="10" fill="none" stroke="currentColor" />
+                </svg></a>
+            
+          </div>
+        </div>
+      </div>
+    
+  
+</div></p>
+
+<p>Developers, prepare yourself for a pivotal moment in the history of
+web development.</p>
+
+<p><em>[Drumroll begins]</em></p>
+
+<p>Promises have arrived in JavaScript!</p>
+
+<p><em>[Fireworks explode, glittery paper rains from above, the crowd goes wild]</em></p>
+
+<p>At this point you fall into one of these categories:</p>
+
+<ul>
+<li>People are cheering around you, but you&#39;re not sure what all the fuss is
+about. Maybe you&#39;re not even sure what a &quot;promise&quot; is. You&#39;d shrug, but the
+weight of glittery paper is weighing down on your shoulders. If so, don&#39;t
+worry about it, it took me ages to work out why I should care about this
+stuff. You probably want to begin at the <a href="#whats-all-the-fuss-about">beginning</a>.</li>
+<li>You punch the air! About time right? You&#39;ve used these Promise things before
+but it bothers you that all implementations have a slightly different API.
+What&#39;s the API for the official JavaScript version? You probably want to begin
+with the <a href="#promise-terminology">terminology</a>.</li>
+<li>You knew about this already and you scoff at those who are jumping up and
+down like it&#39;s news to them. Take a moment to bask in your own superiority,
+then head straight to the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">API reference</a>.</li>
+</ul>
+
+<h2 id="browser_support_and_polyfill" data-text="Browser support and polyfill" tabindex="-1">Browser support and polyfill</h2>
+
+<p>
+  
+    
+    
+    
+    
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+   
+
+    
+    
+      
+      <div class="wd-browser-compat">
+        <p>Browser Support</p>
+        <ul>
+          
+  
+  
+    
+      
+        
+          
+          
+        
+      
+    
+    
+  
+
+  
+  
+  
+  
+  
+    
+  
+
+  <li
+    data-browser="chrome"
+    data-support="yes"
+    aria-label="Supported in Chrome from version 32."
+  >32</li>
+  
+  
+          
+  
+  
+    
+      
+        
+          
+          
+        
+      
+    
+    
+  
+
+  
+  
+  
+  
+  
+    
+  
+
+  <li
+    data-browser="edge"
+    data-support="yes"
+    aria-label="Supported in Edge from version 12."
+  >12</li>
+  
+  
+          
+  
+  
+    
+      
+        
+          
+          
+        
+      
+    
+    
+  
+
+  
+  
+  
+  
+  
+    
+  
+
+  <li
+    data-browser="firefox"
+    data-support="yes"
+    aria-label="Supported in Firefox from version 29."
+  >29</li>
+  
+  
+          
+  
+  
+    
+      
+        
+          
+          
+        
+      
+    
+    
+  
+
+  
+  
+  
+  
+  
+    
+  
+
+  <li
+    data-browser="safari"
+    data-support="yes"
+    aria-label="Supported in Safari from version 8."
+  >8</li>
+  
+  
+        </ul>
+        
+        <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Source</a></p>
+        
+      </div>
+    
+    
+    
+  </p>
+
+<p>To bring browsers that lack a complete promises implementation up to spec
+compliance, or add promises to other browsers and Node.js, check out
+<a href="https://github.com/jakearchibald/ES6-Promises#readme">the polyfill</a>
+(2k gzipped).</p>
+
+<h2 id="whats-all-the-fuss-about" data-text="What's all the fuss about?" tabindex="-1">What's all the fuss about?</h2>
+
+<p>JavaScript is single threaded, meaning that two bits of script cannot run at
+the same time; they have to run one after another. In browsers, JavaScript
+shares a thread with a load of other stuff that differs from browser to
+browser. But typically JavaScript is in the same queue as painting, updating
+styles, and handling user actions (such as highlighting text and interacting
+with form controls). Activity in one of these things delays the others.</p>
+
+<p>As a human being, you&#39;re multithreaded. You can type with multiple fingers,
+you can drive and hold a conversation at the same time. The only blocking
+function we have to deal with is sneezing, where all current activity must
+be suspended for the duration of the sneeze. That&#39;s pretty annoying,
+especially when you&#39;re driving and trying to hold a conversation. You don&#39;t
+want to write code that&#39;s sneezy.</p>
+
+<p>You&#39;ve probably used events and callbacks to get around this. Here are events:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var img1 = document.querySelector(&#39;.img-1&#39;);
+
+img1.addEventListener(&#39;load&#39;, function() {
+  // woo yey image loaded
+});
+
+img1.addEventListener(&#39;error&#39;, function() {
+  // argh everything&#39;s broken
+});
+</code></pre>
+<p>This isn&#39;t sneezy at all. We get the image, add a couple of listeners, then
+JavaScript can stop executing until one of those listeners is called.</p>
+
+<p>Unfortunately, in the example above, it&#39;s possible that the events happened
+before we started listening for them, so we need to work around that using
+the &quot;complete&quot; property of images:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var img1 = document.querySelector(&#39;.img-1&#39;);
+
+function loaded() {
+  // woo yey image loaded
+}
+
+if (img1.complete) {
+  loaded();
+}
+else {
+  img1.addEventListener(&#39;load&#39;, loaded);
+}
+
+img1.addEventListener(&#39;error&#39;, function() {
+  // argh everything&#39;s broken
+});
+</code></pre>
+<p>This doesn&#39;t catch images that errored before we got a chance to listen for
+them; unfortunately the DOM doesn&#39;t give us a way to do that. Also, this is
+loading one image. Things get even more complex if we want to know when a set
+of images have loaded.</p>
+
+<h2 id="events_arent_always_the_best_way" data-text="Events aren't always the best way" tabindex="-1">Events aren't always the best way</h2>
+
+<p>Events are great for things that can happen multiple times on the same
+object&mdash;<code translate="no" dir="ltr">keyup</code>, <code translate="no" dir="ltr">touchstart</code> etc. With those events you don&#39;t really care
+about what happened before you attached the listener. But when it comes to
+async success/failure, ideally you want something like this:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">img1.callThisIfLoadedOrWhenLoaded(function() {
+  // loaded
+}).orIfFailedCallThis(function() {
+  // failed
+});
+
+// and…
+whenAllTheseHaveLoaded([img1, img2]).callThis(function() {
+  // all loaded
+}).orIfSomeFailedCallThis(function() {
+  // one or more failed
+});
+</code></pre>
+<p>This is what promises do, but with better naming. If HTML image elements had a
+&quot;ready&quot; method that returned a promise, we could do this:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">img1.ready()
+.then(function() {
+  // loaded
+}, function() {
+  // failed
+});
+
+// and…
+Promise.all([img1.ready(), img2.ready()])
+.then(function() {
+  // all loaded
+}, function() {
+  // one or more failed
+});
+</code></pre>
+<p>At their most basic, promises are a bit like event listeners except:</p>
+
+<ul>
+<li>A promise can only succeed or fail once. It cannot succeed or fail twice,
+neither can it switch from success to failure or vice versa.</li>
+<li>If a promise has succeeded or failed and you later add a success/failure
+callback, the correct callback will be called, even though the event took
+place earlier.</li>
+</ul>
+
+<p>This is extremely useful for async success/failure, because you&#39;re less
+interested in the exact time something became available, and more interested
+in reacting to the outcome.</p>
+
+<h2 id="promise-terminology" data-text="Promise terminology" tabindex="-1">Promise terminology</h2>
+
+<p><a href="https://twitter.com/domenic">Domenic Denicola</a> proof read the first draft
+of this article and graded me &quot;F&quot; for terminology. He put me in detention,
+forced me to copy out
+<a href="https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md">States and Fates</a>
+100 times, and wrote a worried letter to my parents. Despite that, I still
+get a lot of the terminology mixed up, but here are the basics:</p>
+
+<p>A promise can be:</p>
+
+<ul>
+<li><strong>fulfilled</strong> - The action relating to the promise succeeded</li>
+<li><strong>rejected</strong> - The action relating to the promise failed</li>
+<li><strong>pending</strong> - Hasn&#39;t fulfilled or rejected yet</li>
+<li><strong>settled</strong> - Has fulfilled or rejected</li>
+</ul>
+
+<p><a href="https://www.ecma-international.org/ecma-262/#sec-promise-objects">The spec</a>
+also uses the term <strong>thenable</strong> to describe an object that is promise-like,
+in that it has a <code translate="no" dir="ltr">then</code> method. This term reminds me of ex-England Football
+Manager <a href="https://en.wikipedia.org/wiki/Terry_Venables">Terry Venables</a> so
+I&#39;ll be using it as little as possible.</p>
+
+<h2 id="promises_arrive_in_javascript" data-text="Promises arrive in JavaScript!" tabindex="-1">Promises arrive in JavaScript!</h2>
+
+<p>Promises have been around for a while in the form of libraries, such as:</p>
+
+<ul>
+<li><a href="https://github.com/kriskowal/q">Q</a></li>
+<li><a href="https://github.com/cujojs/when">when</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/br211867.aspx">WinJS</a></li>
+<li><a href="https://github.com/tildeio/rsvp.js">RSVP.js</a></li>
+</ul>
+
+<p>The above and JavaScript promises share a common, standardized behaviour
+called <a href="https://github.com/promises-aplus/promises-spec">Promises/A+</a>. If
+you&#39;re a jQuery user, they have something similar called
+<a href="https://api.jquery.com/category/deferred-object/">Deferreds</a>. However,
+Deferreds aren&#39;t Promise/A+ compliant, which makes them
+<a href="https://thewayofcode.wordpress.com/tag/jquery-deferred-broken/">subtly different and less useful</a>,
+so beware. jQuery also has
+<a href="https://api.jquery.com/Types/#Promise">a Promise type</a>, but this is just a
+subset of Deferred and has the same issues.</p>
+
+<p>Although promise implementations follow a standardized behaviour, their
+overall APIs differ. JavaScript promises are similar in API to RSVP.js.
+Here&#39;s how you create a promise:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var promise = new Promise(function(resolve, reject) {
+  // do a thing, possibly async, then…
+
+  if (/* everything turned out fine */) {
+    resolve(&#34;Stuff worked!&#34;);
+  }
+  else {
+    reject(Error(&#34;It broke&#34;));
+  }
+});
+</code></pre>
+<p>The promise constructor takes one argument, a callback with two parameters,
+resolve and reject. Do something within the callback, perhaps async, then call
+resolve if everything worked, otherwise call reject.</p>
+
+<p>Like <code translate="no" dir="ltr">throw</code> in plain old JavaScript, it&#39;s customary, but not required, to
+reject with an Error object. The benefit of Error objects is they capture a
+stack trace, making debugging tools more helpful.</p>
+
+<p>Here&#39;s how you use that promise:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">promise.then(function(result) {
+  console.log(result); // &#34;Stuff worked!&#34;
+}, function(err) {
+  console.log(err); // Error: &#34;It broke&#34;
+});
+</code></pre>
+<p><code translate="no" dir="ltr">then()</code> takes two arguments, a callback for a success case, and another
+for the failure case. Both are optional, so you can add a callback for the
+success or failure case only.</p>
+
+<p>JavaScript promises started out in the DOM as &quot;Futures&quot;, renamed to &quot;Promises&quot;,
+and finally moved into JavaScript. Having them in JavaScript rather than the
+DOM is great because they&#39;ll be available in non-browser JS contexts such as
+Node.js (whether they make use of them in their core APIs is another question).</p>
+
+<p>Although they&#39;re a JavaScript feature, the DOM isn&#39;t afraid to use them. In
+fact, all new DOM APIs with async success/failure methods will use promises.
+This is happening already with
+<a href="https://dvcs.w3.org/hg/quota/raw-file/tip/Overview.html#idl-def-StorageQuota">Quota Management</a>,
+<a href="http://dev.w3.org/csswg/css-font-loading/#font-face-set-ready">Font Load Events</a>,
+<a href="https://github.com/slightlyoff/ServiceWorker/blob/cf459d473ae09f6994e8539113d277cbd2bce939/service_worker.ts#L17">ServiceWorker</a>,
+<a href="https://webaudio.github.io/web-midi-api/#widl-Navigator-requestMIDIAccess-Promise-MIDIOptions-options">Web MIDI</a>,
+<a href="https://github.com/whatwg/streams#basereadablestream">Streams</a>, and more.</p>
+
+<h2 id="compatibility_with_other_libraries" data-text="Compatibility with other libraries" tabindex="-1">Compatibility with other libraries</h2>
+
+<p>The JavaScript promises API will treat anything with a <code translate="no" dir="ltr">then()</code> method as
+promise-like (or <code translate="no" dir="ltr">thenable</code> in promise-speak <em>sigh</em>), so if you use a library
+that returns a Q promise, that&#39;s fine, it&#39;ll play nice with the new
+JavaScript promises.</p>
+
+<p>Although, as I mentioned, jQuery&#39;s Deferreds are a bit … unhelpful.
+Thankfully you can cast them to standard promises, which is worth doing
+as soon as possible:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var jsPromise = Promise.resolve($.ajax(&#39;/whatever.json&#39;))
+</code></pre>
+<p>Here, jQuery&#39;s <code translate="no" dir="ltr">$.ajax</code> returns a Deferred. Since it has a <code translate="no" dir="ltr">then()</code> method,
+<code translate="no" dir="ltr">Promise.resolve()</code> can turn it into a JavaScript promise. However,
+sometimes deferreds pass multiple arguments to their callbacks, for example:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var jqDeferred = $.ajax(&#39;/whatever.json&#39;);
+
+jqDeferred.then(function(response, statusText, xhrObj) {
+  // ...
+}, function(xhrObj, textStatus, err) {
+  // ...
+})
+</code></pre>
+<p>Whereas JS promises ignore all but the first:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">jsPromise.then(function(response) {
+  // ...
+}, function(xhrObj) {
+  // ...
+})
+</code></pre>
+<p>Thankfully this is usually what you want, or at least gives you access to
+what you want. Also, be aware that jQuery doesn&#39;t follow the convention of
+passing Error objects into rejections.</p>
+
+<h2 id="complex_async_code_made_easier" data-text="Complex async code made easier" tabindex="-1">Complex async code made easier</h2>
+
+<p>Right, let&#39;s code some things. Say we want to:</p>
+
+<ol>
+<li>Start a spinner to indicate loading</li>
+<li>Fetch some JSON for a story, which gives us the title, and urls for each chapter</li>
+<li>Add title to the page</li>
+<li>Fetch each chapter</li>
+<li>Add the story to the page</li>
+<li>Stop the spinner</li>
+</ol>
+
+<p>… but also tell the user if something went wrong along the way. We&#39;ll want
+to stop the spinner at that point too, else it&#39;ll keep on spinning, get
+dizzy, and crash into some other UI.</p>
+
+<p>Of course, you wouldn&#39;t use JavaScript to deliver a story,
+<a href="https://jakearchibald.com/2013/progressive-enhancement-is-faster/">serving as HTML is faster</a>,
+but this pattern is pretty common when dealing with APIs: Multiple data
+fetches, then do something when it&#39;s all done.</p>
+
+<p>To start with, let&#39;s deal with fetching data from the network:</p>
+
+<h2 id="promisifying_xmlhttprequest" data-text="Promisifying XMLHttpRequest" tabindex="-1">Promisifying XMLHttpRequest</h2>
+
+<p>Old APIs will be updated to use promises, if it&#39;s possible in a backwards
+compatible way. <code translate="no" dir="ltr">XMLHttpRequest</code> is a prime candidate, but in the mean time
+let&#39;s write a simple function to make a GET request:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">function get(url) {
+  // Return a new promise.
+  return new Promise(function(resolve, reject) {
+    // Do the usual XHR stuff
+    var req = new XMLHttpRequest();
+    req.open(&#39;GET&#39;, url);
+
+    req.onload = function() {
+      // This is called even on 404 etc
+      // so check the status
+      if (req.status == 200) {
+        // Resolve the promise with the response text
+        resolve(req.response);
+      }
+      else {
+        // Otherwise reject with the status text
+        // which will hopefully be a meaningful error
+        reject(Error(req.statusText));
+      }
+    };
+
+    // Handle network errors
+    req.onerror = function() {
+      reject(Error(&#34;Network Error&#34;));
+    };
+
+    // Make the request
+    req.send();
+  });
+}
+</code></pre>
+<p>Now let&#39;s use it:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(function(response) {
+  console.log(&#34;Success!&#34;, response);
+}, function(error) {
+  console.error(&#34;Failed!&#34;, error);
+})
+</code></pre>
+<p>Now we can make HTTP requests without manually typing <code translate="no" dir="ltr">XMLHttpRequest</code>, which is great, because the
+less I have to see the infuriating camel-casing of <code translate="no" dir="ltr">XMLHttpRequest</code>, the happier my life will be.</p>
+
+<h2 id="chaining" data-text="Chaining" tabindex="-1">Chaining</h2>
+
+<p><code translate="no" dir="ltr">then()</code> isn&#39;t the end of the story, you can chain <code translate="no" dir="ltr">then</code>s together to
+transform values or run additional async actions one after another.</p>
+
+<h3 id="transforming_values" data-text="Transforming values" tabindex="-1">Transforming values</h3>
+
+<p>You can transform values simply by returning the new value:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var promise = new Promise(function(resolve, reject) {
+  resolve(1);
+});
+
+promise.then(function(val) {
+  console.log(val); // 1
+  return val + 2;
+}).then(function(val) {
+  console.log(val); // 3
+})
+</code></pre>
+<p>As a practical example, let&#39;s go back to:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(function(response) {
+  console.log(&#34;Success!&#34;, response);
+})
+</code></pre>
+<p>The response is JSON, but we&#39;re currently receiving it as plain text. We
+could alter our get function to use the JSON
+<a href="https://developer.mozilla.org/docs/Web/API/XMLHttpRequest#responseType"><code translate="no" dir="ltr">responseType</code></a>,
+but we could also solve it in promises land:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(function(response) {
+  return JSON.parse(response);
+}).then(function(response) {
+  console.log(&#34;Yey JSON!&#34;, response);
+})
+</code></pre>
+<p>Since <code translate="no" dir="ltr">JSON.parse()</code> takes a single argument and returns a transformed value,
+we can make a shortcut:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(JSON.parse).then(function(response) {
+  console.log(&#34;Yey JSON!&#34;, response);
+})
+</code></pre>
+<p>In fact, we could make a <code translate="no" dir="ltr">getJSON()</code> function really easily:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+</code></pre>
+<p><code translate="no" dir="ltr">getJSON()</code> still returns a promise, one that fetches a url then parses
+the response as JSON.</p>
+
+<h3 id="queuing_asynchronous_actions" data-text="Queuing asynchronous actions" tabindex="-1">Queuing asynchronous actions</h3>
+
+<p>You can also chain <code translate="no" dir="ltr">then</code>s to run async actions in sequence.</p>
+
+<p>When you return something from a <code translate="no" dir="ltr">then()</code> callback, it&#39;s a bit magic.
+If you return a value, the next <code translate="no" dir="ltr">then()</code> is called with that value. However,
+if you return something promise-like, the next <code translate="no" dir="ltr">then()</code> waits on it, and is
+only called when that promise settles (succeeds/fails). For example:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">getJSON(&#39;story.json&#39;).then(function(story) {
+  return getJSON(story.chapterUrls[0]);
+}).then(function(chapter1) {
+  console.log(&#34;Got chapter 1!&#34;, chapter1);
+})
+</code></pre>
+<p>Here we make an async request to <code translate="no" dir="ltr">story.json</code>, which gives us a set of
+URLs to request, then we request the first of those. This is when promises
+really start to stand out from simple callback patterns.</p>
+
+<p>You could even make a shortcut method to get chapters:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var storyPromise;
+
+function getChapter(i) {
+  storyPromise = storyPromise || getJSON(&#39;story.json&#39;);
+
+  return storyPromise.then(function(story) {
+    return getJSON(story.chapterUrls[i]);
+  })
+}
+
+// and using it is simple:
+getChapter(0).then(function(chapter) {
+  console.log(chapter);
+  return getChapter(1);
+}).then(function(chapter) {
+  console.log(chapter);
+})
+</code></pre>
+<p>We don&#39;t download <code translate="no" dir="ltr">story.json</code> until <code translate="no" dir="ltr">getChapter</code> is called, but the next
+time(s) <code translate="no" dir="ltr">getChapter</code> is called we reuse the story promise, so <code translate="no" dir="ltr">story.json</code>
+is only fetched once. Yay Promises!</p>
+
+<h2 id="error_handling" data-text="Error handling" tabindex="-1">Error handling</h2>
+
+<p>As we saw earlier, <code translate="no" dir="ltr">then()</code> takes two arguments, one for success, one
+for failure (or fulfill and reject, in promises-speak):</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(function(response) {
+  console.log(&#34;Success!&#34;, response);
+}, function(error) {
+  console.log(&#34;Failed!&#34;, error);
+})
+</code></pre>
+<p>You can also use <code translate="no" dir="ltr">catch()</code>:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(function(response) {
+  console.log(&#34;Success!&#34;, response);
+}).catch(function(error) {
+  console.log(&#34;Failed!&#34;, error);
+})
+</code></pre>
+<p>There&#39;s nothing special about <code translate="no" dir="ltr">catch()</code>, it&#39;s just sugar for
+<code translate="no" dir="ltr">then(undefined, func)</code>, but it&#39;s more readable. Note that the two code
+examples above do not behave the same, the latter is equivalent to:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;story.json&#39;).then(function(response) {
+  console.log(&#34;Success!&#34;, response);
+}).then(undefined, function(error) {
+  console.log(&#34;Failed!&#34;, error);
+})
+</code></pre>
+<p>The difference is subtle, but extremely useful. Promise rejections skip
+forward to the next <code translate="no" dir="ltr">then()</code> with a rejection callback (or <code translate="no" dir="ltr">catch()</code>, since
+it&#39;s equivalent). With <code translate="no" dir="ltr">then(func1, func2)</code>, <code translate="no" dir="ltr">func1</code> or <code translate="no" dir="ltr">func2</code> will be
+called, never both. But with <code translate="no" dir="ltr">then(func1).catch(func2)</code>, both will be
+called if <code translate="no" dir="ltr">func1</code> rejects, as they&#39;re separate steps in the chain. Take
+the following:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">asyncThing1().then(function() {
+  return asyncThing2();
+}).then(function() {
+  return asyncThing3();
+}).catch(function(err) {
+  return asyncRecovery1();
+}).then(function() {
+  return asyncThing4();
+}, function(err) {
+  return asyncRecovery2();
+}).catch(function(err) {
+  console.log(&#34;Don&#39;t worry about it&#34;);
+}).then(function() {
+  console.log(&#34;All done!&#34;);
+})
+</code></pre>
+<p>The flow above is very similar to normal JavaScript try/catch, errors that
+happen within a &quot;try&quot; go immediately to the <code translate="no" dir="ltr">catch()</code> block. Here&#39;s the
+above as a flowchart (because I love flowcharts):</p>
+
+<div style="position: relative; padding-top: 93%;">
+  <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden"
+   src="/static/articles/promises/image/error-handling-flowchart.svg" frameborder="0" allowtransparency="true"></iframe>
+</div>
+
+<p>Follow the blue lines for promises that fulfill, or the red for ones that
+reject.</p>
+
+<h3 id="javascript_exceptions_and_promises" data-text="JavaScript exceptions and promises" tabindex="-1">JavaScript exceptions and promises</h3>
+
+<p>Rejections happen when a promise is explicitly rejected, but also implicitly
+if an error is thrown in the constructor callback:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">var jsonPromise = new Promise(function(resolve, reject) {
+  // JSON.parse throws an error if you feed it some
+  // invalid JSON, so this implicitly rejects:
+  resolve(JSON.parse(&#34;This ain&#39;t JSON&#34;));
+});
+
+jsonPromise.then(function(data) {
+  // This never happens:
+  console.log(&#34;It worked!&#34;, data);
+}).catch(function(err) {
+  // Instead, this happens:
+  console.log(&#34;It failed!&#34;, err);
+})
+</code></pre>
+<p>This means it&#39;s useful to do all your promise-related work inside the
+promise constructor callback, so errors are automatically caught and
+become rejections.</p>
+
+<p>The same goes for errors thrown in <code translate="no" dir="ltr">then()</code> callbacks.</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">get(&#39;/&#39;).then(JSON.parse).then(function() {
+  // This never happens, &#39;/&#39; is an HTML page, not JSON
+  // so JSON.parse throws
+  console.log(&#34;It worked!&#34;, data);
+}).catch(function(err) {
+  // Instead, this happens:
+  console.log(&#34;It failed!&#34;, err);
+})
+</code></pre>
+<h3 id="error_handling_in_practice" data-text="Error handling in practice" tabindex="-1">Error handling in practice</h3>
+
+<p>With our story and chapters, we can use catch to display an error to the user:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">getJSON(&#39;story.json&#39;).then(function(story) {
+  return getJSON(story.chapterUrls[0]);
+}).then(function(chapter1) {
+  addHtmlToPage(chapter1.html);
+}).catch(function() {
+  addTextToPage(&#34;Failed to show chapter&#34;);
+}).then(function() {
+  document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;;
+})
+</code></pre>
+<p>If fetching <code translate="no" dir="ltr">story.chapterUrls[0]</code> fails (e.g., http 500 or user is offline),
+it&#39;ll skip all following success callbacks, which includes the one in
+<code translate="no" dir="ltr">getJSON()</code> which tries to parse the response as JSON, and also skips the
+callback that adds chapter1.html to the page. Instead it moves onto the catch
+callback. As a result, &quot;Failed to show chapter&quot; will be added to the page if
+any of the previous actions failed.</p>
+
+<p>Like JavaScript&#39;s try/catch, the error is caught and subsequent code
+continues, so the spinner is always hidden, which is what we want. The
+above becomes a non-blocking async version of:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">try {
+  var story = getJSONSync(&#39;story.json&#39;);
+  var chapter1 = getJSONSync(story.chapterUrls[0]);
+  addHtmlToPage(chapter1.html);
+}
+catch (e) {
+  addTextToPage(&#34;Failed to show chapter&#34;);
+}
+document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;
+</code></pre>
+<p>You may want to <code translate="no" dir="ltr">catch()</code> simply for logging purposes, without recovering
+from the error. To do this, just rethrow the error. We could do this in
+our <code translate="no" dir="ltr">getJSON()</code> method:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">function getJSON(url) {
+  return get(url).then(JSON.parse).catch(function(err) {
+    console.log(&#34;getJSON failed for&#34;, url, err);
+    throw err;
+  });
+}
+</code></pre>
+<p>So we&#39;ve managed to fetch one chapter, but we want them all. Let&#39;s make
+that happen.</p>
+
+<h2 id="parallelism_and_sequencing_getting_the_best_of_both" data-text="Parallelism and sequencing: getting the best of both" tabindex="-1">Parallelism and sequencing: getting the best of both</h2>
+
+<p>Thinking async isn&#39;t easy. If you&#39;re struggling to get off the mark,
+try writing the code as if it were synchronous. In this case:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">try {
+  var story = getJSONSync(&#39;story.json&#39;);
+  addHtmlToPage(story.heading);
+
+  story.chapterUrls.forEach(function(chapterUrl) {
+    var chapter = getJSONSync(chapterUrl);
+    addHtmlToPage(chapter.html);
+  });
+
+  addTextToPage(&#34;All done&#34;);
+}
+catch (err) {
+  addTextToPage(&#34;Argh, broken: &#34; + err.message);
+}
+
+document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;
+</code></pre>
+<div class="wd-embed" style="height: 480px;">
+  <iframe
+    allow="camera; clipboard-read; clipboard-write; encrypted-media; geolocation; microphone; midi"
+    loading="lazy"
+    src="https://glitch.com/embed/#!/embed/promises-sync-example?attributionHidden=true&sidebarCollapsed=true&previewSize=100"
+    style="height: 100%; width: 100%; border: 0;"
+    title="promises-sync-example on Glitch"
+  ></iframe>
+</div>
+
+<p>That works! But it&#39;s sync and locks up the browser while things download. To
+make this work async we use <code translate="no" dir="ltr">then()</code> to make things happen one after another.</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">getJSON(&#39;story.json&#39;).then(function(story) {
+  addHtmlToPage(story.heading);
+
+  // TODO: for each url in story.chapterUrls, fetch &amp;amp; display
+}).then(function() {
+  // And we&#39;re all done!
+  addTextToPage(&#34;All done&#34;);
+}).catch(function(err) {
+  // Catch any error that happened along the way
+  addTextToPage(&#34;Argh, broken: &#34; + err.message);
+}).then(function() {
+  // Always hide the spinner
+  document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;;
+})
+</code></pre>
+<p>But how can we loop through the chapter urls and fetch them in order? This
+<strong>doesn&#39;t work</strong>:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">story.chapterUrls.forEach(function(chapterUrl) {
+  // Fetch chapter
+  getJSON(chapterUrl).then(function(chapter) {
+    // and add it to the page
+    addHtmlToPage(chapter.html);
+  });
+})
+</code></pre>
+<p><code translate="no" dir="ltr">forEach</code> isn&#39;t async-aware, so our chapters would appear in whatever order
+they download, which is basically how Pulp Fiction was written. This isn&#39;t
+Pulp Fiction, so let&#39;s fix it.</p>
+
+<h3 id="creating_a_sequence" data-text="Creating a sequence" tabindex="-1">Creating a sequence</h3>
+
+<p>We want to turn our <code translate="no" dir="ltr">chapterUrls</code> array into a sequence of promises. We can do that using <code translate="no" dir="ltr">then()</code>:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">// Start off with a promise that always resolves
+var sequence = Promise.resolve();
+
+// Loop through our chapter urls
+story.chapterUrls.forEach(function(chapterUrl) {
+  // Add these actions to the end of the sequence
+  sequence = sequence.then(function() {
+    return getJSON(chapterUrl);
+  }).then(function(chapter) {
+    addHtmlToPage(chapter.html);
+  });
+})
+</code></pre>
+<p>This is the first time we&#39;ve seen <code translate="no" dir="ltr">Promise.resolve()</code>, which creates a
+promise that resolves to whatever value you give it. If you pass it an
+instance of <code translate="no" dir="ltr">Promise</code> it&#39;ll simply return it (<strong>note:</strong> this is a
+change to the spec that some implementations don&#39;t yet follow). If you
+pass it something promise-like (has a <code translate="no" dir="ltr">then()</code> method), it creates a
+genuine <code translate="no" dir="ltr">Promise</code> that fulfills/rejects in the same way. If you pass
+in any other value, e.g., <code translate="no" dir="ltr">Promise.resolve(&#39;Hello&#39;)</code>, it creates a
+promise that fulfills with that value. If you call it with no value,
+as above, it fulfills with &quot;undefined&quot;.</p>
+
+<p>There&#39;s also <code translate="no" dir="ltr">Promise.reject(val)</code>, which creates a promise that rejects with
+the value you give it (or undefined).</p>
+
+<p>We can tidy up the above code using
+<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce"><code translate="no" dir="ltr">array.reduce</code></a>:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">// Loop through our chapter urls
+story.chapterUrls.reduce(function(sequence, chapterUrl) {
+  // Add these actions to the end of the sequence
+  return sequence.then(function() {
+    return getJSON(chapterUrl);
+  }).then(function(chapter) {
+    addHtmlToPage(chapter.html);
+  });
+}, Promise.resolve())
+</code></pre>
+<p>This is doing the same as the previous example, but doesn&#39;t need the separate
+&quot;sequence&quot; variable. Our reduce callback is called for each item in the array.
+&quot;sequence&quot; is <code translate="no" dir="ltr">Promise.resolve()</code> the first time around, but for the rest of the
+calls &quot;sequence&quot; is whatever we returned from the previous call. <code translate="no" dir="ltr">array.reduce</code>
+is really useful for boiling an array down to a single value, which in this case
+is a promise.</p>
+
+<p>Let&#39;s put it all together:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">getJSON(&#39;story.json&#39;).then(function(story) {
+  addHtmlToPage(story.heading);
+
+  return story.chapterUrls.reduce(function(sequence, chapterUrl) {
+    // Once the last chapter&#39;s promise is done…
+    return sequence.then(function() {
+      // …fetch the next chapter
+      return getJSON(chapterUrl);
+    }).then(function(chapter) {
+      // and add it to the page
+      addHtmlToPage(chapter.html);
+    });
+  }, Promise.resolve());
+}).then(function() {
+  // And we&#39;re all done!
+  addTextToPage(&#34;All done&#34;);
+}).catch(function(err) {
+  // Catch any error that happened along the way
+  addTextToPage(&#34;Argh, broken: &#34; + err.message);
+}).then(function() {
+  // Always hide the spinner
+  document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;;
+})
+</code></pre>
+<div class="wd-embed" style="height: 480px;">
+  <iframe
+    allow="camera; clipboard-read; clipboard-write; encrypted-media; geolocation; microphone; midi"
+    loading="lazy"
+    src="https://glitch.com/embed/#!/embed/promises-async-example?attributionHidden=true&sidebarCollapsed=true&previewSize=100"
+    style="height: 100%; width: 100%; border: 0;"
+    title="promises-async-example on Glitch"
+  ></iframe>
+</div>
+
+<p>And there we have it, a fully async version of the sync version. But we can do
+better. At the moment our page is downloading like this:</p>
+
+<figure>
+  <video controls autoplay loop muted>
+    <source src="/static/articles/promises/video/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
+    <source src="/static/articles/promises/video/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
+  </video>
+</figure>
+
+<p>Browsers are pretty good at downloading multiple things at once, so we&#39;re losing
+performance by downloading chapters one after the other. What we want to do is
+download them all at the same time, then process them when they&#39;ve all arrived.
+Thankfully there&#39;s an API for this:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">Promise.all(arrayOfPromises).then(function(arrayOfResults) {
+  //...
+})
+</code></pre>
+<p><code translate="no" dir="ltr">Promise.all</code> takes an array of promises and creates a promise that fulfills
+when all of them successfully complete. You get an array of results (whatever
+the promises fulfilled to) in the same order as the promises you passed in.</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">getJSON(&#39;story.json&#39;).then(function(story) {
+  addHtmlToPage(story.heading);
+
+  // Take an array of promises and wait on them all
+  return Promise.all(
+    // Map our array of chapter urls to
+    // an array of chapter json promises
+    story.chapterUrls.map(getJSON)
+  );
+}).then(function(chapters) {
+  // Now we have the chapters jsons in order! Loop through…
+  chapters.forEach(function(chapter) {
+    // …and add to the page
+    addHtmlToPage(chapter.html);
+  });
+  addTextToPage(&#34;All done&#34;);
+}).catch(function(err) {
+  // catch any error that happened so far
+  addTextToPage(&#34;Argh, broken: &#34; + err.message);
+}).then(function() {
+  document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;;
+})
+</code></pre>
+<div class="wd-embed" style="height: 480px;">
+  <iframe
+    allow="camera; clipboard-read; clipboard-write; encrypted-media; geolocation; microphone; midi"
+    loading="lazy"
+    src="https://glitch.com/embed/#!/embed/promises-async-all-example?attributionHidden=true&sidebarCollapsed=true&previewSize=100"
+    style="height: 100%; width: 100%; border: 0;"
+    title="promises-async-all-example on Glitch"
+  ></iframe>
+</div>
+
+<p>Depending on connection, this can be seconds faster than loading one-by-one,
+and it&#39;s less code than our first try. The chapters can download in whatever
+order, but they appear on screen in the right order.</p>
+
+<figure>
+  <video controls autoplay loop muted>
+    <source src="/static/articles/promises/video/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
+    <source src="/static/articles/promises/video/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
+  </video>
+</figure>
+
+<p>However, we can still improve perceived performance. When chapter one arrives we
+should add it to the page. This lets the user start reading before the rest of
+the chapters have arrived. When chapter three arrives, we wouldn&#39;t add it to the
+page because the user may not realize chapter two is missing. When chapter two
+arrives, we can add chapters two and three, etc etc.</p>
+
+<p>To do this, we fetch JSON for all our chapters at the same time, then create a
+sequence to add them to the document:</p>
+<pre class="prettyprint lang-js" translate="no" dir="ltr"><code translate="no" dir="ltr">getJSON(&#39;story.json&#39;)
+.then(function(story) {
+  addHtmlToPage(story.heading);
+
+  // Map our array of chapter urls to
+  // an array of chapter json promises.
+  // This makes sure they all download in parallel.
+  return story.chapterUrls.map(getJSON)
+    .reduce(function(sequence, chapterPromise) {
+      // Use reduce to chain the promises together,
+      // adding content to the page for each chapter
+      return sequence
+      .then(function() {
+        // Wait for everything in the sequence so far,
+        // then wait for this chapter to arrive.
+        return chapterPromise;
+      }).then(function(chapter) {
+        addHtmlToPage(chapter.html);
+      });
+    }, Promise.resolve());
+}).then(function() {
+  addTextToPage(&#34;All done&#34;);
+}).catch(function(err) {
+  // catch any error that happened along the way
+  addTextToPage(&#34;Argh, broken: &#34; + err.message);
+}).then(function() {
+  document.querySelector(&#39;.spinner&#39;).style.display = &#39;none&#39;;
+})
+</code></pre>
+<div class="wd-embed" style="height: 480px;">
+  <iframe
+    allow="camera; clipboard-read; clipboard-write; encrypted-media; geolocation; microphone; midi"
+    loading="lazy"
+    src="https://glitch.com/embed/#!/embed/promises-async-best-example?attributionHidden=true&sidebarCollapsed=true&previewSize=100"
+    style="height: 100%; width: 100%; border: 0;"
+    title="promises-async-best-example on Glitch"
+  ></iframe>
+</div>
+
+<p>And there we go, the best of both! It takes the same amount of time to deliver
+all the content, but the user gets the first bit of content sooner.</p>
+
+<figure>
+  <video controls autoplay loop muted>
+    <source src="/static/articles/promises/video/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
+    <source src="/static/articles/promises/video/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
+  </video>
+</figure>
+
+<p>In this trivial example, all of the chapters arrive around the same time, but
+the benefit of displaying one at a time will be exaggerated with more, larger
+chapters.</p>
+
+<p>Doing the above with <a href="https://gist.github.com/jakearchibald/0e652d95c07442f205ce">Node.js-style callbacks or
+events</a> is around
+double the code, but more importantly isn&#39;t as easy to follow. However, this
+isn&#39;t the end of the story for promises, when combined with other ES6 features
+they get even easier.</p>
+
+<h2 id="bonus_round_expanded_capabilities" data-text="Bonus round: expanded capabilities" tabindex="-1">Bonus round: expanded capabilities</h2>
+
+<p>Since I originally wrote this article, the ability to use Promises has expanded
+greatly. Since Chrome 55, async functions have allowed promise-based code to be
+written as if it were synchronous, but without blocking the main thread. You can
+read more about that in <a href="/articles/async-functions">my async functions article</a>. There&#39;s
+widespread support for both Promises and async functions in the major browsers.
+You can find the details in MDN&#39;s
+<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>
+and <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function">async
+function</a>
+reference.</p>
+
+<p>Many thanks to Anne van Kesteren, Domenic Denicola, Tom Ashworth, Remy Sharp,
+Addy Osmani, Arthur Evans, and Yutaka Hirano who proofread this and made
+corrections/recommendations.</p>
+
+<p>Also, thanks to <a href="https://mathiasbynens.be/">Mathias Bynens</a> for
+<a href="https://github.com/html5rocks/www.html5rocks.com/pull/921/files">updating various parts</a>
+of the article.</p>
+
+  
+
+  
+</div>
+
+  
+
+  
+    
+    
+      
+    <devsite-thumb-rating position="footer">
+    </devsite-thumb-rating>
+  
+       
+    
+    
+  
+
+  
+  
+</article>
+
+
+<devsite-content-footer class="nocontent">
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  <p>Last updated 2013-12-16 UTC.</p>
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  <template class="devsite-thumb-rating-down-categories">
+  [{
+      "type": "thumb-down",
+      "id": "missingTheInformationINeed",
+      "label":"Missing the information I need"
+    },{
+      "type": "thumb-down",
+      "id": "tooComplicatedTooManySteps",
+      "label":"Too complicated / too many steps"
+    },{
+      "type": "thumb-down",
+      "id": "outOfDate",
+      "label":"Out of date"
+    },{
+      "type": "thumb-down",
+      "id": "samplesCodeIssue",
+      "label":"Samples / code issue"
+    },{
+      "type": "thumb-down",
+      "id": "otherDown",
+      "label":"Other"
+    }]
+  </template>
+  <template class="devsite-thumb-rating-up-categories">
+  [{
+      "type": "thumb-up",
+      "id": "easyToUnderstand",
+      "label":"Easy to understand"
+    },{
+      "type": "thumb-up",
+      "id": "solvedMyProblem",
+      "label":"Solved my problem"
+    },{
+      "type": "thumb-up",
+      "id": "otherUp",
+      "label":"Other"
+    }]
+  </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent" aria-label="Footer links">
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox wd-footer-promo">
+    <h3 class="devsite-footer-linkbox-heading no-link">web.dev</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <h3 class="devsite-footer-linkbox-heading no-link">
+          
+            web.dev
+          
+          </h3>
+          
+          
+          <div class="devsite-footer-linkbox-description">We want to help you build beautiful, accessible, fast, and secure websites that work cross-browser, and for all of your users. This site is our home for content to help you on that journey, written by members of the Chrome team, and external experts.</div>
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Contribute</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://issuetracker.google.com/issues/new?component=1400680&amp;template=1857359"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            File a bug
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://issuetracker.google.com/issues?q=status:open%20componentid:1400680&amp;s=created_time:desc"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+              
+              
+            
+          
+            See open issues
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Related Content</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://developer.chrome.com/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Chrome for Developers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://blog.chromium.org/"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Chromium updates
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/case-studies"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Case studies
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="/shows"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Podcasts &amp; shows
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://twitter.com/ChromiumDev"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            @ChromiumDev on X
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.youtube.com/user/ChromeDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="https://www.linkedin.com/showcase/chrome-for-developers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+              
+              
+            
+          
+            Chrome for Developers on LinkedIn
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent">
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        
+          aria-current="true">English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel></devsite-panel>
+        
+      </section></section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar
+    
+    >
+</devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics analytics-iframe>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [{&#34;id&#34;: &#34;GTM-MZWCJPP&#34;, &#34;purpose&#34;: 0}], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;article&#34;, &#34;projectName&#34;: &#34;Articles&#34;, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;web&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    <script nonce="qFpcqcAKDkKhcB5uZL+iXKSThFUS0W">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/js/app_loader.js', '[27,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695","https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web","https://web-dot-devsite-v2-prod-3p.appspot.com",1,null,["/_pwa/web/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v1698cdd3153b47734bb6d9d8688c4490898207543be76b2c5805f109c27c7695/web/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyCNm9YxQumEXwGJgTDjxoxXK6m1F-9720Q","AIzaSyCc76DZePGtoyUjqKrLdsMGk_ry7sljLbY","web.dev","AIzaSyB9bqgQ2t11WJsOX8qNsCQ6U-w91mmqF-I","AIzaSyAdYnStPdzjcJJtQ0mvIaeaMKj7_t6J_Fg",null,null,null,["OnSwitch__enable","Cloud__enable_cloud_shell_fte_user_flow","Analytics__enable_cookie_bar","Profiles__enable_developer_profiles_callout","Profiles__enable_dashboard_curated_recommendations","Profiles__enable_awarding_url","Cloud__enable_cloud_shell","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__developers_footer_image","Search__enable_dynamic_content_confidential_banner","MiscFeatureFlags__emergency_css","Cloud__enable_llm_concierge_chat","MiscFeatureFlags__enable_project_variables","Profiles__enable_profile_collections","Profiles__enable_public_developer_profiles","Search__enable_page_map","EngEduTelemetry__enable_engedu_telemetry","Profiles__enable_page_saving","MiscFeatureFlags__limit_dynamic_context","Concierge__enable_pushui","Search__enable_suggestions_from_borg","TpcFeatures__enable_mirror_tenant_redirects","BookNav__enable_tenant_cache_key","Cloud__enable_cloud_facet_chat","Profiles__enable_recognition_badges","MiscFeatureFlags__enable_explain_this_code","Search__enable_ai_eligibility_checks","Experiments__reqs_query_experiments","Analytics__enable_all_tenant_analytics","CloudShell__cloud_shell_button","MiscFeatureFlags__enable_firebase_utm","CloudShell__cloud_code_overflow_menu","MiscFeatureFlags__developers_footer_dark_image","Cloud__enable_free_trial_server_call","Profiles__enable_release_notes_notifications","Cloud__enable_cloud_dlp_service","MiscFeatureFlags__enable_variable_operator","Cloud__enable_cloudx_experiment_ids","Cloud__enable_cloudx_ping"],null,null,"AIzaSyA58TaKli1DculwmAmbpzLVGuWc8eCQgQc","https://developerscontentserving-pa.googleapis.com","AIzaSyDWBU60w0P9hEkr29kkksYs8Z7gvZ8u_wc","https://developerscontentsearch-pa.googleapis.com",2,4,null,"https://developerprofiles-pa.googleapis.com",[27,"web","web.dev","web.dev",null,"web-dot-devsite-v2-prod-3p.appspot.com",null,null,[null,null,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1,null,1],[1,1,null,1,1]],null,[38,null,null,null,null,null,"/images/lockup.svg","/images/touchicon-180.png",null,null,null,1,1,null,null,null,null,null,null,null,null,1,null,null,null,"/images/lockup-dark-theme.svg",[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[[],[1,1]],[[null,null,null,null,null,["GTM-MZWCJPP"],null,null,null,null,null,[["GTM-MZWCJPP",1]],1]],null,4]]')
+  
+</script>
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>
