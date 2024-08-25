@@ -15,3 +15,6 @@ Test runner - components which orchestrates the execution of tests and provides 
 unittests module provides a rich set of tools for constructing and running tests.
 
 Paramatized unit Testing - allows us to define and execute test cases with different sets of input test data. It involves creating test methods or functions that accept parameters and then running these tests with various input values to validate the behaviour of the code under test.
+
+
+Memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls to pure functions and returning the cached result when the same inputs occur again.Expesive cde takes long time to run or uses alot of memory.
