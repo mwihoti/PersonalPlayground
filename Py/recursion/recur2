@@ -1,0 +1,11 @@
+Perhaps santa shouldn't have to deliver all the presents by himself.
+
+Perhaps we have an algorithm which he can divide the work of delivering presents amog his elves.
+
+algorithm:
+    1. appoint an elf and give work to himself
+    2. Assign titles and responsibilities to the elves based on the number of houses for which
+        they are responsibilities
+
+            -> He is a manager and can appoint two elves and divide his work among them.
+            -> He is a worker and has to deliver the presents to the house assigned to him.
