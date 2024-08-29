@@ -1,0 +1,20 @@
+2024-08-29 10:11:41,100:__main__:Add: 15 + 5 = 20
+2024-08-29 10:11:41,100:__main__:Subtract: 15 - 5 = 10
+2024-08-29 10:11:41,100:__main__:Multiply: 15 * 5 = 75
+2024-08-29 10:11:41,100:__main__:Divide: 15 / 5 = 3.00
+2024-08-29 10:16:26,278:__main__:Tried to divide by zero
+2024-08-29 10:16:59,101:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "/home/mrdan/projects/funTime/Py/logging/./logapp.py", line 37, in divide
+    result = x / y
+ZeroDivisionError: division by zero
+2024-08-29 10:20:20,613:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "/home/mrdan/projects/funTime/Py/logging/./logapp.py", line 40, in divide
+    result = x / y
+ZeroDivisionError: division by zero
+2024-08-29 10:22:06,009:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "/home/mrdan/projects/funTime/Py/logging/./logapp.py", line 41, in divide
+    result = x / y
+ZeroDivisionError: division by zero

@@ -1,0 +1,42 @@
+DEBUG:root:Add: 10 + 6 = 16
+DEBUG:root:Subtract: 10 - 6 = 4
+DEBUG:root:Multiply: 10 * 6 = 60
+DEBUG:root:Divide: 10 / 6 = 1.67
+DEBUG:root:Add: 10 + 5 = 15
+DEBUG:root:Subtract: 10 - 5 = 5
+DEBUG:root:Multiply: 10 * 5 = 50
+DEBUG:root:Divide: 10 / 5 = 2.00
+2024-08-29 09:00:47,036:DEBUG:Add: 10 + 5 = 15
+2024-08-29 09:00:47,037:DEBUG:Subtract: 10 - 5 = 5
+2024-08-29 09:00:47,038:DEBUG:Multiply: 10 * 5 = 50
+2024-08-29 09:00:47,038:DEBUG:Divide: 10 / 5 = 2.00
+2024-08-29 09:01:39,508:DEBUG:Add: 10 + 5 = 15:33:508
+2024-08-29 09:01:39,508:DEBUG:Subtract: 10 - 5 = 5:35:508
+2024-08-29 09:01:39,508:DEBUG:Multiply: 10 * 5 = 50:37:508
+2024-08-29 09:01:39,508:DEBUG:Divide: 10 / 5 = 2.00:40:508
+2024-08-29 09:02:24,619:DEBUG:Add: 15 + 5 = 20:619
+2024-08-29 09:02:24,619:DEBUG:Subtract: 15 - 5 = 10:619
+2024-08-29 09:02:24,619:DEBUG:Multiply: 15 * 5 = 75:619
+2024-08-29 09:02:24,619:DEBUG:Divide: 15 / 5 = 3.00:619
+2024-08-29 09:03:14,702:DEBUG:Add: 15 + 5 = 20:702:140479706861568
+2024-08-29 09:03:14,702:DEBUG:Subtract: 15 - 5 = 10:702:140479706861568
+2024-08-29 09:03:14,702:DEBUG:Multiply: 15 * 5 = 75:702:140479706861568
+2024-08-29 09:03:14,702:DEBUG:Divide: 15 / 5 = 3.00:702:140479706861568
+2024-08-29 09:03:35,671:DEBUG:Add: 15 + 5 = 20:671:140311790370816:MainThread
+2024-08-29 09:03:35,672:DEBUG:Subtract: 15 - 5 = 10:672:140311790370816:MainThread
+2024-08-29 09:03:35,672:DEBUG:Multiply: 15 * 5 = 75:672:140311790370816:MainThread
+2024-08-29 09:03:35,672:DEBUG:Divide: 15 / 5 = 3.00:672:140311790370816:MainThread
+DEBUG:employee.py:2024-08-29 09:22:31,059
+DEBUG:employee.py:2024-08-29 09:22:31,060
+DEBUG:employee.py:Created Employee: John Smith - John.Smith@dans.com:2024-08-29 09:23:06,717
+DEBUG:employee.py:Hello I am John Smith  a x member:2024-08-29 09:23:06,717
+DEBUG:employee.py:Created Employee: Daniel Mwihoti - Daniel.Mwihoti@dans.com:2024-08-29 09:24:33,943
+DEBUG:employee.py:Hello I am Daniel Mwihoti  a x member:2024-08-29 09:24:33,943
+INFO:employee.py:Created Employee: Perpectual Ngendo - Perpectual.Ngendo@dans.com:2024-08-29 09:26:23,923
+INFO:employee.py:Hello I am Perpectual Ngendo  a x member:2024-08-29 09:26:23,923
+INFO:employee.py:Created Employee: Perpectual Ngendo - PerpectualNgendo@dans.com:2024-08-29 09:26:44,366
+INFO:employee.py:Hello I am Perpectual Ngendo  a x member:2024-08-29 09:26:44,366
+2024-08-29 10:08:06,562:DEBUG:Add: 15 + 5 = 20:562:140636890636288:MainThread
+2024-08-29 10:08:06,639:DEBUG:Subtract: 15 - 5 = 10:639:140636890636288:MainThread
+2024-08-29 10:08:06,639:DEBUG:Multiply: 15 * 5 = 75:639:140636890636288:MainThread
+2024-08-29 10:08:06,640:DEBUG:Divide: 15 / 5 = 3.00:640:140636890636288:MainThread
