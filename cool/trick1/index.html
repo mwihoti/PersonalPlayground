@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="styleSheet" />
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="coolStuff">
+        <h1>Welcome to cool stuffs with html, css, js</h1>
+        <div class="image-container">
+            <img src="" alt="Generated QR Code ">
+        </div>
+       
+        <input type=" text" size="32">
+        <button>Generate</button>
+
+    </div>
+   
+
+    <script>
+
+        const image =  document.querySelector('img'),
+        input = document.querySelector("input"),
+        button = document.querySelector("button"),
+        api =  `https://api.qrserver.com/v1/`,
+        api2 = `create-qr-code/?size=150*150&data=`;
+
+        button.addEventListener("click", () => {
+            image.src = `${api}${api2}${input.value}`;
+        });
+    </script>
+    
+</body>
+</html>

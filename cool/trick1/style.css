@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: black;
+    padding: 1rem;
+    
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+.image-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+.coolStuff {
+    display: grid;
+ justify-items: center;
+ padding: 0.5rem ;
+}
+.coolStuff button {
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+}
