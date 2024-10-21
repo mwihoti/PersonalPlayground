@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+
+}
+
+#resultsContainer{
+    margin-top: 20px;
+}

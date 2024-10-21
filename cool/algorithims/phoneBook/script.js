@@ -38,6 +38,22 @@ const data = [
         return null
     }
 
-    const searchName = "nDee";
-    const result = binarySearch(phoneBook, searchName);
-    console.log("Search Result", result)
+    document.getElementById("searchButton").addEventListener("click", () => {
+        const searchInput = document.getElementById("searchInput").value.trim();
+        const result = binarySearch(phoneBook, searchInput);
+        const resultsContainer = document.getElementById("resultsContainer");
+    
+        if (result) {
+            resultsContainer.innerHTML = `
+                <div>
+                    <img src="${result.picture}" alt="${result.first_name}" />
+                    <p><strong>Name:</strong> ${result.first_name} ${result.last_name}</p>
+                    <p><strong>Phone:</strong> ${result.phone}</p>
+                    <p><strong>Gender:</strong> ${result.gender}</p>
+                </div>
+            `;
+        } else {
+            resultsContainer.innerHTML = "<p>No contact found</p>";
+        }
+    });
+   
