@@ -21,3 +21,7 @@ button {
 #resultsContainer{
     margin-top: 20px;
 }
+.cont{
+    display: grid;
+    justify-content: center;
+}
