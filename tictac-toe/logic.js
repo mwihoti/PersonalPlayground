@@ -78,4 +78,22 @@ function highlightWinningSquares(squares) {
     });
 }
 
-// Resettin
+// Resetting the game
+function reset() {
+    $("#screen").text("PLAYER 1 TURN FOLLOWS");
+    $("#screen").css("background-color", "transparent");
+    $(".r").removeClass("fa fa-check");
+    $(".r").removeClass("fa fa-times");
+    turn = 1;
+
+    // Reset colors
+    $(".sq1").css("color", "black");
+    $(".sq2").css("color", "black");
+    $(".sq3").css("color", "black");
+    $(".sq4").css("color", "black");
+    $(".sq5").css("color", "black");
+    $(".sq6").css("color", "black");
+    $(".sq7").css("color", "black");
+    $(".sq8").css("color", "black");
+    $(".sq9").css("color", "black");
+}
