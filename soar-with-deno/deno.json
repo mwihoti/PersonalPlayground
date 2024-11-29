@@ -10,6 +10,10 @@
     "@std/crypto": "jsr:@std/crypto@^1.0.3",
     "@std/encoding": "jsr:@std/encoding@^1.0.5",
     "@zaubrik/djwt": "jsr:@zaubrik/djwt@^3.0.2",
-    "~database": "./database/mod.ts"
+    "~database": "./database/mod.ts",
+    "~types/user": "./types/user.ts",
+    "~types/request": "./types/request.ts",
+    "~crypto/jwt": "./crypto/jwt.ts"
+
   }
 }
