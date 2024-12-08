@@ -5,4 +5,8 @@ import App from './App.tsx'
 
 const root = document.getElementById('root')
 
+if (!root) {
+    throw new Error("Wrapper div not found.")
+}
+
 render(() => <App />, root!)

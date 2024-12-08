@@ -31,9 +31,21 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 4.2em;
   line-height: 1.1;
 }
+
+.dinosaur {
+  border-radius: 2px;
+  font-size: 3em;
+  border: 1px solid black;
+  display: flex;
+  padding: 0.5em ; /* Top, Right, Bottom, Left */
+  gap: 7em;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
 
 button {
   border-radius: 8px;
