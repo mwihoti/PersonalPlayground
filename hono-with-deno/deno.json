@@ -1,5 +1,8 @@
 {
   "imports": {
     "@hono/hono": "jsr:@hono/hono@^4.6.14"
+  },
+  "tasks": {
+    "serve": "deno run --watch -A main.ts"
   }
 }
