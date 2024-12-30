@@ -3,6 +3,10 @@
   "specifiers": {
     "jsr:@findhow/zod-factory@^0.0.2": "0.0.2",
     "jsr:@hono/hono@^4.6.14": "4.6.14",
+    "jsr:@std/crypto@^1.0.3": "1.0.3",
+    "jsr:@std/encoding@0.224.0": "0.224.0",
+    "jsr:@std/encoding@^1.0.6": "1.0.6",
+    "jsr:@zaubrik/djwt@^3.0.2": "3.0.2",
     "npm:@faker-js/faker@8.4.1": "8.4.1",
     "npm:randexp@0.5.3": "0.5.3",
     "npm:zod@3.23.8": "3.23.8"
@@ -18,6 +22,21 @@
     },
     "@hono/hono@4.6.14": {
       "integrity": "b39a5488266adf448fb1081bc3071a0d05145e72f3ab3ff83cf140e780c6c1de"
+    },
+    "@std/crypto@1.0.3": {
+      "integrity": "a2a32f51ddef632d299e3879cd027c630dcd4d1d9a5285d6e6788072f4e51e7f"
+    },
+    "@std/encoding@0.224.0": {
+      "integrity": "efb6dca97d3e9c31392bd5c8cfd9f9fc9decf5a1f4d1f78af7900a493bcf89b5"
+    },
+    "@std/encoding@1.0.6": {
+      "integrity": "ca87122c196e8831737d9547acf001766618e78cd8c33920776c7f5885546069"
+    },
+    "@zaubrik/djwt@3.0.2": {
+      "integrity": "8070adaa49cd9e5d2b8ae82fd461132c966ef2f8ff8378db4a4da8df4f17c664",
+      "dependencies": [
+        "jsr:@std/encoding@0.224.0"
+      ]
     }
   },
   "npm": {
@@ -45,6 +64,9 @@
     "dependencies": [
       "jsr:@findhow/zod-factory@^0.0.2",
       "jsr:@hono/hono@^4.6.14",
+      "jsr:@std/crypto@^1.0.3",
+      "jsr:@std/encoding@^1.0.6",
+      "jsr:@zaubrik/djwt@^3.0.2",
       "npm:zod@3.23.8"
     ]
   }
