@@ -1,5 +1,5 @@
 import { factory } from '@findhow/zod-factory';
-import AnimalSchema from './animal.schema';
+import AnimalSchema from './animal.schema.ts';
 import { isDirty } from "zod";
 
 const AnimalFactory  = factory(AnimalSchema, (faker) => ({
