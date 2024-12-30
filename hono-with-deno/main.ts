@@ -1,29 +1,46 @@
 import { Hono } from "@hono/hono";
 import { HTTPException } from "@hono/hono/http-exception";
-import AnimalFactory from "./mock/factory.ts";
+import { factoryAnimals, factoryPeople } from "./mock/factory.ts";
 
-const factoryAnimals = AnimalFactory.createMany(10);
-
-console.log(factoryAnimals);
-
-
+const animals = new Hono().basePath("/animals");
+const people = new Hono().basePath("/people");
 const app = new Hono().basePath("/api");
 
-app.get("/animals", (c) => {
+animals.get("/", (c) => {
   return c.json(factoryAnimals);
 });
 
 
-app.get("/animals/:id", (c) => {
+animals.get("/:id", (c) => {
   const { id } = c.req.param();
   const animalDetails = factoryAnimals.find((el) => el.id === id);
   if (!animalDetails) {
     throw new HTTPException(404, {
-      message: 'Id not found.',
+      message: 'ID not found.',
     });
   }
   return c.json(animalDetails);
-})
+});
+app.route("/", animals);
+
+people.get('/' , (c) => {
+  return c.json(factoryPeople);
+});
+
+people.get("/:id", (c) => {
+  const { id } = c.req.param();
+  const personalDetail = factoryPeople.find((el) =>
+    el.id === Number.parseInt(id)
+  );
+  if (!personalDetail) {
+    throw new HTTPException(404, {
+      message: "ID not found.",
+    });
+  }
+  return c.json(personalDetail);
+});
+
+app.route("/", people);
 
 if (import.meta.main) {
   Deno.serve({ hostname: "127.0.0.1", port: 5555 }, app.fetch); }
