@@ -21,3 +21,14 @@ export const argon2Verify = (
     const ret = encodeBase64(hash(encodedPassword, encodedSalt, params)) === originalHash;
     return ret;
 }
+
+export const argon2Hasher = (password: string, salt: string): ArrayBuffer => {
+    const encodedPassword = encoder.encode(password);
+    const encodedSalt = encoder.encode(salt);
+    const params: Argon2Params = {
+        algorithm: "Argon2id",
+        secret: TOKEN,
+        version: 0x13,
+    };
+    return hash(encodedPassword, encodedSalt, params);
+}
