@@ -45,3 +45,17 @@ const generateJwt = async (
 
 
 };
+
+/**
+ * Verifies the signature of the JWT
+ * @param jwt The JWT signature
+ * @returns `string` value which is the email.
+ */
+
+const verifyJwt = async (jwt: string) => {
+    const payload: { email: string } = await verify(jwt, key);
+
+    return payload;
+};
+
+export { generateJwt, verifyJwt };
