@@ -2,7 +2,7 @@ import { Database } from "@db/sqlite";
 const personalDetailsDb = new Database("./mock/database/people.db");
 
 export const create_people_table_command = `
-            CREATE TABLE IF NOT EXISTS personal_details (
+            CREATE TABLE IF NOT EXISTS people (
             id INTEGER PRIMARY KEY,
             firstName TEXT NOT NULL,
             lastName TEXT NOT NULL,

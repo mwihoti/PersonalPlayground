@@ -7,10 +7,10 @@ import { PersonalDetailWithSalt } from "../types/common.ts";
 
 
 Deno.test("All password hashes are verified with their respective salt.", () => {
-    const personalDetailsDbPath = "./mock/database/people-mock.db";
-    const animalMockDbPath = "./mock/database/animal-mock.db";
+    const personalDetailsMockDbPath = "./mock/database/people-mock.db";
+    const animalMockDbPath = "./mock/database/pets-mock.db";
     const { personalDetailsMockDb } = generateMockDataForDb(
-        personalDetailsDbPath, 
+        personalDetailsMockDbPath, 
         animalMockDbPath,
     );
 
@@ -23,6 +23,6 @@ Deno.test("All password hashes are verified with their respective salt.", () => 
         const row = stmt.get<PersonalDetailWithSalt>();
         assert(row !== undefined);
 
-        assert(argon2Verify(person.password, row.password, row.salt));
+        assert(argon2Verify(person.password, row.salt, row.password));
     });
 });
