@@ -3,7 +3,7 @@ import { generateMockDataForDb } from "./generateMockDatabase.ts";
 import { factoryPeople } from "./factory.ts";
 import { assert } from "@std/assert";
 import { PersonalDetailWithSalt } from "../types/common.ts";
-import personalDetailsDb from './database/personal-details.db';
+
 
 
 Deno.test("All password hashes are verified with their respective salt.", () => {
