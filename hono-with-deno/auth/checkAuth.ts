@@ -40,12 +40,27 @@ const checkAuth = async (
             throw new HTTPException(403, {
                 message: "You are not allowed to modify this resource.",
             });
+        }
         jwtSignature = jwtSig;
         if ( 
             (jwtFromCookie === jwtSignature)
         ) {
             const jwtCookieValue = await verifyJwt(jwtFromCookie);
+            const jwtAuthValue = await verifyJwt(jwtSig);
+            const verified = jwtAuthValue.email === jwtCookieValue.email;
+            console.log("Is Verified?", verified);
+            if (!verified) {
+                throw new HTTPException(403, {
+                    message: "You are not allowed to modify this resource.",
+
+                });
+            } else {
+                return await next ();
+            }
         }
+        throw new HTTPException(403, {
+            message: "You are not allowed to modify this resource",
+        })
 }
     await next();
 };
