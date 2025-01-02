@@ -36,7 +36,7 @@ const registerUser = async (
     if (changes > 0) {
         return c.json(userInput);
     }
-    throw new HTTPException(500, { message: "Server error."});
+    throw new HTTPException(503, { message: "Server error."});
     
     }
 
